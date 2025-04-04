@@ -1,243 +1,215 @@
-// swiper-init.js
+document.addEventListener("DOMContentLoaded", function () {
+  let bannerSwiper = null;
+  let stockSwiper = null;
+  let stagesSwiper = null;
+  let methodsSwiper = null;
 
-function initBannerSwiper() {
-  const bannerSwiper = new Swiper('.swiper-container-banner', {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    breakpoints: {
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination-banner',
-          clickable: true,
-        },
-      },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        pagination: {
-          el: '.swiper-pagination-banner',
-          clickable: true,
-        },
-      },
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-          el: '.swiper-pagination-banner',
-          clickable: true,
-        },
-      },
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 5,
-      },
-    },
-  });
-}
+  // Функция для создания IntersectionObserver
+  function observeElement(selector, callback) {
+    const element = document.querySelector(selector);
+    if (!element) return;
 
-function initStockSwiper() {
-  const stockSwiper = new Swiper('.swiper-container-stock', {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination-stock',
-      clickable: true,
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 15,
-      },
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 5,
-      },
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 5,
-      },
-    },
-  });
-}
-
-$(document).ready(function () {
-  // Функция для инициализации слайдера или аккордеона
-  function initializeSliderOrAccordion() {
-    if ($(window).width() > 768) {
-      // Инициализация слайдера для десктопа
-      if (!$('.stages-section .slider-main').hasClass('slick-initialized')) {
-        $('.stages-section .slider-main').slick({
-          dots: false,
-          infinite: true,
-          speed: 300,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-              },
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                dots: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-              },
-            },
-          ],
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            callback();
+            observer.unobserve(entry.target); // После инициализации прекращаем наблюдение
+          }
         });
+      },
+      { threshold: 0.1 } // Начинаем отслеживание, когда элемент на 10% виден
+    );
 
-        // Показываем текст описания на десктопе
-        $('.accordion-content').css('display', 'block');
+    observer.observe(element);
+  }
+
+  // Инициализация слайдеров при видимости элемента
+  function initBannerSwiper() {
+    if (window.innerWidth >= 320) {
+      if (!bannerSwiper) {
+        bannerSwiper = new Swiper('.swiper-container-banner', {
+          slidesPerView: 4,
+          spaceBetween: 20,
+          breakpoints: {
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              pagination: {
+                el: '.swiper-pagination-banner',
+                clickable: true,
+              },
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+              pagination: {
+                el: '.swiper-pagination-banner',
+                clickable: true,
+              },
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              pagination: {
+                el: '.swiper-pagination-banner',
+                clickable: true,
+              },
+            },
+          },
+        });
       }
     } else {
-      // Уничтожение слайдера для мобильных устройств
-      if ($('.stages-section .slider-main').hasClass('slick-initialized')) {
-        $('.stages-section .slider-main').slick('unslick');
+      if (bannerSwiper) {
+        bannerSwiper.destroy();
+        bannerSwiper = null;
       }
-
-      // Скрываем текст описания на мобильных устройствах
-      $('.accordion-content').css('display', 'none');
-
-// Инициализация аккордеона
-$('.slider-item .accordion-header').off('click').on('click', function (event) {
-  event.stopPropagation(); // Предотвращаем конфликт событий
-
-  const $this = $(this); // Текущий элемент (заголовок аккордеона)
-  const $content = $this.next('.accordion-content'); // Содержимое аккордеона
-  const $toggleBtn = $this.find('.accordion-toggle-btn'); // Кнопка переключения (+/-)
-
-  // Проверяем текущее состояние аккордеона
-  if ($this.hasClass('active')) {
-    // Если аккордеон открыт, закрываем его
-    $this.removeClass('active');
-    $content.slideUp();
-    $toggleBtn.text('+'); // Меняем текст кнопки на "+"
-  } else {
-    // Если аккордеон закрыт, открываем его
-    $this.addClass('active');
-    $content.slideDown();
-    $toggleBtn.text('-'); // Меняем текст кнопки на "-"
-  }
-});
     }
   }
 
-  // Инициализация при загрузке страницы
-  initializeSliderOrAccordion();
-
-  // Обработка изменения размера окна
-  $(window).resize(function () {
-    initializeSliderOrAccordion();
-  });
-
-  // Привязка кнопок для слайдера (работает только на десктопе)
-  $('#prev-slide').on('click', function () {
-    if ($(window).width() > 768) {
-      $('.stages-section .slider-main').slick('slickPrev');
+  function initStockSwiper() {
+    if (window.innerWidth >= 544) {
+      if (!stockSwiper) {
+        stockSwiper = new Swiper('.swiper-container-stock', {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          pagination: {
+            el: '.swiper-pagination-stock',
+            clickable: true,
+          },
+          breakpoints: {
+            544: {
+              slidesPerView: 2,
+            },
+            778: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+              loop: false,
+            },
+          },
+        });
+      }
+    } else {
+      if (stockSwiper) {
+        stockSwiper.destroy();
+        stockSwiper = null;
+      }
     }
-  });
+  }
 
-  $('#next-slide').on('click', function () {
-    if ($(window).width() > 768) {
-      $('.stages-section .slider-main').slick('slickNext');
+  function initStagesSwiper() {
+    if (window.innerWidth > 768) {
+      if (!stagesSwiper) {
+        stagesSwiper = new Swiper(".stages-swiper", {
+          navigation: {
+            nextEl: ".next-button-stages",
+            prevEl: ".prev-button-stages",
+          },
+          slidesPerView: 3,
+          spaceBetween: 20,
+          breakpoints: {
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+          },
+        });
+      }
+    } else {
+      if (stagesSwiper) {
+        stagesSwiper.destroy();
+        stagesSwiper = null;
+      }
     }
-  });
+  }
 
-  // Инициализация других слайдеров
-  $('.advantages-section .slider-main').slick({
-    dots: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 868,
-        settings: {
-          dots: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
+  function initMethodsSwiper() {
+    if (window.innerWidth <= 1010) {
+      if (!methodsSwiper) {
+        methodsSwiper = new Swiper(".methods-slider", {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      }
+    } else {
+      if (methodsSwiper) {
+        methodsSwiper.destroy();
+        methodsSwiper = null;
+      }
+    }
+  }
 
-  // Инициализация methods-slider только для мобильных
-  if ($(window).width() <= 768) {
-    $('.methods-slider').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: true,
-      arrows: false,
-      infinite: true,
+  function initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.removeEventListener('click', handleAccordionClick);
     });
-  }
 
-  // Обработчик изменения размера окна для methods-slider
-  $(window).resize(function () {
-    if ($(window).width() <= 768) {
-      if (!$('.methods-slider').hasClass('slick-initialized')) {
-        $('.methods-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-          arrows: false,
-          infinite: true,
-        });
-      }
-    } else {
-      if ($('.methods-slider').hasClass('slick-initialized')) {
-        $('.methods-slider').slick('unslick');
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', handleAccordionClick);
+    });
+
+    function handleAccordionClick() {
+      const accordionIco = this.querySelector('.accordion-ico img');
+
+      accordionHeaders.forEach(otherHeader => {
+        if (otherHeader !== this) {
+          const otherDesc = otherHeader.closest('.slider-content').querySelector('.slider-desc');
+          otherDesc.classList.remove('open');
+
+          const otherIco = otherHeader.querySelector('.accordion-ico img');
+          if (otherIco) {
+            otherIco.classList.remove('active');
+          }
+        }
+      });
+
+      const desc = this.closest('.slider-content').querySelector('.slider-desc');
+      desc.classList.toggle('open');
+
+      if (accordionIco) {
+        accordionIco.classList.toggle('active');
       }
     }
-  });
+  }
 
-  // Привязка кнопок для advantages-section
-  $('#prev-slide-adv').on('click', function () {
-    $('.advantages-section .slider-main').slick('slickPrev');
-  });
+  // Инициализация всех слайдеров через IntersectionObserver
+  function initializeAll() {
+    observeElement('.swiper-container-banner', initBannerSwiper);
+    observeElement('.swiper-container-stock', initStockSwiper);
+    observeElement('.stages-swiper', initStagesSwiper);
+    observeElement('.methods-slider', initMethodsSwiper);
 
-  $('#next-slide-adv').on('click', function () {
-    $('.advantages-section .slider-main').slick('slickNext');
+    if (window.innerWidth <= 768) {
+      initAccordion();
+    }
+  }
+
+  initializeAll();
+
+  window.addEventListener("resize", () => {
+    initBannerSwiper();
+    initStockSwiper();
+    initStagesSwiper();
+    initMethodsSwiper();
+
+    if (window.innerWidth <= 768) {
+      initAccordion();
+    }
   });
 });
-
-function initAllSwipers() {
-  initBannerSwiper();
-  initStockSwiper();
-}
-
-window.initAllSwipers = initAllSwipers;
-
-function initAllSwipers() {
-  initBannerSwiper();
-  initStockSwiper();
-}
-
-window.initAllSwipers = initAllSwipers;

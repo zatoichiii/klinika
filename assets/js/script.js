@@ -1,22 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const bannerWrapper = document.querySelector(".banner-wrapper");
-  const swiperContainer = document.querySelector(".swiper-container-banner");
-  const categoryButtons = document.querySelectorAll('.category-btn');
-  const priceCategories = document.querySelectorAll('.price-category');
-  const bannerHeight = bannerWrapper.offsetHeight;
-  swiperContainer.style.top = `${bannerHeight}px`;
-  const menuIcon = document.querySelector('.menu-icon');
-  const menuContainer = document.querySelector('.menu-container');
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const priceCategories = document.querySelectorAll(".price-category");
   const dynamicContent = document.querySelector(".menu-column.dynamic-content");
-  const moreCategoriesBtn = document.querySelector('.more-categories-btn');
-  const additionalCategories = document.querySelector('.additional-categories');
+  const moreCategoriesBtn = document.querySelector(".more-categories-btn");
+  const additionalCategories = document.querySelector(".additional-categories");
+  const menuIcon = document.querySelector(".menu-icon");
+  const menuContainer = document.querySelector(".menu-container");
+  const header = document.querySelector(".header");
+
+    const wrappers = document.querySelectorAll('[class*="-wrapper"]');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, 
+    });
+
+    wrappers.forEach((wrapper) => {
+        observer.observe(wrapper);
+    });
+
+    function loadStyles() {
+      const style = document.createElement("link");
+      style.rel = "stylesheet";
+      style.href = "styles.css"; 
+      document.head.appendChild(style);
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener("scroll", loadStyles, { once: true });
+  });
 
   const menuData = {
     "alcohol-treatment": {
       title: "Лечение алкоголизма",
-      items: ["Кодирование от алкоголизма", "Психологическая помощь", "Реабилитация"],
+      items: [
+        "Кодирование от алкоголизма",
+        "Психологическая помощь",
+        "Реабилитация",
+      ],
     },
-    "detox": {
+    detox: {
       title: "Вывод из запоя",
       items: [
         "Медикаментозный вывод из запоя",
@@ -29,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       items: ["История клиники", "Наши врачи", "Отзывы пациентов"],
     },
   };
-
 
   function updateDynamicContent(target) {
     const data = menuData[target];
@@ -50,10 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       dynamicContent.style.opacity = 0;
-      setTimeout(() => dynamicContent.style.opacity = 1, 50);
+      setTimeout(() => (dynamicContent.style.opacity = 1), 50);
     }
   }
-
 
   function initMenuHandlers() {
     const menuItems = document.querySelectorAll(".main-menu li");
@@ -83,7 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const arrow = menuItem.querySelector("img.arrow");
-        if (arrow) arrow.classList.toggle("active", menuItem.classList.contains("active"));
+        if (arrow)
+          arrow.classList.toggle(
+            "active",
+            menuItem.classList.contains("active")
+          );
       });
     });
   }
@@ -101,18 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => (dynamicContent.style.opacity = 1), 50);
   }
   function initMenuIconHandler() {
-    const header = document.querySelector('.header');
+    const header = document.querySelector(".header");
 
-    menuIcon.addEventListener('click', () => {
-      menuIcon.classList.toggle('active');
-      menuContainer.classList.toggle('active');
+    menuIcon.addEventListener("click", () => {
+      menuIcon.classList.toggle("active");
+      menuContainer.classList.toggle("active");
 
-      if (menuContainer.classList.contains('active')) {
-        header.style.borderBottomLeftRadius = '0px';
-        header.style.borderBottomRightRadius = '0px';
+      if (menuContainer.classList.contains("active")) {
+        header.style.borderBottomLeftRadius = "0px";
+        header.style.borderBottomRightRadius = "0px";
       } else {
-        header.style.borderBottomLeftRadius = '';
-        header.style.borderBottomRightRadius = '';
+        header.style.borderBottomLeftRadius = "";
+        header.style.borderBottomRightRadius = "";
 
         if (dynamicContent.parentNode) {
           dynamicContent.remove();
@@ -120,16 +151,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    document.addEventListener('click', (event) => {
+    document.addEventListener("click", (event) => {
       if (
-        menuContainer.classList.contains('active') &&
+        menuContainer.classList.contains("active") &&
         !menuContainer.contains(event.target) &&
         !menuIcon.contains(event.target)
       ) {
-        menuIcon.classList.remove('active');
-        menuContainer.classList.remove('active');
-        header.style.borderBottomLeftRadius = '';
-        header.style.borderBottomRightRadius = '';
+        menuIcon.classList.remove("active");
+        menuContainer.classList.remove("active");
+        header.style.borderBottomLeftRadius = "";
+        header.style.borderBottomRightRadius = "";
 
         if (dynamicContent.parentNode) {
           dynamicContent.remove();
@@ -144,58 +175,83 @@ document.addEventListener("DOMContentLoaded", () => {
     var myMap = new ymaps.Map("map", {
       center: [54.1377, 37.5903],
       zoom: 10,
-      controls: []
+      controls: [],
     });
 
-    var myPlacemark = new ymaps.Placemark([54.1377, 37.5903], {}, {
-      iconColor: '#6c5ce7'
-    });
+    var myPlacemark = new ymaps.Placemark(
+      [54.1377, 37.5903],
+      {},
+      {
+        iconColor: "#6c5ce7",
+      }
+    );
     myMap.geoObjects.add(myPlacemark);
   }
 
+  categoryButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach((b) => b.classList.remove("active"));
+      priceCategories.forEach((c) => c.classList.remove("active"));
 
-
-    categoryButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-      // Убираем активный класс у всех категорий
-      categoryButtons.forEach(b => b.classList.remove('active'));
-      priceCategories.forEach(c => c.classList.remove('active'));
-
-      // Добавляем активный класс к текущей категории
-      btn.classList.add('active');
-      priceCategories[index].classList.add('active');
+      btn.classList.add("active");
+      priceCategories[index].classList.add("active");
     });
   });
 
-// Обработчик кнопок "Подробнее"
-const detailsBtns = document.querySelectorAll('.details-btn');
-detailsBtns.forEach(btn => {
-  btn.addEventListener('click', (event) => {
-    event.preventDefault(); // Предотвращаем стандартное поведение ссылки
+  const detailsBtns = document.querySelectorAll(".details-btn");
+  detailsBtns.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
 
-    const priceItem = btn.closest('.price-item'); // Находим ближайший родительский элемент .price-item
-    const details = priceItem.querySelector('.details'); // Находим блок с подробной информацией внутри этого элемента
+      const priceItem = btn.closest(".price-item");
+      const details = priceItem.querySelector(".details");
 
-    if (details) {
-      details.classList.toggle('show'); // Показываем/скрываем детали
+      if (details) {
+        details.classList.toggle("show");
+      }
+    });
+  });
+
+  moreCategoriesBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    additionalCategories.style.display =
+      additionalCategories.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      !moreCategoriesBtn.contains(event.target) &&
+      !additionalCategories.contains(event.target)
+    ) {
+      additionalCategories.style.display = "none";
     }
   });
-});
 
-moreCategoriesBtn.addEventListener('click', (event) => {
-  event.stopPropagation(); // Предотвращаем закрытие при клике на кнопку
-  additionalCategories.style.display = additionalCategories.style.display === 'block' ? 'none' : 'block';
-});
+  menuIcon.addEventListener("click", () => {
+    menuIcon.classList.toggle("active");
+    menuContainer.classList.toggle("active");
+    if (menuContainer.classList.contains("active")) {
+      header.style.borderBottomLeftRadius = "0px";
+      header.style.borderBottomRightRadius = "0px";
+    } else {
+      header.style.borderBottomLeftRadius = "";
+      header.style.borderBottomRightRadius = "";
+    }
+  });
 
-// Закрыть выпадающий список при клике вне его
-document.addEventListener('click', (event) => {
-  if (!moreCategoriesBtn.contains(event.target) && !additionalCategories.contains(event.target)) {
-    additionalCategories.style.display = 'none';
-  }
-});
+  document.addEventListener("click", (event) => {
+    if (
+      menuContainer.classList.contains("active") &&
+      !menuContainer.contains(event.target) &&
+      !menuIcon.contains(event.target)
+    ) {
+      menuIcon.classList.remove("active");
+      menuContainer.classList.remove("active");
+      header.style.borderBottomLeftRadius = "";
+      header.style.borderBottomRightRadius = "";
+    }
+  });
 
-
-  // Инициализация
   initMenuHandlers();
   initAllSwipers();
   initMenuIconHandler();

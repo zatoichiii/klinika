@@ -10,11 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script async src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <script defer src="assets/js/script.js"></script>
   <script defer src="assets/js/swiper-init.js"></script>
@@ -34,7 +29,7 @@
         <div class="banner-wrapper">
           <div class="content">
             <h1 class="content-title">Наркологическая клиника «Призма»</h1>
-            <p class="content-description">Наши специализированные программы лечения алкоголизма предлагают комплексный подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные.</p>
+            <p class="content-description">Наши специализированные программы лечения алкоголизма предлагают комплексный подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные планы реабилитации.</p>
             <a href="#" class="button">Бесплатная консультация</a>
           </div>
           <div class="image-wrapper">
@@ -128,7 +123,7 @@
                 <img src="assets/images/icons/therapist.png" alt="Терапевт">
               </div>
               <div class="service-text">
-                <h3>Терапевт</h3>
+                <div>Терапевт</div>
                 <p>Лечение наркозависимости</p>
               </div>
             </div>
@@ -141,7 +136,7 @@
     <section class="prices-section">
       <div class="container">
         <div class="prices-wrapper">
-          <div class="prices-title">
+          <div class="block-title">
             <div>Прайс-лист клиники «Призма»</div>
           </div>
 
@@ -421,8 +416,8 @@
     <!-- Блок акций -->
     <section class="stock-section">
       <div class="container">
-        <div class="prices-title">Акции клиники</div>
-        <div class="swiper-container-stock">
+        <div class="block-title">Акции клиники</div>
+        <div class="swiper-container-stock swiper">
           <div class="swiper-wrapper">
             <!-- Слайд 1 -->
             <div class="swiper-slide">
@@ -463,6 +458,7 @@
                 <button class="btn btn-primary promotion">Заказать услугу</button>
               </div>
             </div>
+            <!-- Слайд 4 -->
             <div class="swiper-slide">
               <div class="slide-content">
                 <div class="slide-discount">Скидка</div>
@@ -476,6 +472,7 @@
               </div>
             </div>
           </div>
+          <!-- Пагинация -->
           <div class="swiper-pagination-stock"></div>
         </div>
       </div>
@@ -483,77 +480,80 @@
 
 
     <!-- Этапы лечения -->
-    <section class="stages-section">
+    <section class="stage-section">
       <div class="container">
-        <div class="slider-container">
-          <div class="slider-sidebar">
-            <div class="prices-title">Этапы <br> лечения</div>
-            <div class="buttons">
-              <button id="prev-slide"><img class="button-left" src="./assets/images/icons/arrow-right.png"></button>
-              <button id="next-slide"><img class="button-right" src="./assets/images/icons/arrow-right.png"></button>
+        <div class="stage-wrapper">
+          <div class="left-side">
+            <div class="block-title">Этапы лечения</div>
+            <div class="swiper-main-buttons">
+              <button class="prev-button-stages"><img class="button-left" src="./assets/images/icons/arrow-right.png"></button>
+              <button class="next-button-stages"><img class="button-right" src="./assets/images/icons/arrow-right.png"></button>
             </div>
           </div>
-          <div class="slider-main">
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="slider-title accordion-header">
-                  <div class="upper-text">
-                    <div class="slider-number">01</div>
-                    <div class="slider-words">Первичная консультация</div>
-                  </div>
-                  <button class="accordion-toggle-btn">+</button>
-                </div>
-                <div class="slider-content accordion-content">
-                  <div class="slider-desc">
-                    Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="slider-title accordion-header">
-                  <div class="upper-text">
-                    <div class="slider-number">02</div>
-                    <div class="slider-words">Диагностика и составление плана лечения</div>
-                  </div>
-                  <button class="accordion-toggle-btn">+</button>
-                </div>
-                <div class="slider-content accordion-content">
-                  <div class="slider-desc">
-                    Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
+          <div class="right-side stages">
+            <div class="swiper stages-swiper">
+              <div class="swiper-wrapper stages">
+                <div class="swiper-slide">
+                  <div class="slider-content">
+                    <div class="slider-title accordion-header">
+                      <div class="upper-text">
+                        <div class="slider-number">01</div>
+                        <div class="slider-words">Первичная консультация</div>
+                      </div>
+                      <div class="accordion-ico"><img src="/assets/images/icons/accrodion.png"></div>
+                    </div>
+                    <div class="slider-desc accordion">
+                      <div class="slider-desc">
+                        Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="slider-title accordion-header">
-                  <div class="upper-text">
-                    <div class="slider-number">03</div>
-                    <div class="slider-words">Детоксикация организма</div>
+                <div class="swiper-slide">
+                  <div class="slider-content">
+                    <div class="slider-title accordion-header">
+                      <div class="upper-text">
+                        <div class="slider-number">02</div>
+                        <div class="slider-words">Диагностика и составление плана лечения</div>
+                      </div>
+                      <div class="accordion-ico"><img src="/assets/images/icons/accrodion.png"></div>
+                    </div>
+                    <div class="slider-desc accordion">
+                      <div class="slider-desc">
+                        Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
+                      </div>
+                    </div>
                   </div>
-                  <button class="accordion-toggle-btn">+</button>
                 </div>
-                <div class="slider-content accordion-content">
-                  <div class="slider-desc">
-                    Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
+                <div class="swiper-slide">
+                  <div class="slider-content">
+                    <div class="slider-title accordion-header">
+                      <div class="upper-text">
+                        <div class="slider-number">03</div>
+                        <div class="slider-words">Детоксикация организма</div>
+                      </div>
+                      <div class="accordion-ico"><img src="/assets/images/icons/accrodion.png"></div>
+                    </div>
+                    <div class="slider-desc accordion">
+                      <div class="slider-desc">
+                        Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="slider-title accordion-header">
-                  <div class="upper-text">
-                    <div class="slider-number">04</div>
-                    <div class="slider-words">Первичная консультация</div>
-                  </div>
-                  <button class="accordion-toggle-btn">+</button>
-                </div>
-                <div class="slider-content accordion-content">
-                  <div class="slider-desc">
-                    Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
+                <div class="swiper-slide">
+                  <div class="slider-content">
+                    <div class="slider-title accordion-header">
+                      <div class="upper-text">
+                        <div class="slider-number">04</div>
+                        <div class="slider-words">Первичная консультация</div>
+                      </div>
+                      <div class="accordion-ico"><img src="/assets/images/icons/accrodion.png"></div>
+                    </div>
+                    <div class="slider-desc accordion">
+                      <div class="slider-desc">
+                        Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -561,130 +561,125 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
-    <!-- Методы лечения -->
-    <section class="methonds-section">
+
+    <!-- Методы -->
+    <section class="method-section">
       <div class="container">
-        <div class="upper-container">
-          <div class="prices-title">Методы лечения</div>
-          <button class="order-button">Заказать услугу</button>
+        <div class="method-wrapper">
+          <div class="method-upper-text">
+            <div class="block-title">Методы лечения</div>
+            <button class="order-btn">Заказать услугу</button>
+          </div>
+          <div class="swiper methods-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide method-item">
+                <div class="upper-block">
+                  <img src="/assets/images/icons/first.png" alt="Метод">
+                  <div>Медикаментозная терапия</div>
+                </div>
+                <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+              </div>
+              <div class="swiper-slide method-item">
+                <div class="upper-block">
+                  <img src="/assets/images/icons/first.png" alt="Метод">
+                  <div>Медикаментозная терапия</div>
+                </div>
+                <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+              </div>
+              <div class="swiper-slide method-item">
+                <div class="upper-block">
+                  <img src="/assets/images/icons/first.png" alt="Метод">
+                  <div>Медикаментозная терапия</div>
+                </div>
+                <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+              </div>
+              <div class="swiper-slide method-item">
+                <div class="upper-block">
+                  <img src="/assets/images/icons/first.png" alt="Метод">
+                  <div>Медикаментозная терапия</div>
+                </div>
+                <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+              </div>
+              <div class="swiper-slide method-item">
+                <div class="upper-block">
+                  <img src="/assets/images/icons/first.png" alt="Метод">
+                  <div>Медикаментозная терапия</div>
+                </div>
+                <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+              </div>
+              <div class="swiper-slide method-item">
+                <div class="upper-block">
+                  <img src="/assets/images/icons/first.png" alt="Метод">
+                  <div>Медикаментозная терапия</div>
+                </div>
+                <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination" style="margin-bottom: -30px"></div>
         </div>
-        <div class="methods-slider">
-          <div class="method-item">
-            <div class="upper-block">
-              <img src="/assets/images/icons/first.png">   
-              <h3>Медикаментозная терапия</h3>
-            </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
-          </div>
-          <div class="method-item">
-            <div class="upper-block">
-            <img src="/assets/images/icons/second.png">   
-            <h3>Психотерапия</h3>
-            </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
-          </div>
-          <div class="method-item">
-            <div class="upper-block">
-            <img src="/assets/images/icons/third.png">   
 
-              <h3>Реабилитационные программы</h3>
-            </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
-          </div>
-          <div class="method-item">
-            <div class="upper-block">
-            <img src="/assets/images/icons/fourth.png">   
-              <h3>Групповая терапия</h3>
-            </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
-          </div>
-          <div class="method-item">
-            <div class="upper-block">
-            <img src="/assets/images/icons/six.png">   
+      </div>
+    </section>
 
-              <h3>Работа с семьей</h3>
+
+    <!-- О клинике -->
+    <section class="about-section">
+      <div class="container">
+      <div class="about-wrapper">
+
+        <!-- Основной контент -->
+        <div class="main-content">
+          <!-- Левая колонка (текст, заголовок, кнопка) -->
+          <div class="left-column">
+            <div class="block-title">О клинике <b>«Призма»</b></div>
+            <div class="clinic-description">
+              <p>
+                Клиника «Призма» была основана командой опытных врачей-наркологов, психологов и реабилитологов, объединенных одной целью — помочь людям обрести свободу от зависимостей и вернуть радость полноценной жизни. Мы начали с небольшого центра, но благодаря высокому уровню профессионализма, современным методикам лечения и заботе о пациентах, мы смогли достичь значительных результатов.
+              </p>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+            <button class="more-button">Подробнее о клинике</button>
           </div>
-          <div class="method-item">
-            <div class="upper-block">
-            <img src="/assets/images/icons/fivith.png">   
-              <h3>Профилактика срывов</h3>
+
+          <!-- Правая колонка (видео) -->
+          <div class="right-column">
+            <div class="video-text-block">
+              <div class="video-container">
+                <img src="assets/images/photos/test.jfif" alt="Промо-ролик клиники 'Призма'">
+                <button class="play-button"><i class="fas fa-play"></i></button>
+              </div>
+              <p class="description">Промо-ролик клиники «Призма»</p>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких.</p>
+          </div>
+        </div>
+          <!-- Информационные блоки -->
+          <div class="info-blocks">
+            <div class="info-item">
+              <span class="number">10+</span>
+              <p class="text">Лет успешной работы</p>
+            </div>
+            <div class="info-item">
+              <span class="number">20</span>
+              <p class="text">Опытных специалистов</p>
+            </div>
+            <div class="info-item">
+              <span class="number">50+</span>
+              <p class="text">Методик лечения</p>
+            </div>
+            <div class="info-item">
+              <span class="number">250+</span>
+              <p class="text">Здоровых пациентов</p>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Подключение Font Awesome для иконки Play -->
+      <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
     </section>
-
-    <!-- Приемущества -->
-    <section class="advantages-section">
-      <div class="container">
-        <div class="slider-container">
-          <div class="slider-sidebar">
-            <div class="prices-title">Наши <br> преимущества</div>
-            <div class="buttons">
-              <button id="prev-slide-adv"><img class="button-left" src="./assets/images/icons/arrow-right.png"></button>
-              <button id="next-slide-adv"><img class="button-right" src="./assets/images/icons/arrow-right.png"></button>
-            </div>
-          </div>
-          <div class="slider-main">
-            <!-- Карточка 1 -->
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="card-image" style="background-image: url('./assets/images/photos/advantages.png');"></div>
-                <div class="card-text">
-                  <div class="slider-title">
-                    <div class="slider-words">Индивидуальный подход</div>
-                  </div>
-                  <div class="slider-desc">Мы разрабатываем уникальные программы лечения для каждого пациента.</div>
-                </div>
-              </div>
-            </div>
-            <!-- Карточка 2 -->
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="card-image" style="background-image: url('./assets/images/photos/advantages.png');"></div>
-                <div class="card-text">
-                  <div class="slider-title">
-                    <div class="slider-words">Команда профессионалов</div>
-                  </div>
-                  <div class="slider-desc">Опытные врачи и психологи с многолетним стажем работы.</div>
-                </div>
-              </div>
-            </div>
-            <!-- Карточка 3 -->
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="card-image" style="background-image: url('./assets/images/photos/advantages.png');"></div>
-                <div class="card-text">
-                  <div class="slider-title">
-                    <div class="slider-words">Современное оборудование</div>
-                  </div>
-                  <div class="slider-desc">Используем передовые технологии для диагностики и лечения.</div>
-                </div>
-              </div>
-            </div>
-            <!-- Карточка 4 -->
-            <div class="slider-item">
-              <div class="slider-content">
-                <div class="card-image" style="background-image: url('./assets/images/photos/advantages.png');"></div>
-                <div class="card-text">
-                  <div class="slider-title">
-                    <div class="slider-words">Поддержка 24/7</div>
-                  </div>
-                  <div class="slider-desc">Наши специалисты всегда готовы помочь в любое время суток.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
   </main>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
