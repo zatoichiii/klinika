@@ -1,4 +1,3 @@
-/* Общие настройки */
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +31,6 @@ ul li::marker {
   font-size: 1em; 
 }
 
-/* Стили для пагинации */
 .slick-dots {
   display: flex;
   justify-content: center;
@@ -98,7 +96,6 @@ button {
   background-color: transparent;
 }
 
-/* Контейнер */
 .container {
   position: relative;
   max-width: 1320px;
@@ -114,7 +111,6 @@ button {
 }
 
 
-/* Шапка */
 .header {
   display: flex;
   align-items: center;
@@ -126,7 +122,6 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-/* Логотип */
 .logo {
   display: flex;
   align-items: center;
@@ -154,7 +149,6 @@ button {
   color: #666;
 }
 
-/* Информация о центре */
 .center-info {
   display: flex;
   align-items: center;
@@ -175,7 +169,6 @@ button {
   flex-direction: column;
 }
 
-/* Действия */
 .actions {
   display: flex;
   align-items: center;
@@ -241,7 +234,6 @@ button {
   color: rgba(124, 73, 100, 1);
 }
 
-/* Кнопки */
 .btn {
   padding: 13px;
   border-radius: 30px;
@@ -276,7 +268,6 @@ button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Меню */
 .menu-container {
   position: absolute;
   top: -1000px;
@@ -320,7 +311,6 @@ button {
   list-style: none;
   padding: 0;
   overflow-x: hidden;
-/* Отключает горизонтальный скролл */
   border-right: 1px solid #c7c7c7;
 }
 
@@ -406,7 +396,6 @@ button {
 }
 
 
-/* Иконка меню */
 .menu-icon {
   width: 35px;
   height: 35px;
@@ -460,7 +449,6 @@ button {
   margin-bottom: 10px;
   color: var(--secondary-color);
 }
-/* Активное состояние (крестик) */
 .menu-icon.active::before {
   transform: rotate(45deg) translateY(0) translateX(0);
 }
@@ -473,7 +461,6 @@ button {
   opacity: 0;
 }
 
-/* Контейнер для поиска */
 .search-container {
   position: relative;
   display: flex;
@@ -483,7 +470,6 @@ button {
   max-width: 300px;
 }
 
-/* Поле ввода */
 .search-mobile {
   width: 100%;
   padding: 10px 40px 10px 15px;
@@ -498,7 +484,6 @@ button {
   border-color: var(--secondary-color);
 }
 
-/* Иконка поиска */
 .search-icon-mobile {
   position: absolute;
   right: 15px;
@@ -515,7 +500,6 @@ button {
   opacity: 1;
 }
 
-/* Адаптивность для шапки */
 @media screen and (max-width: 1200px) {
   .header {
       gap: 20px;
@@ -1104,12 +1088,10 @@ button {
   }
 }
 .prices-section {
-  margin-top: 100px;
   background-color: var(--bg-color);
 }
 
 
-/* Базовые стили */
 .prices-section {
   padding: 40px 0;
 }
@@ -1572,13 +1554,12 @@ button {
 
   
   .swiper-slide.method-item {
-    width: 100%; /* Полная ширина для слайдера */
+    width: 100%; 
   }
 }
 
 
 
-/* Основной контент */
 .about-section {
   padding: 40px 0;
 }
@@ -1603,7 +1584,6 @@ button {
   justify-content: center;
 }
 
-/* Заголовок */
 .about-section .block-title {
   font-size: 36px;
   margin-bottom: 20px;
@@ -1612,7 +1592,6 @@ button {
 .about-section .video-text-block{
   position: relative;
 }
-/* Описание клиники */
 .about-section .clinic-description {
   margin-bottom: 20px;
 }
@@ -1623,7 +1602,6 @@ button {
   color: #333;
 }
 
-/* Кнопка "Подробнее" */
 .about-section .more-button {
   display: inline-block;
   padding: 10px 20px;
@@ -1642,7 +1620,6 @@ button {
   color: #fff;
 }
 
-/* Блок с видео */
 .about-section .video-container {
   position: relative;
   width: 100%;
@@ -1686,7 +1663,6 @@ button {
   backdrop-filter: blur(10px);
 }
 
-/* Информационные блоки */
 .about-section .info-blocks {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -1713,7 +1689,6 @@ button {
   color: #666;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .about-section .main-content {
     flex-direction: column;
@@ -1735,5 +1710,360 @@ button {
   }
   .main-menu ul{
     border: none;
+  }
+}
+
+
+
+
+.services-section {
+  padding: 40px 0;
+  background-color: var(--bg-color);
+}
+
+
+
+.services-section .services-wrapper {
+  position: relative;
+}
+
+.services-section .swiper-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.services-section .swiper-slide {
+  flex: 1 1 calc(25% - 20px); 
+  background: rgba(236, 234, 228, 1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.services-section ul{
+  padding-left: 25px;
+}
+
+.services-section li{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+}
+
+
+.services-section .swiper-slide:last-child {
+  flex: 0 0 50%; 
+  text-align: center;
+  height: auto;
+  background-image:  url('/assets/images/photos/more-sevice.png');
+}
+
+
+.services-section .slide-title {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.services-section .slide-title img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.services-section .slide-content {
+  width: 100%; 
+  height: auto; 
+}
+
+.services-section button {
+  color: var(--red-color);
+  border: 1px solid var(--red-color);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 64px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.services-section .placeholder {
+  visibility: hidden; 
+}
+
+.services-section .block-title {
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+}
+
+@media (max-width: 1170px) {
+  .services-section .swiper-container-services {
+    display: block;
+  }
+
+  .services-section .swiper-wrapper {
+    flex-wrap: nowrap;
+    gap: none;
+  }
+  .services-section .swiper-slide {
+    flex: none;
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+
+  .services-section .swiper-slide:last-child {
+    width: 100%; 
+  }
+
+  .services-section .placeholder {
+    display: none; 
+  }
+
+  .services-section .block-title {
+    position: static; 
+    margin-bottom: 20px;
+  }
+}
+
+.advantages-section {
+  background-color: var(--bg-color);
+  padding: 40px 0;
+}
+
+.advantages-section .advantages-wrapper {
+  display: flex;
+}
+
+.advantages-section .right-side.advantages {
+  width: 70%;
+}
+
+.advantages-section .left-side {
+  width: 30%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.advantages-section .swiper-main-buttons button {
+  background: var(--red-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.advantages-section .swiper-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px; 
+  overflow: hidden; 
+  height: 350px; 
+  background-position-y: -100px;
+  background-image:  url('/assets/images/photos/advantages.png');
+}
+
+.advantages-section .slider-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  height: 55%;
+  border-radius: 20px; 
+  background-color: rgba(236, 234, 228, 1)
+}
+
+.advantages-section .upper-text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.advantages-section .slider-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  
+}
+
+.advantages-section .slider-desc {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1267px) {
+  .advantages-section .swiper-wrapper.advantages {
+    display: flex;
+    gap: 10px;
+  }
+
+  .advantages-section .right-side.advantages {
+    width: 100%;
+  }
+
+  .advantages-section .swiper-main-buttons {
+    display: none;
+  }
+
+  .advantages-section .advantages-wrapper {
+    flex-direction: column;
+  }
+
+  .advantages-section .swiper-slide {
+    height: 300px; 
+  }
+}
+
+
+.doctors-section {
+  padding: 60px 0;
+  background-color: var(--bg-color);
+}
+
+.doctors-section .upper-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+
+.doctors-section .swiper-main-buttons-doctors {
+  display: flex;
+  gap: 10px;
+}
+
+.doctors-section .swiper-container-doctors {
+  position: relative;
+  overflow: hidden;
+}
+
+.doctors-section .swiper-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.doctors-section .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.doctors-section .doctor-card {
+  background-color: rgba(245, 244, 241, 1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 450px; /* Увеличено для размещения картинки */
+}
+
+.doctors-section .doctor-card:hover {
+  transform: translateY(-10px);
+}
+
+.doctors-section .placeholders {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.doctors-section .placeholder-item {
+  font-size: 14px;
+  color: #666;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  gap: 8px;
+}
+
+.doctors-section .placeholder-item img {
+  width: 16px;
+  height: 16px;
+}
+
+.doctors-section .doctor-name {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+
+}
+
+.doctors-section .doctor-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.doctors-section .doctor-image {
+  position: absolute;
+  bottom: -4px; /* Смещение картинки вниз */
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.doctors-section .doctor-image img {
+  object-fit: cover; /* Сохраняет пропорции изображения */
+}
+
+.doctors-section .button {
+  background-color: var(--red-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-top: auto; 
+}
+
+.doctors-section .button:hover {
+  background: none;
+  border: 1px solid var(--red-color);
+}
+
+
+.prev-button-doctors,
+.next-button-doctors {
+  width: 50px;
+  height: 50px;
+  background: var(--red-color);
+  border-radius: 50%;
+}
+
+
+.prev-button-doctors img{
+  transform: rotate(180deg);
+}
+@media screen and (max-width: 650px) {
+  .doctors-section .swiper-main-buttons-doctors {
+    display: none;
   }
 }

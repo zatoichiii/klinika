@@ -3,28 +3,73 @@ document.addEventListener("DOMContentLoaded", function () {
   let stockSwiper = null;
   let stagesSwiper = null;
   let methodsSwiper = null;
+  let servicesSwiper = null;
+  let advantagesSwiper = null;
 
-  // Функция для создания IntersectionObserver
+  // Функция для debounce
+  function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
+
+  // Функция для наблюдения за элементами
   function observeElement(selector, callback) {
     const element = document.querySelector(selector);
-    if (!element) return;
+    if (!element) {
+      console.warn(`Элемент с селектором "${selector}" не найден.`);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             callback();
-            observer.unobserve(entry.target); // После инициализации прекращаем наблюдение
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 } // Начинаем отслеживание, когда элемент на 10% виден
+      { threshold: 0.1 }
     );
 
     observer.observe(element);
   }
 
-  // Инициализация слайдеров при видимости элемента
+  // Обработчик кликов для аккордеона
+  function handleAccordionClick() {
+    const accordionIco = this.querySelector('.accordion-ico img');
+
+    document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+      if (otherHeader !== this) {
+        const otherDesc = otherHeader.closest('.slider-content')?.querySelector('.slider-desc');
+        if (otherDesc) {
+          otherDesc.classList.remove('open');
+        }
+
+        const otherIco = otherHeader.querySelector('.accordion-ico img');
+        if (otherIco) {
+          otherIco.classList.remove('active');
+        }
+      }
+    });
+
+    const sliderContent = this.closest('.slider-content');
+    if (sliderContent) {
+      const desc = sliderContent.querySelector('.slider-desc');
+      if (desc) {
+        desc.classList.toggle('open');
+      }
+    }
+
+    if (accordionIco) {
+      accordionIco.classList.toggle('active');
+    }
+  }
+
+  // Инициализация Swiper для баннера
   function initBannerSwiper() {
     if (window.innerWidth >= 320) {
       if (!bannerSwiper) {
@@ -65,14 +110,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       if (bannerSwiper) {
-        bannerSwiper.destroy();
+        bannerSwiper.destroy(true, true);
         bannerSwiper = null;
       }
     }
   }
 
+  // Инициализация Swiper для акций
   function initStockSwiper() {
-    if (window.innerWidth >= 544) {
+    if (window.innerWidth >= 0) {
       if (!stockSwiper) {
         stockSwiper = new Swiper('.swiper-container-stock', {
           slidesPerView: 1,
@@ -97,12 +143,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       if (stockSwiper) {
-        stockSwiper.destroy();
+        stockSwiper.destroy(true, true);
         stockSwiper = null;
       }
     }
   }
 
+  // Инициализация Swiper для этапов
   function initStagesSwiper() {
     if (window.innerWidth > 768) {
       if (!stagesSwiper) {
@@ -127,12 +174,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       if (stagesSwiper) {
-        stagesSwiper.destroy();
+        stagesSwiper.destroy(true, true);
         stagesSwiper = null;
       }
     }
   }
 
+  // Инициализация Swiper для методов
   function initMethodsSwiper() {
     if (window.innerWidth <= 1010) {
       if (!methodsSwiper) {
@@ -147,69 +195,129 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     } else {
       if (methodsSwiper) {
-        methodsSwiper.destroy();
+        methodsSwiper.destroy(true, true);
         methodsSwiper = null;
       }
     }
   }
 
-  function initAccordion() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
+  // Инициализация Swiper для услуг
+  function initServicesSwiper() {
+    if (window.innerWidth <= 1170) {
+      if (!servicesSwiper) {
+        servicesSwiper = new Swiper(".swiper-container-services", {
+          slidesPerView: 4,
+          spaceBetween: 20,
+          loop: false,
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            940: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          },
+        });
 
-    accordionHeaders.forEach(header => {
-      header.removeEventListener('click', handleAccordionClick);
-    });
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+          slide.classList.remove('desktop-style');
+        });
+      }
+    } else {
+      if (servicesSwiper) {
+        servicesSwiper.destroy(true, true);
+        servicesSwiper = null;
 
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', handleAccordionClick);
-    });
-
-    function handleAccordionClick() {
-      const accordionIco = this.querySelector('.accordion-ico img');
-
-      accordionHeaders.forEach(otherHeader => {
-        if (otherHeader !== this) {
-          const otherDesc = otherHeader.closest('.slider-content').querySelector('.slider-desc');
-          otherDesc.classList.remove('open');
-
-          const otherIco = otherHeader.querySelector('.accordion-ico img');
-          if (otherIco) {
-            otherIco.classList.remove('active');
-          }
-        }
-      });
-
-      const desc = this.closest('.slider-content').querySelector('.slider-desc');
-      desc.classList.toggle('open');
-
-      if (accordionIco) {
-        accordionIco.classList.toggle('active');
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+          slide.classList.add('desktop-style');
+        });
       }
     }
   }
 
-  // Инициализация всех слайдеров через IntersectionObserver
+  // Инициализация Swiper для преимуществ
+  function initAdvantagesSwiper() {
+    if (!advantagesSwiper) {
+      advantagesSwiper = new Swiper(".advantages-swiper", {
+        navigation: {
+          nextEl: ".next-button-advantages",
+          prevEl: ".prev-button-advantages",
+        },
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        },
+      });
+    }
+  }
+
+  // Инициализация аккордеона
+  function initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    if (!accordionHeaders.length) return;
+
+    accordionHeaders.forEach(header => {
+      header.removeEventListener('click', handleAccordionClick);
+      header.addEventListener('click', handleAccordionClick);
+    });
+  }
+
+  // Инициализация всех компонентов
   function initializeAll() {
     observeElement('.swiper-container-banner', initBannerSwiper);
     observeElement('.swiper-container-stock', initStockSwiper);
     observeElement('.stages-swiper', initStagesSwiper);
     observeElement('.methods-slider', initMethodsSwiper);
+    observeElement('.swiper-container-services', initServicesSwiper);
+    observeElement('.advantages-swiper', initAdvantagesSwiper);
 
-    if (window.innerWidth <= 768) {
-      initAccordion();
-    }
+    observeElement('.accordion-header', () => {
+      if (window.innerWidth <= 768) {
+        initAccordion();
+      }
+    });
   }
 
   initializeAll();
 
-  window.addEventListener("resize", () => {
+  // Обработка изменения размера окна
+  window.addEventListener("resize", debounce(() => {
     initBannerSwiper();
     initStockSwiper();
     initStagesSwiper();
     initMethodsSwiper();
+    initServicesSwiper();
+    initAdvantagesSwiper();
 
     if (window.innerWidth <= 768) {
       initAccordion();
+    } else {
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      accordionHeaders.forEach(header => {
+        header.removeEventListener('click', handleAccordionClick);
+      });
     }
-  });
+  }, 200));
 });
