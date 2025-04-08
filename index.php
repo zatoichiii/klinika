@@ -49,19 +49,19 @@
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <div class="slide-title">100%</div>
+                <div class="slide-title number" data-target="100" data-symbol="%">100%</div>
                 <div class="slide-description">Гарантия эффективности лечения</div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <div class="slide-title">92%</div>
+                <div class="slide-title number" data-target="92" data-symbol="%">92%</div>
                 <div class="slide-description">Наших пациентов успешно проходят лечение</div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-content">
-                <div class="slide-title">100%</div>
+                <div class="slide-title number" data-target="100" data-symbol="%">100%</div>
                 <div class="slide-description">Гарантия эффективности лечения</div>
               </div>
             </div>
@@ -205,13 +205,14 @@
                 <div class="slide-content" style="display: flex;
               flex-direction: column;
               height: 100%;
-              justify-content: space-between;">
+              justify-content: space-between;
+              ">
                   <div class="slide-title">
                     Другие услуги клиники
                   </div>
-                  <button style="justify-content: end; border: none">
-                    <img src="assets/images/icons/button-service.png" alt="Иконка">
-                  </button>
+                  <a class="img-button">
+                    <img src="assets/images/icons/arrow-right-red.png" alt="Иконка">
+                  </a>
                 </div>
               </div>
             </div>
@@ -717,7 +718,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination" style="margin-bottom: -30px"></div>
+          <div class="swiper-pagination" style="position: relative"></div>
         </div>
 
       </div>
@@ -793,7 +794,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-pagination advantages" style="margin-bottom: -30px"></div>
+              <div class="swiper-pagination advantages" style="position: relative"></div>
             </div>
           </div>
         </div>
@@ -823,8 +824,13 @@
             <div class="right-column">
               <div class="video-text-block">
                 <div class="video-container">
-                  <img src="assets/images/photos/test.jfif" alt="Промо-ролик клиники 'Призма'">
-                  <button class="play-button"><i class="fas fa-play"></i></button>
+                  <video id="promo-video" poster="assets/images/photos/test.jfif" preload="none">
+                    <source src="/assets/images/photos/test.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает воспроизведение видео.
+                  </video>
+                  <button class="play-button">
+                    <img src="/assets/images/icons/play.png">
+                  </button>
                 </div>
                 <p class="description">Промо-ролик клиники «Призма»</p>
               </div>
@@ -832,19 +838,19 @@
           </div>
           <div class="info-blocks">
             <div class="info-item">
-              <span class="number">10+</span>
+              <span class="number" data-target="10">0</span>
               <p class="text">Лет успешной работы</p>
             </div>
             <div class="info-item">
-              <span class="number">20</span>
+              <span class="number" data-target="20">0</span>
               <p class="text">Опытных специалистов</p>
             </div>
             <div class="info-item">
-              <span class="number">50+</span>
+              <span class="number" data-target="50">0</span>
               <p class="text">Методик лечения</p>
             </div>
             <div class="info-item">
-              <span class="number">250+</span>
+              <span class="number" data-target="250">0</span>
               <p class="text">Здоровых пациентов</p>
             </div>
           </div>
@@ -853,7 +859,7 @@
 
     </section>
 
-
+    <!-- Врачи -->
     <section class="doctors-section">
       <div class="container">
         <div class="doctors-wrapper">
@@ -990,39 +996,271 @@
         </div>
       </div>
     </section>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const swiper = new Swiper('.swiper-container-doctors', {
-        slidesPerView: 'auto', 
-        spaceBetween: 20,
-        slidesPerGroup: 1,
-        navigation: {
-          nextEl: '.next-button-doctors',
-          prevEl: '.prev-button-doctors',
-        },
-        breakpoints: {
-          480: {
-            slidesPerView: 1,
-            spaceBetween: 0 
-          },
-          640: {
-            slidesPerView: 2, 
-          },
-          1024: {
-            slidesPerView: 3, 
-          },
-          1280: {
-            slidesPerView: 4, 
-          },
-        },
-      });
-    });
-    </script>
+
+    <!-- Вопросы и ответы -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-wrapper">
+          <div class="left-side">
+            <div class="block-title">Часто задаваемые вопросы</div>
+            <div class="button">Задать вопрос</div>
+          </div>
+          <div class="right-side">
+            <div class="accordion">
+              <div class="accordion-item">
+                <div class="upper-block">
+                  <div class="accordion-title">В какое время можно обратиться в кликнику</div>
+                  <img class="accordion-arrow" src="./assets/images/icons/faq-button.png"></img>
+                </div>
+                <div class="accordion-content">
+                  <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
+                    Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. </p>
+                  <div class="respondent">
+                    <img src="./assets/images/photos/doctor.png" alt="Фото врача">
+                    <div class="respondent-info">
+                      <div class="respondent-placeholder">На вопрос ответил врач:</div>
+                      <div class="respondent-name">Королькова Ольга Николаевна</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="upper-block">
+                  <div class="accordion-title">В какое время можно обратиться в кликнику</div>
+                  <img class="accordion-arrow" src="./assets/images/icons/faq-button.png"></img>
+                </div>
+                <div class="accordion-content">
+                  <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
+                    Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. </p>
+                  <div class="respondent">
+                    <img src="./assets/images/photos/doctor.png" alt="Фото врача">
+                    <div class="respondent-info">
+                      <div class="respondent-placeholder">На вопрос ответил врач:</div>
+                      <div class="respondent-name">Королькова Ольга Николаевна</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="upper-block">
+                  <div class="accordion-title">В какое время можно обратиться в кликнику</div>
+                  <img class="accordion-arrow" src="./assets/images/icons/faq-button.png"></img>
+                </div>
+                <div class="accordion-content">
+                  <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
+                    Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. </p>
+                  <div class="respondent">
+                    <img src="./assets/images/photos/doctor.png" alt="Фото врача">
+                    <div class="respondent-info">
+                      <div class="respondent-placeholder">На вопрос ответил врач:</div>
+                      <div class="respondent-name">Королькова Ольга Николаевна</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="upper-block">
+                  <div class="accordion-title">В какое время можно обратиться в кликнику</div>
+                  <img class="accordion-arrow" src="./assets/images/icons/faq-button.png"></img>
+                </div>
+                <div class="accordion-content">
+                  <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
+                    Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. </p>
+                  <div class="respondent">
+                    <img src="./assets/images/photos/doctor.png" alt="Фото врача">
+                    <div class="respondent-info">
+                      <div class="respondent-placeholder">На вопрос ответил врач:</div>
+                      <div class="respondent-name">Королькова Ольга Николаевна</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="upper-block">
+                  <div class="accordion-title">В какое время можно обратиться в кликнику</div>
+                  <img class="accordion-arrow" src="./assets/images/icons/faq-button.png"></img>
+                </div>
+                <div class="accordion-content">
+                  <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
+                    Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. </p>
+                  <div class="respondent">
+                    <img src="./assets/images/photos/doctor.png" alt="Фото врача">
+                    <div class="respondent-info">
+                      <div class="respondent-placeholder">На вопрос ответил врач:</div>
+                      <div class="respondent-name">Королькова Ольга Николаевна</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
 
+    <!-- Комплекс -->
+    <section class="complex-section">
+      <div class="container">
+        <div class="complex-wrapper">
+          <div class="upper-blocks">
+            <div class="left-block">
+              <div class="block-title">Комплексный подход клиники <b>«Призма»</b></div>
+              <div class="prisma-with-buttons">
+                <img src="/assets/images/photos/prisma-complex.png" />
+                <img id="prisma-first" src="/assets/images/icons/prisma-first.png" />
+                <img id="prisma-second" src="/assets/images/icons/prisma-second.png" />
+                <img id="prisma-third" src="/assets/images/icons/prisma-third.png" />
+                <img id="prisma-fourth" src="/assets/images/icons/prisma-fourth.png" />
+                <img id="prisma-fifth" src="/assets/images/icons/prisma-fifth.png" />
+                <img id="prisma-sixth" src="/assets/images/icons/prisma-sixth.png" />
+              </div>
+            </div>
+
+            <div class="right-block">
+              <div class="swiper-container-complex">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="complex-card">
+                      <div class="upper-text">
+                        <div class="image-container">
+                          <img src="/assets/images/icons/prisma/1.png" />
+                        </div>
+                        Медикаментозная терапия
+                      </div>
+                      <div class="open-text">
+                        Применение современных препаратов для детоксикации и стабилизации состояния.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="complex-card">
+                      <div class="upper-text">
+                        <div class="image-container">
+                          <img src="/assets/images/icons/prisma/2.png" />
+                        </div>
+                        Психотерапия
+                      </div>
+                      <div class="open-text">
+                        Применение современных препаратов для детоксикации и стабилизации состояния.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="complex-card">
+                      <div class="upper-text">
+                        <div class="image-container">
+                          <img src="/assets/images/icons/prisma/3.png" />
+                        </div>
+                        Групповая терапия
+                      </div>
+                      <div class="open-text">
+                        Применение современных препаратов для детоксикации и стабилизации состояния.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="complex-card">
+                      <div class="upper-text">
+                        <div class="image-container">
+                          <img src="/assets/images/icons/prisma/4.png" />
+                        </div>
+                        Семейная терапия
+                      </div>
+                      <div class="open-text">
+                        Применение современных препаратов для детоксикации и стабилизации состояния.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="complex-card">
+                      <div class="upper-text">
+                        <div class="image-container">
+                          <img src="/assets/images/icons/prisma/5.png" />
+                        </div>
+                        Реабилитационные программы
+                      </div>
+                      <div class="open-text">
+                        Применение современных препаратов для детоксикации и стабилизации состояния.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="complex-card">
+                      <div class="upper-text">
+                        <div class="image-container">
+                          <img src="/assets/images/icons/prisma/6.png" />
+                        </div>
+                        Профилактика срывов
+                      </div>
+                      <div class="open-text">
+                        Применение современных препаратов для детоксикации и стабилизации состояния.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-block">
+            <div class="left-block">
+              <div class="block-title">Статистика эффективности</div>
+              <div class="numbers">
+                <div class="number-item">
+                  <div class="number" data-target="2250" data-symbol="+">2250</div>
+                  <div class="description">Здоровых пациентов</div>
+                </div>
+                <div class="number-item">
+                  <div class="number" data-target="10" data-symbol="+">10</div>
+                  <div class="description">Лет успешной работы</div>
+                </div>
+                <div class="number-item">
+                  <div class="number" data-target="800" data-symbol="+">800</div>
+                  <div class="description">Выездов бригад</div>
+                </div>
+              </div>
+            </div>
+            <div class="right-block">
+              <div class="block-title">Индивидуальный подход</div>
+              <div class="block-desc">Применение современных препаратов для детоксикации и стабилизации состояния.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Фотогалерея / лицензии -->
+    <section class="photo-licenses-section">
+      <div class="container">
+        <div class="photo-licenses-wrapper">
+          <div class="gallery">
+            <div class="block-title">Фотогалерея клиники</div>
+            <div class="slider"></div>
+          </div>
+          <div class="licenses">
+            <div class="block-title">Лицензии клиники</div>
+            <div class="desc">Деятельность клиники основана на медицинской лицензии <b>№ЛО-77-01-018683</b></div>
+            <a class="download-license">
+              <img src="/assets/images/icons/download.png">
+              <p>Скачать лицензию</p>
+            </a>
+            <div class="slider"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
+
+
+  <?php include 'includes/footer.php'; ?>
+
+  <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU" type="text/javascript"></script>
 
 </body>
 

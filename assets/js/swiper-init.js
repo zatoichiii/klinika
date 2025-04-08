@@ -5,72 +5,66 @@ document.addEventListener("DOMContentLoaded", function () {
   let methodsSwiper = null;
   let servicesSwiper = null;
   let advantagesSwiper = null;
+  let complexSwiper = null;
+  let doctorsSwiper = null;
 
-  // Функция для debounce
-  function debounce(func, delay) {
-    let timeout;
-    return function (...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), delay);
-    };
-  }
-
-  // Функция для наблюдения за элементами
-  function observeElement(selector, callback) {
-    const element = document.querySelector(selector);
-    if (!element) {
-      console.warn(`Элемент с селектором "${selector}" не найден.`);
-      return;
+  // Инициализация Swiper для комплексных услуг
+  const initComplexSwiper = () => {
+    if (window.innerWidth < 768 && !complexSwiper) {
+      complexSwiper = new Swiper('.swiper-container-complex', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          578: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        },
+      });
+    } else if (window.innerWidth >= 768 && complexSwiper) {
+      complexSwiper.destroy(true, true);
+      complexSwiper = null;
     }
+  };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            callback();
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
 
-    observer.observe(element);
-  }
-
-  // Обработчик кликов для аккордеона
-  function handleAccordionClick() {
-    const accordionIco = this.querySelector('.accordion-ico img');
-
-    document.querySelectorAll('.accordion-header').forEach(otherHeader => {
-      if (otherHeader !== this) {
-        const otherDesc = otherHeader.closest('.slider-content')?.querySelector('.slider-desc');
-        if (otherDesc) {
-          otherDesc.classList.remove('open');
-        }
-
-        const otherIco = otherHeader.querySelector('.accordion-ico img');
-        if (otherIco) {
-          otherIco.classList.remove('active');
-        }
-      }
-    });
-
-    const sliderContent = this.closest('.slider-content');
-    if (sliderContent) {
-      const desc = sliderContent.querySelector('.slider-desc');
-      if (desc) {
-        desc.classList.toggle('open');
-      }
+  const initSwiperDoctors = () => {
+    if (!doctorsSwiper) {
+      doctorsSwiper = new Swiper('.swiper-container-doctors', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.next-button-doctors',
+          prevEl: '.prev-button-doctors',
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
+        },
+      });
     }
+  };
 
-    if (accordionIco) {
-      accordionIco.classList.toggle('active');
-    }
-  }
-
-  // Инициализация Swiper для баннера
-  function initBannerSwiper() {
+  const initBannerSwiper = () => {
     if (window.innerWidth >= 320) {
       if (!bannerSwiper) {
         bannerSwiper = new Swiper('.swiper-container-banner', {
@@ -114,10 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
         bannerSwiper = null;
       }
     }
-  }
-
-  // Инициализация Swiper для акций
-  function initStockSwiper() {
+  };
+  const initStockSwiper = () => {
     if (window.innerWidth >= 0) {
       if (!stockSwiper) {
         stockSwiper = new Swiper('.swiper-container-stock', {
@@ -147,10 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
         stockSwiper = null;
       }
     }
-  }
+  };
 
-  // Инициализация Swiper для этапов
-  function initStagesSwiper() {
+  const initStagesSwiper = () => {
     if (window.innerWidth > 768) {
       if (!stagesSwiper) {
         stagesSwiper = new Swiper(".stages-swiper", {
@@ -178,10 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
         stagesSwiper = null;
       }
     }
-  }
+  };
 
-  // Инициализация Swiper для методов
-  function initMethodsSwiper() {
+  const initMethodsSwiper = () => {
     if (window.innerWidth <= 1010) {
       if (!methodsSwiper) {
         methodsSwiper = new Swiper(".methods-slider", {
@@ -199,10 +189,9 @@ document.addEventListener("DOMContentLoaded", function () {
         methodsSwiper = null;
       }
     }
-  }
+  };
 
-  // Инициализация Swiper для услуг
-  function initServicesSwiper() {
+  const initServicesSwiper = () => {
     if (window.innerWidth <= 1170) {
       if (!servicesSwiper) {
         servicesSwiper = new Swiper(".swiper-container-services", {
@@ -224,7 +213,6 @@ document.addEventListener("DOMContentLoaded", function () {
             },
           },
         });
-
         document.querySelectorAll('.swiper-slide').forEach(slide => {
           slide.classList.remove('desktop-style');
         });
@@ -233,16 +221,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (servicesSwiper) {
         servicesSwiper.destroy(true, true);
         servicesSwiper = null;
-
         document.querySelectorAll('.swiper-slide').forEach(slide => {
           slide.classList.add('desktop-style');
         });
       }
     }
-  }
+  };
 
-  // Инициализация Swiper для преимуществ
-  function initAdvantagesSwiper() {
+  const initAdvantagesSwiper = () => {
     if (!advantagesSwiper) {
       advantagesSwiper = new Swiper(".advantages-swiper", {
         navigation: {
@@ -271,46 +257,96 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
     }
-  }
+  };
 
-  // Инициализация аккордеона
-  function initAccordion() {
+  const handleAccordionClick = function () {
+    const accordionIco = this.querySelector('.accordion-ico img');
+    document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+      if (otherHeader !== this) {
+        const otherDesc = otherHeader.closest('.slider-content')?.querySelector('.slider-desc');
+        if (otherDesc) {
+          otherDesc.classList.remove('open');
+        }
+        const otherIco = otherHeader.querySelector('.accordion-ico img');
+        if (otherIco) {
+          otherIco.classList.remove('active');
+        }
+      }
+    });
+    const sliderContent = this.closest('.slider-content');
+    if (sliderContent) {
+      const desc = sliderContent.querySelector('.slider-desc');
+      if (desc) {
+        desc.classList.toggle('open');
+      }
+    }
+    if (accordionIco) {
+      accordionIco.classList.toggle('active');
+    }
+  };
+
+  const initAccordion = () => {
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     if (!accordionHeaders.length) return;
-
     accordionHeaders.forEach(header => {
       header.removeEventListener('click', handleAccordionClick);
       header.addEventListener('click', handleAccordionClick);
     });
-  }
+  };
 
-  // Инициализация всех компонентов
-  function initializeAll() {
+  const initializeAll = () => {
     observeElement('.swiper-container-banner', initBannerSwiper);
     observeElement('.swiper-container-stock', initStockSwiper);
     observeElement('.stages-swiper', initStagesSwiper);
     observeElement('.methods-slider', initMethodsSwiper);
     observeElement('.swiper-container-services', initServicesSwiper);
     observeElement('.advantages-swiper', initAdvantagesSwiper);
-
     observeElement('.accordion-header', () => {
       if (window.innerWidth <= 768) {
         initAccordion();
       }
     });
-  }
+  };
+
+  const debounce = (func, delay) => {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  };
+
+  const observeElement = (selector, callback) => {
+    const element = document.querySelector(selector);
+    if (!element) {
+      console.warn(`Элемент с селектором "${selector}" не найден.`);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            callback();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(element);
+  };
 
   initializeAll();
 
-  // Обработка изменения размера окна
   window.addEventListener("resize", debounce(() => {
     initBannerSwiper();
     initStockSwiper();
     initStagesSwiper();
+    initComplexSwiper();
+    initSwiperDoctors();
     initMethodsSwiper();
     initServicesSwiper();
     initAdvantagesSwiper();
-
     if (window.innerWidth <= 768) {
       initAccordion();
     } else {
