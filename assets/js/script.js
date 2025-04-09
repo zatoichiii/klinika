@@ -1,33 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Инициализация аккордеона
   const accordionItems = document.querySelectorAll(".accordion-item");
 
   accordionItems.forEach((item) => {
     const upperBlock = item.querySelector(".upper-block");
     const arrow = item.querySelector(".accordion-arrow");
     const content = item.querySelector(".accordion-content");
+    const menuItems = document.querySelectorAll(".menu-item");
+    const dynamicContent = document.querySelector(".dynamic-content");
 
+
+    menuItems.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        const target = item.getAttribute("data-target"); 
+        updateDynamicContent(target);
+        positionDynamicContent(item); 
+      });
+    });
+  
     upperBlock.addEventListener("click", () => {
-      // Проверяем, открыт ли текущий элемент
       const isOpen = content.classList.contains("open");
 
-      // Закрываем все другие аккордеоны
       accordionItems.forEach((otherItem) => {
         if (otherItem !== item) {
           otherItem.querySelector(".accordion-content").classList.remove("open");
           otherItem.querySelector(".accordion-arrow").classList.remove("open");
-          otherItem.querySelector(".upper-block").classList.remove("open"); // Убираем класс open у других upper-block
+          otherItem.querySelector(".upper-block").classList.remove("open"); 
         }
       });
 
-      // Переключаем состояние текущего аккордеона
       content.classList.toggle("open", !isOpen);
       arrow.classList.toggle("open", !isOpen);
-      upperBlock.classList.toggle("open", !isOpen); // Добавляем/убираем класс open у upper-block
+      upperBlock.classList.toggle("open", !isOpen); 
     });
   });
 
-  // Остальной код второго фрагмента
   const categoryButtons = document.querySelectorAll(".category-btn");
   const priceCategories = document.querySelectorAll(".price-category");
   const dynamicContent = document.querySelector(".menu-column.dynamic-content");

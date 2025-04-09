@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const initBannerSwiper = () => {
-    if (window.innerWidth >= 320) {
+    if (window.innerWidth > 0) {
       if (!bannerSwiper) {
         bannerSwiper = new Swiper('.swiper-container-banner', {
           slidesPerView: 4,
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
   const initStockSwiper = () => {
-    if (window.innerWidth >= 0) {
+    if (window.innerWidth > 0) {
       if (!stockSwiper) {
         stockSwiper = new Swiper('.swiper-container-stock', {
           slidesPerView: 1,
@@ -229,34 +229,42 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const initAdvantagesSwiper = () => {
-    if (!advantagesSwiper) {
-      advantagesSwiper = new Swiper(".advantages-swiper", {
-        navigation: {
-          nextEl: ".next-button-advantages",
-          prevEl: ".prev-button-advantages",
-        },
-        slidesPerView: 3,
-        spaceBetween: 20,
-        breakpoints: {
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 20,
+    if (window.innerWidth > 0) {
+      if (!advantagesSwiper) {
+        advantagesSwiper = new Swiper(".advantages-swiper", {
+          navigation: {
+            nextEl: ".next-button-advantages",
+            prevEl: ".prev-button-advantages",
           },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
+          slidesPerView: 3,
+          spaceBetween: 20,
+          breakpoints: {
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
             },
           },
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-        },
-      });
+        });
+      }
+    } else {
+      if (advantagesSwiper) {
+        advantagesSwiper.destroy(true, true);
+        advantagesSwiper = null;
+      }
     }
+
   };
 
   const handleAccordionClick = function () {
@@ -335,6 +343,69 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     observer.observe(element);
   };
+
+
+  const swiperGallery = document.querySelector('.swiper-gallery');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+  const swiper = new Swiper('.swiper-gallery', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    spaceBetween: 50,
+    pagination: {
+      el: '.swiper-pagination.photo',
+      clickable: true,
+    },
+  });
+
+  if (isMobile) {
+    setTimeout(() => {
+      swiperGallery.style.display = 'contents';
+    }, 100); 
+  }
+
+  window.addEventListener('resize', () => {
+    const isMobileNow = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobileNow) {
+      swiperGallery.style.display = 'contents';
+    } else {
+      swiperGallery.style.display = '';
+    }
+  });
+
+  Fancybox.bind('[data-fancybox="licenses-gallery"]', {
+    animated: true,
+    showClass: false,
+    hideClass: false,
+  });
+
+  function filterSlides(target) {
+    const slides = document.querySelectorAll('.swiper-slide.photo');
+    slides.forEach(slide => {
+      if (target === 'all' || slide.dataset.target === target) {
+        slide.style.display = 'block';
+      } else {
+        slide.style.display = 'none';
+      }
+    });
+    swiper.update();
+  }
+
+  const tags = document.querySelectorAll('.swiper-tag');
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      tags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      const target = tag.dataset.target || 'all';
+      filterSlides(target);
+    });
+  });
+
+  filterSlides('all');
 
   initializeAll();
 

@@ -6,13 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Наркологическая клиника «Призма»</title>
   <link rel="stylesheet" href="assets/css/main.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+
+
   <script defer src="assets/js/script.js"></script>
   <script defer src="assets/js/swiper-init.js"></script>
+
 
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -1236,28 +1245,188 @@
 
 
     <!-- Фотогалерея / лицензии -->
-    <section class="photo-licenses-section">
-      <div class="container">
-        <div class="photo-licenses-wrapper">
-          <div class="gallery">
-            <div class="block-title">Фотогалерея клиники</div>
-            <div class="slider"></div>
-          </div>
-          <div class="licenses">
-            <div class="block-title">Лицензии клиники</div>
-            <div class="desc">Деятельность клиники основана на медицинской лицензии <b>№ЛО-77-01-018683</b></div>
-            <a class="download-license">
-              <img src="/assets/images/icons/download.png">
-              <p>Скачать лицензию</p>
-            </a>
-            <div class="slider"></div>
-          </div>
-        </div>
-      </div>
-    </section>
+     <? include 'includes/gallery-licenses.php'; ?>
   </main>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+     
+    });
 
+
+    const swiper = new Swiper('.swiper-licenses', {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 2,
+
+      pagination: {
+        el: '.swiper-pagination.license',
+        clickable: true,
+      },
+    });
+  </script>
+
+  <style>
+    .photo-licenses-section {
+      padding: 40px 0;
+      background-color: rgba(248, 248, 246, 1);
+    }
+
+    .photo-licenses-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .gallery {
+      width: 45%;
+    }
+
+    .photo-licenses-wrapper .gallery img {
+      border-radius: 20px;
+      width: inherit;
+    }
+
+    .swiper-button-next.own {
+      background-color: var(--red-color);
+      color: var(--bg-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    .swiper-button-prev.own {
+      background-color: var(--red-color);
+      color: var(--bg-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    .swiper-button-next.own::after,
+    .swiper-button-prev.own::after {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .gallery .swiper {
+      position: relative;
+    }
+
+    .swiper-tags {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99999;
+      display: flex;
+      gap: 42px;
+      padding: 14px 30px;
+      border-radius: 20px;
+      background-color: rgba(237, 234, 227, 1);
+    }
+
+    .swiper-tag.active {
+      border-bottom: 1px solid black;
+    }
+
+    .gallery .swiper-pagination {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .licenses {
+      width: 50%;
+    }
+
+    .swiper-pagination.license {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .download-license {
+      display: flex;
+      gap: 10px;
+      margin: 21px 0;
+      align-items: center;
+    }
+
+    .licenses .swiper-slide {
+      position: relative;
+    }
+
+    .licenses .swiper-slide img {
+      width: 85%;
+      height: auto;
+      display: block;
+    }
+
+    .licenses .lic-desc {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 85%;
+      background-color: rgba(236, 234, 228, 1);
+      padding: 2%;
+      border-radius: 20px 20px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    @media screen and (max-width: 768px) {
+      .photo-licenses-wrapper {
+        flex-direction: column;
+      }
+
+      .gallery {
+        width: 100%;
+      }
+
+      .licenses {
+        width: 100%;
+      }
+
+      .swiper-button-next.own,
+      .swiper-button-prev.own {
+        display: none;
+      }
+
+
+      .swiper-tags {
+        top: 45px;
+        bottom: auto;
+      }
+
+
+      .swiper-tags {
+        cursor: pointer;
+      }
+      .gallery .block-title {
+        padding-bottom: 32px;
+      }
+
+      .licenses .lic-desc {
+        padding: 14px;
+        font-size: 12px;
+      }
+
+    }
+
+    @media screen and (max-width: 480px) {
+      .licenses .lic-desc {
+        display: none;
+      }
+
+      .licenses .swiper-slide img{
+        width: 100%;
+      }
+      
+    }
+  </style>
   <?php include 'includes/footer.php'; ?>
 
   <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU" type="text/javascript"></script>
