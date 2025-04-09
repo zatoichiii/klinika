@@ -147,7 +147,8 @@
                     <li>Кодирование от алкоголизма</li>
                     <li>Лечение алкоголизма</li>
                   </ul>
-                  <button>Подробнее</button>
+                  <button>Подробнее
+                  </button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1245,191 +1246,356 @@
 
 
     <!-- Фотогалерея / лицензии -->
-     <? include 'includes/gallery-licenses.php'; ?>
-  </main>
+    <? include 'includes/gallery-licenses.php'; ?>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-     
-    });
+    <!-- Отзывы -->
+    <section class="reviews-section">
+      <div class="container">
+        <div class="upper-block">
+          <div class="block-title">Отзывы</div>
+          <div class="swiper-arrows">
+            <div class="swiper-button-prev-reviews-swiper">
+              <img class="button-left" src="./assets/images/icons/arrow-right.png">
+            </div>
+            <div class="swiper-button-next-reviews-swiper">
+              <img class="button-rigjt" src="./assets/images/icons/arrow-right.png">
+            </div>
+          </div>
+        </div>
+        <div class="swiper reviews-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="person">
+                  <img src="/assets/images/icons/objects.png" alt="Владимир К.">
+                  <div class="person-info">
+                    <div class="name">Владимир К.</div>
+                    <div class="description">
+                      <div class="city">г. Москва</div>
+                      <div class="age">58 лет</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>
+                    Наши доктора помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни клиентов, их родственников, родных и близких. Наши доктора помогают избавиться пациентам от хронических зависимостей.
+                  </p>
+                  <button class="more">
+                    <span>Подробнее</span>
+                    <img src="/assets/images/icons/down.png">
+                  </button>
+                </div>
+                <div class="date-from">
+                  <div class="date-block">
+                    <div class="date-title">Опубликован:</div>
+                    <div class="date">12 мая 2024</div>
+                  </div>
+                  <img src="/assets/images/icons/ya.png" alt="Google">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="person">
+                  <img src="/assets/images/icons/objects.png" alt="Анна С.">
+                  <div class="person-info">
+                    <div class="name">Анна С.</div>
+                    <div class="description">
+                      <div class="city">г. Санкт-Петербург</div>
+                      <div class="age">42 года</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>
+                    Благодаря вашей клинике моя жизнь изменилась к лучшему. Профессиональный подход врачей и внимательное отношение к каждому пациенту — это бесценно.
+                  </p>
+                  <button class="more">
+                    <span>Подробнее</span>
+                    <img src="/assets/images/icons/down.png">
+                  </button>
+                </div>
+                <div class="date-from">
+                  <div class="date-block">
+                    <div class="date-title">Опубликован:</div>
+                    <div class="date">15 мая 2024</div>
+                  </div>
+                  <img src="/assets/images/icons/google.png" alt="Google">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="person">
+                  <img src="/assets/images/icons/objects.png" alt="Анна С.">
+                  <div class="person-info">
+                    <div class="name">Анна С.</div>
+                    <div class="description">
+                      <div class="city">г. Санкт-Петербург</div>
+                      <div class="age">42 года</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>
+                    Благодаря вашей клинике моя жизнь изменилась к лучшему. Профессиональный подход врачей и внимательное отношение к каждому пациенту — это бесценно.
+                  </p>
+                  <button class="more">
+                    <span>Подробнее</span>
+                    <img src="/assets/images/icons/down.png">
+                  </button>
+                </div>
+                <div class="date-from">
+                  <div class="date-block">
+                    <div class="date-title">Опубликован:</div>
+                    <div class="date">15 мая 2024</div>
+                  </div>
+                  <img src="/assets/images/icons/prodoctorov.png" alt="Google">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="person">
+                  <img src="/assets/images/icons/objects.png" alt="Анна С.">
+                  <div class="person-info">
+                    <div class="name">Анна С.</div>
+                    <div class="description">
+                      <div class="city">г. Санкт-Петербург</div>
+                      <div class="age">42 года</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>
+                    Благодаря вашей клинике моя жизнь изменилась к лучшему. Профессиональный подход врачей и внимательное отношение к каждому пациенту — это бесценно.
+                  </p>
+                  <button class="more">
+                    <span>Подробнее</span>
+                    <img src="/assets/images/icons/down.png">
+                  </button>
+                </div>
+                <div class="date-from">
+                  <div class="date-block">
+                    <div class="date-title">Опубликован:</div>
+                    <div class="date">15 мая 2024</div>
+                  </div>
+                  <img src="/assets/images/icons/google.png" alt="Google">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="person">
+                  <img src="/assets/images/icons/objects.png" alt="Анна С.">
+                  <div class="person-info">
+                    <div class="name">Анна С.</div>
+                    <div class="description">
+                      <div class="city">г. Санкт-Петербург</div>
+                      <div class="age">42 года</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>
+                    Благодаря вашей клинике моя жизнь изменилась к лучшему. Профессиональный подход врачей и внимательное отношение к каждому пациенту — это бесценно.
+                  </p>
+                  <button class="more">
+                    <span>Подробнее</span>
+                    <img src="/assets/images/icons/down.png">
+                  </button>
+                </div>
+                <div class="date-from">
+                  <div class="date-block">
+                    <div class="date-title">Опубликован:</div>
+                    <div class="date">15 мая 2024</div>
+                  </div>
+                  <img src="/assets/images/icons/google.png" alt="Google">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Текстовый блок -->
+    <section class="article-section">
+      <div class="container">
+        <div class="article-wrapper">
+          <div class="left-side-article">
+            <div class="title-article">H3 Длинный заголовок для статьи о лечении</div>
+            <div class="article-body">
+              <div class="article-content">
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+              </div>
+              <button class="read-more-btn">Читать полностью</button>
+            </div>
+          </div>
+          <div class="right-side-form">
+            <div class="form-body">
+              <form class="form-content" id="consultationForm">
+                <div class="form-title">Оставьте заявку на <b>бесплатную</b> консультацию</div>
+                <div class="form-desc">Оставьте свой номер, и мы вам перезвоним в течение 10 минут</div>
+                <input type="tel" name="phone" id="phoneInput" placeholder="+7 (___) ___-__-__" required>
+                <div class="checkbox-container">
+                  <input type="checkbox" id="privacyCheckbox" required>
+                  <label for="privacyCheckbox">Отправляя данные вы соглашаетесь с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a></label>
+                </div>
+                <button type="submit">Получить консультацию</button>
+                <p id="errorMessage" style="color: red; font-size: 12px; display: none;">Заполните все поля корректно</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Филиалы клиники -->
+    <section class="branches-section">
+      <div class="container">
+        <div class="branches-wrapper">
+          <div class="upper-block">
+            <div class="block-title">Филиалы клиники</div>
+            <div class="swiper-arrows">
+              <div class="swiper-button-prev-branches-swiper">
+                <img class="button-left" src="./assets/images/icons/arrow-right.png" alt="Previous">
+              </div>
+              <div class="swiper-button-next-branches-swiper">
+                <img class="button-right" src="./assets/images/icons/arrow-right.png" alt="Next">
+              </div>
+            </div>
+          </div>
+          <div class="swiper branches-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="branches-card">
+                  <div class="card-content">
+                    <div class="info-block-new">
+                      <div class="branch-name">Название отделения</div>
+                      <div class="branch-address">г. Тула, ул. Социалистическая, 191, офис 153</div>
+                    </div>
+                    <div class="details-block">
+                      <div class="work-time">
+                        <div class="title">Режим работы:</div>
+                        <div class="time-item">Пн-Пт: 7:00 - 20:00</div>
+                        <div class="time-item">Вс: 8:00 - 16:00</div>
+                        <div class="time-item">Сб: 7:00 - 18:00</div>
+                      </div>
+                      <div class="description">
+                        Прием только по предварительной записи для сохранения анонимности пациентов (центры закрытого типа)
+                      </div>
+                    </div>
+                  </div>
+                  <img src="/assets/images/photos/filial.png" alt="Филиал">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="branches-card">
+                  <div class="card-content">
+                    <div class="info-block-new">
+                      <div class="branch-name">Название отделения</div>
+                      <div class="branch-address">г. Тула, ул. Социалистическая, 191, офис 153</div>
+                    </div>
+                    <div class="details-block">
+                      <div class="work-time">
+                        <div class="title">Режим работы:</div>
+                        <div class="time-item">Пн-Пт: 7:00 - 20:00</div>
+                        <div class="time-item">Вс: 8:00 - 16:00</div>
+                        <div class="time-item">Сб: 7:00 - 18:00</div>
+                      </div>
+                      <div class="description">
+                        Прием только по предварительной записи для сохранения анонимности пациентов (центры закрытого типа)
+                      </div>
+                    </div>
+                  </div>
+                  <img src="/assets/images/photos/filial.png" alt="Филиал">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="branches-card">
+                  <div class="card-content">
+                    <div class="info-block-new">
+                      <div class="branch-name">Название отделения</div>
+                      <div class="branch-address">г. Тула, ул. Социалистическая, 191, офис 153</div>
+                    </div>
+                    <div class="details-block">
+                      <div class="work-time">
+                        <div class="title">Режим работы:</div>
+                        <div class="time-item">Пн-Пт: 7:00 - 20:00</div>
+                        <div class="time-item">Вс: 8:00 - 16:00</div>
+                        <div class="time-item">Сб: 7:00 - 18:00</div>
+                      </div>
+                      <div class="description">
+                        Прием только по предварительной записи для сохранения анонимности пациентов (центры закрытого типа)
+                      </div>
+                    </div>
+                  </div>
+                  <img src="/assets/images/photos/filial.png" alt="Филиал">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pre-footer-info-section"></section>
 
 
-    const swiper = new Swiper('.swiper-licenses', {
-      loop: true,
-      spaceBetween: 10,
-      slidesPerView: 2,
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const phoneInput = document.getElementById("phoneInput");
+        const form = document.getElementById("consultationForm");
+        const errorMessage = document.getElementById("errorMessage");
 
-      pagination: {
-        el: '.swiper-pagination.license',
-        clickable: true,
-      },
-    });
-  </script>
+        const maskOptions = {
+          mask: "+7 (999) 999-99-99",
+          placeholder: "+7 (___) ___-__-__",
+          showMaskOnHover: false,
+          showMaskOnFocus: true,
+          greedy: false,
+          clearIncomplete: true,
+          autoUnmask: true,
+          onBeforeMask: function(value) {
 
-  <style>
-    .photo-licenses-section {
-      padding: 40px 0;
-      background-color: rgba(248, 248, 246, 1);
-    }
+            if (value && value.charAt(0) !== "+") {
+              return "+7 " + value;
+            }
+            return value;
+          },
+        };
 
-    .photo-licenses-wrapper {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
+        const mask = new Inputmask(maskOptions);
+        mask.mask(phoneInput);
 
-    .gallery {
-      width: 45%;
-    }
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
 
-    .photo-licenses-wrapper .gallery img {
-      border-radius: 20px;
-      width: inherit;
-    }
+          const isValidPhone = phoneInput.inputmask.isComplete();
+          const isCheckboxChecked = document.getElementById("privacyCheckbox").checked;
 
-    .swiper-button-next.own {
-      background-color: var(--red-color);
-      color: var(--bg-color);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-    }
+          if (!isValidPhone || !isCheckboxChecked) {
+            errorMessage.style.display = "block";
+            return;
+          }
 
-    .swiper-button-prev.own {
-      background-color: var(--red-color);
-      color: var(--bg-color);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-    }
+          errorMessage.style.display = "none";
+          alert("Форма успешно отправлена!");
+          form.reset();
+        });
+      });
+    </script>
+    <?php include 'includes/footer.php'; ?>
 
-    .swiper-button-next.own::after,
-    .swiper-button-prev.own::after {
-      font-size: 15px;
-      font-weight: bold;
-    }
-
-    .gallery .swiper {
-      position: relative;
-    }
-
-    .swiper-tags {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 99999;
-      display: flex;
-      gap: 42px;
-      padding: 14px 30px;
-      border-radius: 20px;
-      background-color: rgba(237, 234, 227, 1);
-    }
-
-    .swiper-tag.active {
-      border-bottom: 1px solid black;
-    }
-
-    .gallery .swiper-pagination {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    .licenses {
-      width: 50%;
-    }
-
-    .swiper-pagination.license {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .download-license {
-      display: flex;
-      gap: 10px;
-      margin: 21px 0;
-      align-items: center;
-    }
-
-    .licenses .swiper-slide {
-      position: relative;
-    }
-
-    .licenses .swiper-slide img {
-      width: 85%;
-      height: auto;
-      display: block;
-    }
-
-    .licenses .lic-desc {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 85%;
-      background-color: rgba(236, 234, 228, 1);
-      padding: 2%;
-      border-radius: 20px 20px 0 0;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    @media screen and (max-width: 768px) {
-      .photo-licenses-wrapper {
-        flex-direction: column;
-      }
-
-      .gallery {
-        width: 100%;
-      }
-
-      .licenses {
-        width: 100%;
-      }
-
-      .swiper-button-next.own,
-      .swiper-button-prev.own {
-        display: none;
-      }
-
-
-      .swiper-tags {
-        top: 45px;
-        bottom: auto;
-      }
-
-
-      .swiper-tags {
-        cursor: pointer;
-      }
-      .gallery .block-title {
-        padding-bottom: 32px;
-      }
-
-      .licenses .lic-desc {
-        padding: 14px;
-        font-size: 12px;
-      }
-
-    }
-
-    @media screen and (max-width: 480px) {
-      .licenses .lic-desc {
-        display: none;
-      }
-
-      .licenses .swiper-slide img{
-        width: 100%;
-      }
-      
-    }
-  </style>
-  <?php include 'includes/footer.php'; ?>
-
-  <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU" type="text/javascript"></script>
 
 </body>
 

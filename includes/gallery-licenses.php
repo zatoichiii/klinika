@@ -36,7 +36,7 @@
           </div>
           <div class="licenses">
             <div class="block-title">Лицензии клиники</div>
-            <div class="desc">Деятельность клиники основана на медицинской лицензии <b>№ЛО-77-01-018683</b></div>
+            <div class="desc">Деятельность клиники основана на медицинской лицензии <b><p>№ЛО-77-01-018683</p></b></div>
             <a class="download-license">
               <img src="/assets/images/icons/download.png">
               <p>Скачать лицензию</p>

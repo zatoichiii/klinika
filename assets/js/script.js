@@ -1,4 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
+  const articleContent = document.querySelector(".article-content");
+  const readMoreBtn = document.querySelector(".read-more-btn");
+
+  let isExpanded = false;
+
+  const fullHeight = articleContent.scrollHeight;
+
+
+  if (window.innerWidth <= 1010) {
+    articleContent.style.maxHeight = "170px"; 
+  } else {
+    articleContent.style.maxHeight = "544px"; 
+  }
+
+  function checkButtonVisibility() {
+    const initialHeight = window.innerWidth <= 1010 ? 170 : 544;
+    if (fullHeight <= initialHeight) {
+      readMoreBtn.style.display = "none"; 
+    } else {
+      readMoreBtn.style.display = "block"; 
+    }
+  }
+
+  checkButtonVisibility();
+
+  readMoreBtn.addEventListener("click", function() {
+    if (!isExpanded) {
+      articleContent.style.maxHeight = `${fullHeight + 200}px`; 
+      readMoreBtn.textContent = "Скрыть";
+    } else {
+      const initialHeight = window.innerWidth <= 1010 ? 170 : 544;
+      articleContent.style.maxHeight = `${initialHeight}px`;
+      readMoreBtn.textContent = "Читать полностью";
+    }
+    isExpanded = !isExpanded; 
+  });
+
+  window.addEventListener("resize", function() {
+    const initialHeight = window.innerWidth <= 1010 ? 170 : 544;
+
+    if (!isExpanded) {
+      articleContent.style.maxHeight = `${initialHeight}px`;
+    }
+
+    checkButtonVisibility();
+  });
+  
   const accordionItems = document.querySelectorAll(".accordion-item");
 
   accordionItems.forEach((item) => {
@@ -8,30 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuItems = document.querySelectorAll(".menu-item");
     const dynamicContent = document.querySelector(".dynamic-content");
 
-
     menuItems.forEach((item) => {
       item.addEventListener("click", (event) => {
-        event.preventDefault(); 
-        const target = item.getAttribute("data-target"); 
+        event.preventDefault();
+        const target = item.getAttribute("data-target");
         updateDynamicContent(target);
-        positionDynamicContent(item); 
+        positionDynamicContent(item);
       });
     });
-  
+
     upperBlock.addEventListener("click", () => {
       const isOpen = content.classList.contains("open");
 
       accordionItems.forEach((otherItem) => {
         if (otherItem !== item) {
-          otherItem.querySelector(".accordion-content").classList.remove("open");
+          otherItem
+            .querySelector(".accordion-content")
+            .classList.remove("open");
           otherItem.querySelector(".accordion-arrow").classList.remove("open");
-          otherItem.querySelector(".upper-block").classList.remove("open"); 
+          otherItem.querySelector(".upper-block").classList.remove("open");
         }
       });
 
       content.classList.toggle("open", !isOpen);
       arrow.classList.toggle("open", !isOpen);
-      upperBlock.classList.toggle("open", !isOpen); 
+      upperBlock.classList.toggle("open", !isOpen);
     });
   });
 
@@ -118,8 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => (dynamicContent.style.opacity = 1), 50);
     }
   }
-
-
 
   function positionDynamicContent(menuItem) {
     if (!menuItem || !menuItem.classList.contains("active")) return;
@@ -253,27 +301,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
   document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".number");
     const duration = 2000; // Продолжительность анимации в миллисекундах
 
     // Создаем Intersection observerNew
-    const observerNew = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const counter = entry.target;
+    const observerNew = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
 
-          // Запускаем анимацию
-          animateCounter(counter);
+            // Запускаем анимацию
+            animateCounter(counter);
 
-          // Отключаем наблюдение после запуска анимации
-          observerNew.unobserve(counter);
-        }
-      });
-    }, {
-      threshold: 0.5
-    }); // Анимация начнется, когда 50% элемента станет видимым
+            // Отключаем наблюдение после запуска анимации
+            observerNew.unobserve(counter);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    ); // Анимация начнется, когда 50% элемента станет видимым
 
     // Наблюдаем за каждым числом
     counters.forEach((counter) => observerNew.observe(counter));
@@ -308,19 +358,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.swiper-container-doctors', {
-      slidesPerView: 'auto',
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper(".swiper-container-doctors", {
+      slidesPerView: "auto",
       spaceBetween: 20,
       slidesPerGroup: 1,
       navigation: {
-        nextEl: '.next-button-doctors',
-        prevEl: '.prev-button-doctors',
+        nextEl: ".next-button-doctors",
+        prevEl: ".prev-button-doctors",
       },
       breakpoints: {
         480: {
           slidesPerView: 1,
-          spaceBetween: 0
+          spaceBetween: 0,
         },
         640: {
           slidesPerView: 2,
@@ -335,26 +385,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   const counters = document.querySelectorAll(".number");
   const duration = 2000; // Продолжительность анимации в миллисекундах
 
   // Создаем Intersection observerNew
-  const observerNew = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const counter = entry.target;
+  const observerNew = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
 
-        // Запускаем анимацию
-        animateCounter(counter);
+          // Запускаем анимацию
+          animateCounter(counter);
 
-        // Отключаем наблюдение после запуска анимации
-        observerNew.unobserve(counter);
-      }
-    });
-  }, {
-    threshold: 0.5
-  }); // Анимация начнется, когда 50% элемента станет видимым
+          // Отключаем наблюдение после запуска анимации
+          observerNew.unobserve(counter);
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  ); // Анимация начнется, когда 50% элемента станет видимым
 
   // Наблюдаем за каждым числом
   counters.forEach((counter) => observerNew.observe(counter));
@@ -389,19 +441,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const swiper = new Swiper('.swiper-container-doctors', {
-    slidesPerView: 'auto',
+document.addEventListener("DOMContentLoaded", () => {
+  const swiper = new Swiper(".swiper-container-doctors", {
+    slidesPerView: "auto",
     spaceBetween: 20,
     slidesPerGroup: 1,
     navigation: {
-      nextEl: '.next-button-doctors',
-      prevEl: '.prev-button-doctors',
+      nextEl: ".next-button-doctors",
+      prevEl: ".prev-button-doctors",
     },
     breakpoints: {
       480: {
         slidesPerView: 1,
-        spaceBetween: 0
+        spaceBetween: 0,
       },
       640: {
         slidesPerView: 2,
@@ -420,17 +472,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   playButton.addEventListener("click", () => {
     if (video.paused) {
-      video.play(); 
-      playButton.style.display = "none"; 
+      video.play();
+      playButton.style.display = "none";
     } else {
-      video.pause(); 
-      playButton.style.display = "block"; 
+      video.pause();
+      playButton.style.display = "block";
     }
   });
 
   video.addEventListener("click", () => {
     if (!video.paused) {
-      video.pause(); 
+      video.pause();
       playButton.style.display = "block";
     }
   });
@@ -439,32 +491,33 @@ document.addEventListener('DOMContentLoaded', () => {
     playButton.style.display = "block";
   });
 
-
-  const buttons = document.querySelectorAll('.prisma-with-buttons img:not(:first-child)');
-  const cards = document.querySelectorAll('.complex-card');
+  const buttons = document.querySelectorAll(
+    ".prisma-with-buttons img:not(:first-child)"
+  );
+  const cards = document.querySelectorAll(".complex-card");
 
   const activateCard = (index) => {
-    cards.forEach(card => card.classList.remove('active'));
-    cards[index].classList.add('active');
+    cards.forEach((card) => card.classList.remove("active"));
+    cards[index].classList.add("active");
   };
 
   const activateButton = (index) => {
-    buttons.forEach(button => button.classList.remove('active-button'));
-    buttons[index].classList.add('active-button');
+    buttons.forEach((button) => button.classList.remove("active-button"));
+    buttons[index].classList.add("active-button");
   };
 
   buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
+    button.addEventListener("click", () => {
       activateCard(index);
       activateButton(index);
     });
   });
 
   cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-      if (card.classList.contains('active')) {
-        card.classList.remove('active');
-        buttons[index].classList.remove('active-button');
+    card.addEventListener("click", () => {
+      if (card.classList.contains("active")) {
+        card.classList.remove("active");
+        buttons[index].classList.remove("active-button");
       } else {
         activateCard(index);
         activateButton(index);
@@ -481,11 +534,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const initSwiper = () => {
     if (window.innerWidth < 768 && !swiperInstance) {
-      swiperInstance = new Swiper('.swiper-container-complex', {
+      swiperInstance = new Swiper(".swiper-container-complex", {
         slidesPerView: 1,
         spaceBetween: 20,
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
         },
         breakpoints: {
@@ -505,8 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     initSwiper();
   });
 
@@ -514,5 +566,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initMenuHandlers();
   initAllSwipers();
   initMenuIconHandler();
-  
 });
