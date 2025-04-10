@@ -1,6 +1,100 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const menuTitles = document.querySelectorAll(".menu-title");
 
+  menuTitles.forEach((title) => {
+    title.addEventListener("click", () => {
+      const menuItem = title.closest(".menu-item");
+      if (!menuItem) return;
 
+      const submenuContainer = menuItem.querySelector(".submenu-container");
+
+      submenuContainer.classList.toggle("open");
+
+      title.classList.toggle("active");
+
+      // Закрываем другие открытые меню
+      menuTitles.forEach((otherTitle) => {
+        if (otherTitle !== title) {
+          otherTitle.classList.remove("active");
+          const otherSubmenu = otherTitle
+            .closest(".menu-item")
+            ?.querySelector(".submenu-container");
+          if (otherSubmenu) {
+            otherSubmenu.classList.remove("open");
+          }
+        }
+      });
+    });
+  });
+
+  const complexCards = document.querySelectorAll(
+    ".complex-section .complex-card"
+  );
+
+  Fancybox.bind("[data-fancybox]", {
+    video: {
+      autoplay: true,
+      ratio: 16 / 9,
+    },
+  });
+
+  function initMap() {
+    const coordinates = [54.193161, 37.616897];
+
+    const map = new ymaps.Map("map_second", {
+      center: coordinates,
+      zoom: 16,
+      controls: ["zoomControl"],
+    });
+
+    const placemark = new ymaps.Placemark(coordinates, {
+      hintContent: "Клиника «Призма»",
+      balloonContent: "г. Тула, ул. Ленина, 191, офис 153",
+    });
+
+    map.geoObjects.add(placemark);
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU";
+  script.onload = function () {
+    ymaps.ready(initMap);
+  };
+  document.head.appendChild(script);
+
+  const prismaImages = document.querySelectorAll(
+    ".prisma-with-buttons img[id^='prisma-']"
+  );
+
+  function toggleCardAndButton(activeCardIndex) {
+    complexCards.forEach((card) => {
+      card.classList.remove("active");
+    });
+
+    prismaImages.forEach((image) => {
+      image.classList.remove("active-button");
+    });
+
+    if (complexCards[activeCardIndex]) {
+      complexCards[activeCardIndex].classList.add("active");
+    }
+
+    if (prismaImages[activeCardIndex]) {
+      prismaImages[activeCardIndex].classList.add("active-button");
+    }
+  }
+
+  complexCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      toggleCardAndButton(index);
+    });
+  });
+
+  prismaImages.forEach((image, index) => {
+    image.addEventListener("click", () => {
+      toggleCardAndButton(index);
+    });
+  });
   const articleContent = document.querySelector(".article-content");
   const readMoreBtn = document.querySelector(".read-more-btn");
 
@@ -8,37 +102,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fullHeight = articleContent.scrollHeight;
 
-
   if (window.innerWidth <= 1010) {
-    articleContent.style.maxHeight = "170px"; 
+    articleContent.style.maxHeight = "170px";
   } else {
-    articleContent.style.maxHeight = "544px"; 
+    articleContent.style.maxHeight = "544px";
   }
 
   function checkButtonVisibility() {
     const initialHeight = window.innerWidth <= 1010 ? 170 : 544;
     if (fullHeight <= initialHeight) {
-      readMoreBtn.style.display = "none"; 
+      readMoreBtn.style.display = "none";
     } else {
-      readMoreBtn.style.display = "block"; 
+      readMoreBtn.style.display = "block";
     }
   }
 
   checkButtonVisibility();
 
-  readMoreBtn.addEventListener("click", function() {
+  readMoreBtn.addEventListener("click", function () {
     if (!isExpanded) {
-      articleContent.style.maxHeight = `${fullHeight + 200}px`; 
+      articleContent.style.maxHeight = `${fullHeight + 200}px`;
       readMoreBtn.textContent = "Скрыть";
     } else {
       const initialHeight = window.innerWidth <= 1010 ? 170 : 544;
       articleContent.style.maxHeight = `${initialHeight}px`;
       readMoreBtn.textContent = "Читать полностью";
     }
-    isExpanded = !isExpanded; 
+    isExpanded = !isExpanded;
   });
 
-  window.addEventListener("resize", function() {
+  window.addEventListener("resize", function () {
     const initialHeight = window.innerWidth <= 1010 ? 170 : 544;
 
     if (!isExpanded) {
@@ -47,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkButtonVisibility();
   });
-  
+
   const accordionItems = document.querySelectorAll(".accordion-item");
 
   accordionItems.forEach((item) => {
@@ -358,7 +451,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".swiper-container-doctors", {
       slidesPerView: "auto",
       spaceBetween: 20,
@@ -383,22 +475,18 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
-  });
 
   const counters = document.querySelectorAll(".number");
-  const duration = 2000; // Продолжительность анимации в миллисекундах
+  const duration = 2000; 
 
-  // Создаем Intersection observerNew
   const observerNew = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const counter = entry.target;
 
-          // Запускаем анимацию
           animateCounter(counter);
 
-          // Отключаем наблюдение после запуска анимации
           observerNew.unobserve(counter);
         }
       });
@@ -406,9 +494,8 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       threshold: 0.5,
     }
-  ); // Анимация начнется, когда 50% элемента станет видимым
+  ); 
 
-  // Наблюдаем за каждым числом
   counters.forEach((counter) => observerNew.observe(counter));
 
   function animateCounter(counter) {

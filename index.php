@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Наркологическая клиника «Призма»</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+<?php include 'includes/header.php'; ?>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-
-
-
-  <script defer src="assets/js/script.js"></script>
-  <script defer src="assets/js/swiper-init.js"></script>
-
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-  <section class="header-section container">
-    <?php include 'includes/header.php'; ?>
-  </section>
-
-  <main>
     <!-- Баннер -->
     <section class="banner-section">
       <div class="container">
@@ -834,13 +801,10 @@
             <div class="right-column">
               <div class="video-text-block">
                 <div class="video-container">
-                  <video id="promo-video" poster="assets/images/photos/test.jfif" preload="none">
-                    <source src="/assets/images/photos/test.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает воспроизведение видео.
-                  </video>
-                  <button class="play-button">
-                    <img src="/assets/images/icons/play.png">
-                  </button>
+                  <a href="/assets/images/photos/test.mp4" data-fancybox="video-gallery" data-caption="Промо-видео">
+                    <img src="/assets/images/icons/play.png" alt="Воспроизвести видео" class="play-button">
+                  </a>
+                  <img src="assets/images/photos/test.jfif" alt="Превью видео" class="video-preview">
                 </div>
                 <p class="description">Промо-ролик клиники «Призма»</p>
               </div>
@@ -1549,54 +1513,45 @@
     <section class="pre-footer-info-section"></section>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const phoneInput = document.getElementById("phoneInput");
-        const form = document.getElementById("consultationForm");
-        const errorMessage = document.getElementById("errorMessage");
+    <section class="pre-footer-section">
+      <div class="container">
+        <div class="pre-footer-wrapper">
+          <div class="left-side">
+            <div class="phone-adress">
+              <div class="phone">
+                <a>8 (888) 999-99-99</a>
+              </div>
+              <div class="adress">
+                г. Тула ул. Ленина, 191, офис 153
+              </div>
+            </div>
 
-        const maskOptions = {
-          mask: "+7 (999) 999-99-99",
-          placeholder: "+7 (___) ___-__-__",
-          showMaskOnHover: false,
-          showMaskOnFocus: true,
-          greedy: false,
-          clearIncomplete: true,
-          autoUnmask: true,
-          onBeforeMask: function(value) {
-
-            if (value && value.charAt(0) !== "+") {
-              return "+7 " + value;
-            }
-            return value;
-          },
-        };
-
-        const mask = new Inputmask(maskOptions);
-        mask.mask(phoneInput);
-
-        form.addEventListener("submit", function(event) {
-          event.preventDefault();
-
-          const isValidPhone = phoneInput.inputmask.isComplete();
-          const isCheckboxChecked = document.getElementById("privacyCheckbox").checked;
-
-          if (!isValidPhone || !isCheckboxChecked) {
-            errorMessage.style.display = "block";
-            return;
-          }
-
-          errorMessage.style.display = "none";
-          alert("Форма успешно отправлена!");
-          form.reset();
-        });
-      });
-    </script>
+            <div class="additional-info">
+              <div class="additional-item">
+                <div class="additional-title">Режим работы:</div>
+                <div class="additional-content">Круглосуточно, без выходных</div>
+              </div>
+              <div class="additional-item">
+                <div class="additional-title">Номер лицензии:</div>
+                <div class="additional-content">№ЛО-77-01-018683</div>
+              </div>
+              <div class="additional-item">
+                <div class="additional-title">Почта для обращений:</div>
+                <div class="additional-content">
+                  <a href="info@prizmanarcology.ru">info@prizmanarcology.ru</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-block">
+            <div id="map_second"></div>
+            <div class="map-description">
+              <span>Проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <?php include 'includes/footer.php'; ?>
 
-    <script src="https://api-maps.yandex.ru/2.1/?&lang=ru_RU" type="text/javascript"></script>
 
-</body>
-
-</html>
