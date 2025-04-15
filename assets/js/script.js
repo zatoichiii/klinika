@@ -1,4 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".modal");
+  const buttonsModal = document.querySelectorAll(".btn");
+  const closeBtn = document.querySelector(".close");
+
+  function openModal() {
+    modal.style.display = "flex";
+    setTimeout(() => {
+      modal.classList.add("open");
+    }, 10);
+  }
+
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.style.animation = "fadeOut 0.3s ease-in-out";
+    setTimeout(() => {
+      modal.style.display = "none";
+      modal.style.animation = "";
+    }, 300);
+  }
+
+  buttonsModal.forEach((button) => {
+    button.addEventListener("click", openModal);
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
   const menuTitles = document.querySelectorAll(".menu-title");
 
   menuTitles.forEach((title) => {
@@ -12,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       title.classList.toggle("active");
 
-      // Закрываем другие открытые меню
       menuTitles.forEach((otherTitle) => {
         if (otherTitle !== title) {
           otherTitle.classList.remove("active");
@@ -66,8 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ".prisma-with-buttons img[id^='prisma-']"
   );
 
+  const complexCardsNew = document.querySelectorAll(".complex-card");
+
   function toggleCardAndButton(activeCardIndex) {
-    complexCards.forEach((card) => {
+    complexCardsNew.forEach((card) => {
       card.classList.remove("active");
     });
 
@@ -75,8 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
       image.classList.remove("active-button");
     });
 
-    if (complexCards[activeCardIndex]) {
-      complexCards[activeCardIndex].classList.add("active");
+    if (complexCardsNew[activeCardIndex]) {
+      complexCardsNew[activeCardIndex].classList.add("active");
     }
 
     if (prismaImages[activeCardIndex]) {
@@ -84,17 +116,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  complexCards.forEach((card, index) => {
+  complexCardsNew.forEach((card, index) => {
     card.addEventListener("click", () => {
       toggleCardAndButton(index);
     });
   });
+
 
   prismaImages.forEach((image, index) => {
     image.addEventListener("click", () => {
       toggleCardAndButton(index);
     });
   });
+
+const complexCardsAnother = document.querySelectorAll(".complex-card");
+
+complexCardsAnother.forEach((card) => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("active");
+  });
+});
+
   const articleContent = document.querySelector(".article-content");
   const readMoreBtn = document.querySelector(".read-more-btn");
 
@@ -451,33 +493,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-    const swiper = new Swiper(".swiper-container-doctors", {
-      slidesPerView: "auto",
-      spaceBetween: 20,
-      slidesPerGroup: 1,
-      navigation: {
-        nextEl: ".next-button-doctors",
-        prevEl: ".prev-button-doctors",
+  const swiper = new Swiper(".swiper-container-doctors", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    slidesPerGroup: 1,
+    navigation: {
+      nextEl: ".next-button-doctors",
+      prevEl: ".prev-button-doctors",
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 0,
       },
-      breakpoints: {
-        480: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        640: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-        1280: {
-          slidesPerView: 4,
-        },
+      640: {
+        slidesPerView: 2,
       },
-    });
+      1024: {
+        slidesPerView: 3,
+      },
+      1280: {
+        slidesPerView: 4,
+      },
+    },
+  });
 
   const counters = document.querySelectorAll(".number");
-  const duration = 2000; 
+  const duration = 2000;
 
   const observerNew = new IntersectionObserver(
     (entries) => {
@@ -494,7 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       threshold: 0.5,
     }
-  ); 
+  );
 
   counters.forEach((counter) => observerNew.observe(counter));
 
@@ -526,10 +568,8 @@ document.addEventListener("DOMContentLoaded", () => {
       element.appendChild(symbolSpan); // Добавляем символ к числу
     }
   }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper(".swiper-container-doctors", {
+  const swiperDoctors = new Swiper(".swiper-container-doctors", {
     slidesPerView: "auto",
     spaceBetween: 20,
     slidesPerGroup: 1,
@@ -552,30 +592,6 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 4,
       },
     },
-  });
-  // Проигрыватель видео
-  const video = document.getElementById("promo-video");
-  const playButton = document.querySelector(".play-button");
-
-  playButton.addEventListener("click", () => {
-    if (video.paused) {
-      video.play();
-      playButton.style.display = "none";
-    } else {
-      video.pause();
-      playButton.style.display = "block";
-    }
-  });
-
-  video.addEventListener("click", () => {
-    if (!video.paused) {
-      video.pause();
-      playButton.style.display = "block";
-    }
-  });
-
-  video.addEventListener("pause", () => {
-    playButton.style.display = "block";
   });
 
   const buttons = document.querySelectorAll(
@@ -649,8 +665,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initSwiper();
   });
 
-  initSwiper();
-  initMenuHandlers();
   initAllSwipers();
+  initSwiper();
   initMenuIconHandler();
 });

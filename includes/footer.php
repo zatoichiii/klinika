@@ -24,7 +24,7 @@
                             <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
                             Версия для слабовидящих
                         </button>
-                        <button class="call">Срочный вызов врача</button>
+                        <button class="btn call">Срочный вызов врача</button>
                     </div>
                 </div>
 
@@ -142,8 +142,31 @@
         </div>
     </div>
 
+
+
 </footer>
 
+
+<!-- Модальное окно -->
+<div class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-title"><b>Бесплатная</b> консультация</div>
+        <p>Оставьте заявку, наш менеджер перезвонит вам в течение 10 минут</p>
+        <form>
+            <input type="text" placeholder="+7 (___) ___ __-__">
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="checkbox-container">
+            <input type="checkbox" id="agree">
+            <label for="agree">Отправляя данные вы соглашаетесь с <a href="#">политикой конфиденциальности</a></label>
+        </div>
+    </div>
+</div>
+
+<style>
+
+</style>
 </body>
 
 </html>

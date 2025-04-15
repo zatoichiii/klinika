@@ -9,7 +9,7 @@
             <h1 class="content-title">Наркологическая клиника «Призма»</h1>
             <p class="content-description">Наши специализированные программы лечения алкоголизма предлагают комплексный
               подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные планы реабилитации.</p>
-            <a href="#" class="button">Бесплатная консультация</a>
+            <a href="#" class="btn button">Бесплатная консультация</a>
           </div>
           <div class="image-wrapper">
             <img src="assets/images/photos/corridor.png" alt="Коридор клиники" class="content-image">
@@ -57,7 +57,7 @@
             <p class="phone-number">8 (888) 999-99-99</p>
             <p class="desc">Оставьте заявку по телефону или кликнув на кнопку ниже, наш менеджер перезвонит для
               уточнения информации и назначит бригаду.</p>
-            <button class="call-button">Вызвать бригаду на дом</button>
+            <button class="btn call-button">Вызвать бригаду на дом</button>
           </div>
 
           <div class="right-section">
@@ -114,7 +114,7 @@
                     <li>Кодирование от алкоголизма</li>
                     <li>Лечение алкоголизма</li>
                   </ul>
-                  <button>Подробнее
+                  <button class="btn">Подробнее
                   </button>
                 </div>
               </div>
@@ -864,7 +864,7 @@
                   <div class="doctor-image">
                     <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                   </div>
-                  <button class="button">Задать вопрос врачу</button>
+                  <button class="btn button">Задать вопрос врачу</button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -877,24 +877,7 @@
                   <div class="doctor-image">
                     <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                   </div>
-                  <button class="button">Задать вопрос врачу</button>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="doctor-card">
-                  <div class="placeholders">
-                    <div class="placeholder-item">
-                      <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                      Главный врач
-                    </div>
-                    <div class="placeholder-item">Стаж: 15 лет</div>
-                  </div>
-                  <div class="doctor-name">Иванов Иван Иванович</div>
-                  <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
-                  <div class="doctor-image">
-                    <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-                  </div>
-                  <button class="button">Задать вопрос врачу</button>
+                  <button class="btn button">Задать вопрос врачу</button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -911,7 +894,7 @@
                   <div class="doctor-image">
                     <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                   </div>
-                  <button class="button">Задать вопрос врачу</button>
+                  <button class="btn button">Задать вопрос врачу</button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -928,7 +911,7 @@
                   <div class="doctor-image">
                     <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                   </div>
-                  <button class="button">Задать вопрос врачу</button>
+                  <button class="btn button">Задать вопрос врачу</button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -945,7 +928,7 @@
                   <div class="doctor-image">
                     <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                   </div>
-                  <button class="button">Задать вопрос врачу</button>
+                  <button class="btn button">Задать вопрос врачу</button>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -962,7 +945,24 @@
                   <div class="doctor-image">
                     <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                   </div>
-                  <button class="button">Задать вопрос врачу</button>
+                  <button class="btn button">Задать вопрос врачу</button>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="doctor-card">
+                  <div class="placeholders">
+                    <div class="placeholder-item">
+                      <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
+                      Главный врач
+                    </div>
+                    <div class="placeholder-item">Стаж: 15 лет</div>
+                  </div>
+                  <div class="doctor-name">Иванов Иван Иванович</div>
+                  <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
+                  <div class="doctor-image">
+                    <img src="/assets/images/photos/doctor.png" alt="Фото врача">
+                  </div>
+                  <button class="btn button">Задать вопрос врачу</button>
                 </div>
               </div>
             </div>
@@ -977,7 +977,7 @@
         <div class="faq-wrapper">
           <div class="left-side">
             <div class="block-title">Часто задаваемые вопросы</div>
-            <div class="button">Задать вопрос</div>
+            <div class="btn button">Задать вопрос</div>
           </div>
           <div class="right-side">
             <div class="accordion">
