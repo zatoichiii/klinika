@@ -33,40 +33,11 @@
 </div>
 <div class="content-section">
     <div class="container">
-        <div class="middle-form">
-            <div class="left-block-middle-form">
-                <div class="title-middle-form">
-                    <img src="/assets/images/icons/symptoms.png" alt="Симптомы" />
-                    Заметили похожие симптомы?
-                </div>
-                <ul class="line-list">
-                    <li>Тошнота;</li>
-                    <li>Головокружение;</li>
-                    <li>Высокая температура;</li>
-                    <li>Тремор;</li>
-                    <li>Головокружение;</li>
-                </ul>
-            </div>
-            <div class="right-block-middle-form">
-                <form>
-                    <div class="right-block-title">
-                        Оставьте заявку! <br> Мы можем вам помочь
-                    </div>
-                    <div>
-                        <input type="tel" placeholder="Введите ваш номер телефона" required>
-                        <button type="submit">Отправить</button>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="privacyCheckbox" required>
-                        <label for="privacyCheckbox">Отправляя данные вы соглашаетесь с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a></label>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="wrappernew">
 
-            <div class="left-content">
-                <h2>НЗ Длинный заголовок для статьи о лечении</h2>
+        <div class="new-wrapper">
+
+            <div class="part-block">
+                <div class="block-title">НЗ Длинный заголовок для статьи о лечении</div>
                 <p>
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека. Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -75,14 +46,60 @@
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека. Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
                 </p>
+
                 <p>
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека. Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
                 </p>
+
+                <img src="/assets/images/photos/doctor-article.png">
+
+                <ul>
+                    <li>Проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</li>
+                    <li>Проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</li>
+                    <li>Проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</li>
+                </ul>
+
+                <div class="attention">
+                    <img src="/assets/images/icons/attention.png" alt="Внимание">
+                    <div>
+                        Не занимайтесь самолечением, обращайтесь за помощью к квалифицированным специалистам клиники «Призма»
+                    </div>
+                </div>
+                <div class="middle-form">
+                    <div class="left-block-middle-form">
+                        <div class="title-middle-form">
+                            <img src="/assets/images/icons/call.png" alt="Симптомы" />
+                            Заметили похожие симптомы?
+                        </div>
+                        <ul class="line-list">
+                            <li>Тошнота;</li>
+                            <li>Головокружение;</li>
+                            <li>Высокая температура;</li>
+                            <li>Тремор;</li>
+                            <li>Головокружение;</li>
+                        </ul>
+                    </div>
+                    <div class="right-block-middle-form">
+                        <form>
+                            <div class="right-block-title">
+                                <strong>Оставьте заявку!</strong> <br> Мы можем вам помочь
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Введите ваш номер телефона" required>
+                                <button type="submit">Отправить</button>
+                            </div>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="privacyCheckbox" required>
+                                <label for="privacyCheckbox">Отправляя данные вы соглашаетесь с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="right-content">
                 <div class="consultation-form">
-                    <h3>Оставьте заявку на бесплатную консультацию</h3>
+                    <div>Оставьте заявку на бесплатную консультацию</div>
                     <form>
                         <input type="text" placeholder="Введите свой номер, мы вам перезвоним в течение 10 минут">
                         <button type="submit">Получить консультацию</button>
@@ -90,7 +107,7 @@
                     <p><small>Отправляя данные вы соглашаетесь с политикой конфиденциальности</small></p>
                 </div>
                 <div class="team-info">
-                    <h3>Бригада на линии</h3>
+                    <div>Бригада на линии</div>
                     <div class="team-stats">
                         <div class="stat-item">
                             <span class="icon"><img src="/assets/images/icons/doctor.png" alt="Доктор"></span>
@@ -103,7 +120,7 @@
                     </div>
                 </div>
                 <div class="additional-info">
-                    <h3>Поможем оформить налоговый вычет</h3>
+                    <div>Поможем оформить налоговый вычет</div>
                     <p>Соберите бухгалтерские расчёты по лечению, первые шаги — ОГ</p>
                     <button>Узнать подробнее</button>
                 </div>
@@ -113,6 +130,28 @@
     </div>
 </div>
 <style>
-  
+    .attention {
+        display: flex;
+        padding: 29px 15px;
+        gap: 16px;
+        margin: 20px 0;
+        border-radius: 20px;
+        background-color: rgba(236, 234, 228, 1);
+    }
+
+    .new-wrapper {
+        display: flex;
+        gap: 80px;
+    }
+
+    .part-block p {
+        padding-bottom: 20px;
+    }
+
+    .part-block .block-title {
+        margin-bottom: 30px;
+    }
 </style>
+
+<?php include 'includes/footer-map.php'; ?>
 <?php include 'includes/footer.php'; ?>

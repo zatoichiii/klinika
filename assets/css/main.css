@@ -26,9 +26,17 @@
   --swiper-theme-color: var(--red-color) !important;
 }
 
+ul{
+  list-style-position: inside; 
+}
+
 ul li::marker {
   color: var(--red-color);
   font-size: 1.4em;
+}
+
+.new-wrapper img{
+  border-radius: 20px;
 }
 
 .slick-dots {
@@ -3272,7 +3280,7 @@ button {
 .pre-footer-section #map_second {
   width: 100%;
   height: 300px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -3353,6 +3361,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding-bottom: 31px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -3385,6 +3394,7 @@ button {
 .footer-section .buttons {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .footer-section .button-eye {
@@ -3585,7 +3595,6 @@ button {
   font-size: 48px;
   line-height: 60px;
   letter-spacing: 0%;
-
 }
 
 .banner-service-section .content-left .price {
@@ -3596,7 +3605,6 @@ button {
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 0px;
-
 }
 
 .banner-service-section .content-left p {
@@ -3634,7 +3642,6 @@ button {
   background: transparent;
   color: #8c4964;
   border: 1px solid black;
-
 }
 
 .banner-service-section .btn-secondary-service:hover {
@@ -3651,528 +3658,520 @@ button {
 
 @media screen and (max-width: 768px) {
   .banner-service-section .service-content {
-      gap: 20px;
-      flex-direction: column;
-      align-items: stretch;
+    gap: 20px;
+    flex-direction: column;
+    align-items: stretch;
   }
-  .banner-service-section .buttons{
-      order: 3;
-      justify-content: center;
+  .banner-service-section .buttons {
+    order: 3;
+    justify-content: center;
   }
 
-  .banner-service-section .content-left{
-      display: contents;
+  .banner-service-section .content-left {
+    display: contents;
   }
   .banner-service-section .content-left,
   .banner-service-section .content-right {
-      width: 100%;
+    width: 100%;
   }
 
   .banner-service-section .content-right img {
-      margin-top: 20px;
+    margin-top: 20px;
   }
 }
-    /* Стили для модального окна */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 700px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
   }
 
-  .modal-content {
-      background-color: white;
-      padding: 20px;
-      border-radius: 20px;
-      width: 700px;
-      max-width: 90%;
-      text-align: center;
-      position: relative;
-      animation: fadeIn 0.3s ease-in-out;
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Анимация исчезновения */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
   }
 
-  /* Анимация появления */
-  @keyframes fadeIn {
-      from {
-          opacity: 0;
-          transform: scale(0.9);
-      }
-
-      to {
-          opacity: 1;
-          transform: scale(1);
-      }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
   }
+}
 
-  /* Анимация исчезновения */
-  @keyframes fadeOut {
-      from {
-          opacity: 1;
-          transform: scale(1);
-      }
+/* Стили для формы */
+.modal-content .modal-title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 14px;
+  text-align: center;
+}
 
-      to {
-          opacity: 0;
-          transform: scale(0.9);
-      }
-  }
+.modal-content p {
+  margin-bottom: 40px;
+}
 
-  /* Стили для формы */
-  .modal-content .modal-title {
-      font-weight: 400;
-      font-size: 32px;
-      line-height: 40px;
-      margin-bottom: 14px;
-      text-align: center;
+.modal-content input,
+.modal-content button {
+  width: 48%;
+  padding: 17px;
+  border: 1px solid rgba(124, 73, 100, 0.5);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+}
 
-  }
+.modal-content input {
+  text-align: start;
+}
 
-  .modal-content p {
-      margin-bottom: 40px;
+#agree {
+  width: auto;
+}
+
+.modal-content button {
+  background-color: rgba(124, 73, 100, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.modal-content .checkbox-container {
+  margin-top: 10px;
+  justify-content: center;
+  font-size: 12px;
+  align-items: center;
+}
+
+.modal-content .checkbox-container input {
+  margin: 0;
+  margin-right: 5px;
+}
+
+/* Кнопка закрытия */
+.close {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 40px;
+  color: rgba(124, 73, 100, 1);
+}
+
+@media screen and (max-width: 768px) {
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
   }
 
   .modal-content input,
   .modal-content button {
-      width: 48%;
-      padding: 17px;
-      border: 1px solid rgba(124, 73, 100, 0.5);
-      border-radius: 20px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      font-family: Montserrat;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 22px;
-      text-align: center;
+    width: 100%;
   }
+}
 
-  .modal-content input {
-      text-align: start;
-  }
-
-  #agree {
-      width: auto;
-  }
-
-  .modal-content button {
-      background-color: rgba(124, 73, 100, 1);
-      color: white;
-      cursor: pointer;
-  }
-
-  
-  .modal-content .checkbox-container {
-      margin-top: 10px;
-      justify-content: center;
-      font-size: 12px;
-      align-items: center;
-  }
-
-  .modal-content .checkbox-container input {
-      margin: 0;
-      margin-right: 5px;
-  }
-
-  /* Кнопка закрытия */
-  .close {
-      position: absolute;
-      top: -6px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 40px;
-      color: rgba(124, 73, 100, 1);
-  }
-
-  @media screen and (max-width: 768px) {
-      .modal-content form {
-          display: flex;
-          flex-direction: column;
-      }
-
-      .modal-content input,
-      .modal-content button {
-          width: 100%;
-      }
-
-  }
-
-
-  .line-list {
-    list-style-type: none;
-    padding-left: 0;
+.line-list {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .line-list li {
-    list-style: none;
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    color: #fff;
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  color: #fff;
+  font-weight: 300;
 }
 
 .line-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 2px;
-    background-color: #fff;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
 }
 
 .middle-form {
-    display: flex;
-    color: white;
-    gap: 40px;
-    background-color: var(--red-color);
-    margin: 40px 0;
-    padding: 8px;
+  display: flex;
+  color: white;
+  gap: 40px;
+  border-radius: 20px;
+  background-color: var(--red-color);
+  padding: 8px;
+  margin: 20px 0;
 }
 
 .left-block-middle-form {
-    width: 40%;
+  width: 40%;
 }
 
 .right-block-middle-form {
-    width: 60%;
+  width: 60%;
 }
 
 .title-middle-form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: middle;
 }
 
 .title-middle-form img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .left-block-middle-form ul {
-    list-style-type: disc;
-    padding-left: 20px;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 .right-block-middle-form form {
-    background-color: #895b74;
-    padding: 20px;
-    border-radius: 8px;
+  background-color: #895b74;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .right-block-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .right-block-middle-form input[type="tel"] {
-    width: 305px;
-    padding: 10px;
-    background: transparent;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    color: white;
-    margin-bottom: 10px;
+  width: 305px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .right-block-middle-form button {
-    padding: 10px;
-    background-color: rgba(236, 234, 228, 1);
-    color: var(--red-color);
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+  padding: 10px;
+  background-color: rgba(236, 234, 228, 1);
+  color: var(--red-color);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .right-block-middle-form button:hover {
-    background-color: var(--red-color);
-    color: white;
+  background-color: var(--red-color);
+  color: white;
 }
 
 .checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .checkbox-container label {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .checkbox-container a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .content-section {
-    margin: 40px 0;
+  padding: 40px 0;
+  background-color: white;
 }
 
-
 .wrappernew {
-    display: flex;
-    gap: 80px;
+  display: flex;
+  gap: 80px;
 }
 
 .left-content {
-    width: 65%;
+  width: 65%;
 }
 
 .right-content {
-    width: 35%;
+  width: 35%;
 }
 
 /* Консультация */
 .consultation-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .consultation-form h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .consultation-form form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .consultation-form input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
 }
 
 .consultation-form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .consultation-form small {
-    font-size: 12px;
-    color: #666;
+  font-size: 12px;
+  color: #666;
 }
 
 /* Команда */
 .team-info {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .team-info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .team-stats {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .stat-item {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .stat-item .icon img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .stat-item .count {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* Дополнительная информация */
 .additional-info {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .additional-info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .additional-info p {
-    line-height: 1.6;
-    margin-bottom: 10px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
 .additional-info button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-   /* Баннер врача */
-   .banner-doctor-section {
-    padding: 40px 0;
+/* Баннер врача */
+.banner-doctor-section {
+  padding: 40px 0;
 }
-
 
 /* Контент врача */
 .banner-doctor-section .doctor-content {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .banner-doctor-section .content-left {
-    display: flex;
-    width: 60%;
-    flex-direction: column;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
 }
 
 .banner-doctor-section .content-right img {
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-    border-radius: 10px;
-    bottom: -40px;
-    width: 360px;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  border-radius: 10px;
+  bottom: -40px;
+  width: 360px;
 }
 
 /* Теги */
 .banner-doctor-section .tags {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .banner-doctor-section .tag-item {
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    font-size: 14px;
-    color: #495057;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  color: #495057;
 }
 
 .banner-doctor-section .tag-item img {
-    margin-right: 5px;
-    width: 16px;
-    height: 16px;
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
 }
 
 /* Заголовки и описание */
 .banner-doctor-section .doctor-name {
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 60px;
-
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 60px;
 }
 
 .banner-doctor-section .doctor-title {
-    font-size: 16px;
-    margin: 0 0 70px;
-    color: #6c757d;
+  font-size: 16px;
+  margin: 0 0 70px;
+  color: #6c757d;
 }
 
 /* Кнопки */
 .banner-doctor-section .buttons {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .banner-doctor-section .btn-primary-doctor,
 .banner-doctor-section .btn-secondary-doctor {
-    padding: 17px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 17px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .banner-doctor-section .btn-primary-doctor {
-    background-color: var(--red-color);
-    color: #fff;
+  background-color: var(--red-color);
+  color: #fff;
 }
 
 .banner-doctor-section .btn-primary-doctor:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-
 .banner-doctor-section .btn-secondary-doctor:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .banner-doctor-section .doctor-name {
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 40px;
-        margin-bottom: 10px;
+  .banner-doctor-section .doctor-name {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
 
-    }
+  .banner-doctor-section .doctor-title {
+    font-size: 14px;
+  }
 
-    .banner-doctor-section .doctor-title {
-        font-size: 14px;
-    }
+  .banner-doctor-section .btn-secondary-doctor {
+    background-color: rgba(236, 234, 228, 1);
+    color: black;
+    border: 1px solid black;
+  }
 
-    .banner-doctor-section .btn-secondary-doctor {
-        background-color: rgba(236, 234, 228, 1);
-        color: black;
-        border: 1px solid black
-    }
+  .banner-doctor-section .btn-primary-doctor,
+  .banner-doctor-section .btn-secondary-doctor {
+    padding: 16px;
+  }
+  .banner-doctor-section .btn-primary-doctor:hover,
+  .banner-doctor-section .btn-secondary-doctor:hover {
+    transform: scale(1);
+  }
 
-    .banner-doctor-section .btn-primary-doctor,
-    .banner-doctor-section .btn-secondary-doctor {
-        padding: 16px;
-    }
-    .banner-doctor-section .btn-primary-doctor:hover,
-    .banner-doctor-section .btn-secondary-doctor:hover {
-        transform: scale(1);
+  .doctor-content {
+    flex-direction: column;
+  }
 
-    }
+  .banner-doctor-section .buttons {
+    position: absolute;
+    bottom: 30px;
+    width: 95%;
+    flex-direction: column;
+  }
 
-    .doctor-content {
-        flex-direction: column;
-    }
+  .banner-doctor-section .content-left {
+    width: 100%;
+  }
 
-    .banner-doctor-section .buttons {
-        position: absolute;
-        bottom: 30px;
-        width: 95%;
-        flex-direction: column;
-    }
+  .banner-doctor-section .content-right img {
+    width: 100%;
+    position: static;
+  }
 
-    .banner-doctor-section .content-left {
-        width: 100%;
-    }
-
-    .banner-doctor-section .content-right img {
-        width: 100%;
-        position: static;
-    }
-
-    .banner-doctor-section {
-        padding-bottom: 0;
-    }
+  .banner-doctor-section {
+    padding-bottom: 0;
+  }
 }
-
 
 .price-time-section {
   padding: 40px 0 0 0;
@@ -4216,7 +4215,6 @@ button {
   font-size: 32px;
   line-height: 40px;
   letter-spacing: 0%;
-
 }
 
 .price-time-section .price-block-desc {
@@ -4245,12 +4243,10 @@ button {
   font-size: 16px;
   line-height: 22px;
   vertical-align: middle;
-
 }
 
 .price-time-section .price-item:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
 }
 
 .price-time-section .price-item .price {
@@ -4293,7 +4289,6 @@ button {
 
 .price-time-section .schedule-item:nth-child(even) {
   background-color: white;
-
 }
 
 .price-time-section .schedule-item .day {
@@ -4310,27 +4305,27 @@ button {
 
 @media (max-width: 1080px) {
   .price-time-section .container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .price-time-section .price-block {
-      width: 100%;
+    width: 100%;
   }
 
   .price-time-section .time-block {
-      width: 100%;
-      margin-top: 20px;
-      padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
   }
 }
 
-@media  (max-width: 576px) {
-  .price-time-section .upper-block-price{
-      flex-direction: column;
+@media (max-width: 576px) {
+  .price-time-section .upper-block-price {
+    flex-direction: column;
   }
 }
 
-.part-block{
+.part-block {
   width: 70%;
 }
 
@@ -4359,23 +4354,22 @@ button {
   vertical-align: middle;
 }
 
-.education-item{
+.education-item {
   margin-bottom: 30px;
 }
 
 @media screen and (max-width: 1080px) {
-  .part-block{
-      width: 100%;
+  .part-block {
+    width: 100%;
   }
-  
 }
 
-.pre-footer-wrapper{
+.pre-footer-wrapper {
   display: flex;
 }
 
 @media screen and (max-width: 973px) {
-  .pre-footer-wrapper{
+  .pre-footer-wrapper {
     flex-direction: column;
   }
 }

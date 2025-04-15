@@ -313,7 +313,7 @@
 </div>
 
 <!-- Отзывы о враче -->
-<div class="reviews-section">
+<div class="reviews-section-doctor">
     <div class="container">
         <div class="part-block">
             <div class="upper-block">
@@ -481,37 +481,37 @@
 </script>
 
 <style>
-    .reviews-section {
+    .reviews-section-doctor {
         background-color: #F8F8F6;
         padding: 40px 0;
     }
 
 
 
-    .reviews-section .upper-block {
+    .reviews-section-doctor .upper-block {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 30px;
     }
 
-    .reviews-section .block-title {
+    .reviews-section-doctor .block-title {
         font-size: 28px;
         font-weight: 600;
         color: #333;
     }
 
-    .reviews-section .swiper-reviews-doctor {
+    .reviews-section-doctor .swiper-reviews-doctor {
         overflow: hidden;
         position: relative;
     }
 
-    .reviews-section .swiper-wrapper {
+    .reviews-section-doctor .swiper-wrapper {
         display: flex;
         transition: transform 0.5s ease;
     }
 
-    .reviews-section .swiper-slide {
+    .reviews-section-doctor .swiper-slide {
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -523,45 +523,45 @@
         transition: box-shadow 0.3s ease;
     }
 
-    .reviews-section .swiper-slide:hover {
+    .reviews-section-doctor .swiper-slide:hover {
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
     /* Информация о человеке */
-    .reviews-section .person-block {
+    .reviews-section-doctor .person-block {
         display: flex;
         align-items: center;
         gap: 15px;
         margin-bottom: 15px;
     }
 
-    .reviews-section .person-image {
+    .reviews-section-doctor .person-image {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         object-fit: cover;
     }
 
-    .reviews-section .text-block {
+    .reviews-section-doctor .text-block {
         display: flex;
         flex-direction: column;
     }
 
-    .reviews-section .name {
+    .reviews-section-doctor .name {
         font-size: 16px;
         font-weight: 600;
         color: #333;
         margin: 0;
     }
 
-    .reviews-section .more-info {
+    .reviews-section-doctor .more-info {
         font-size: 14px;
         color: #666;
         margin: 0;
     }
 
     /* Текст отзыва */
-    .reviews-section .review-doctor {
+    .reviews-section-doctor .review-doctor {
         font-size: 14px;
         color: #333;
         line-height: 1.6;
@@ -569,30 +569,28 @@
     }
 
     /* Дата и логотип источника */
-    .reviews-section .date-and-image {
+    .reviews-section-doctor .date-and-image {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    .reviews-section .date {
+    .reviews-section-doctor .date {
         font-size: 12px;
         color: #999;
     }
 
-    .reviews-section .image img {
+    .reviews-section-doctor .image img {
         object-fit: contain;
     }
 
     /* Пагинация */
-    .reviews-section .swiper-pagination.reviews {
-        position: absolute;
-        bottom: -30px;
+    .reviews-section-doctor .swiper-pagination.reviews {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .reviews-section .swiper-pagination-bullet {
+    .reviews-section-doctor .swiper-pagination-bullet {
         width: 10px;
         height: 10px;
         background-color: #ccc;
@@ -602,7 +600,7 @@
         transition: background-color 0.3s ease;
     }
 
-    .reviews-section .swiper-pagination-bullet-active {
+    .reviews-section-doctor .swiper-pagination-bullet-active {
         background-color: #7C4964;
     }
 
@@ -612,7 +610,7 @@
         border-radius: 20px;
     }
 
-    .publications-section .about-diplom {
+    .diploms-doctors-section .about-diplom {
         padding: 15px;
         padding-top: 0px;
     }
@@ -718,6 +716,10 @@
         padding: 8px;
         border-radius: 20px;
         color: white;
+    }
+
+    .reviews-section-doctor .swiper-button-next::after {
+        content: 'next';
     }
 
     .publications-section .tag-item {
@@ -841,10 +843,20 @@
         transform: translateX(10px);
     }
 
+    .swiper-pagination.reviews {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 25px;
+        transform: translateX(10px);
+    }
+
     .diploms-doctors-section .upper-block {
         font-weight: 400;
         font-size: 32px;
         line-height: 40px;
+        gap: 30px;
         margin-bottom: 35px;
     }
 
