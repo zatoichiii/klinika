@@ -1,4 +1,67 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Находим все контейнеры аккордеонов
+    const accordions = document.querySelectorAll(".accordion");
+
+    accordions.forEach((accordion) => {
+      const items = accordion.querySelectorAll(".accordion-item");
+  
+      items.forEach((item) => {
+        const upperBlock = item.querySelector(".upper-block");
+        const arrow = item.querySelector(".accordion-arrow");
+        const content = item.querySelector(".accordion-content");
+  
+        upperBlock.addEventListener("click", () => {
+          const isOpen = content.classList.contains("open");
+  
+          items.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem
+                .querySelector(".accordion-content")
+                .classList.remove("open");
+              otherItem
+                .querySelector(".accordion-arrow")
+                .classList.remove("open");
+              otherItem.querySelector(".upper-block").classList.remove("open");
+            }
+          });
+  
+          content.classList.toggle("open", !isOpen);
+          arrow.classList.toggle("open", !isOpen);
+          upperBlock.classList.toggle("open", !isOpen);
+        });
+      });
+    });
+    
+  const wrappers = document.querySelectorAll('[class*="-wrapper"]');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  wrappers.forEach((wrapper) => {
+    observer.observe(wrapper);
+  });
+
+  function loadStyles() {
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = "styles.css";
+    document.head.appendChild(style);
+  }
+
+  window.addEventListener("scroll", loadStyles, { once: true });
+
   const modal = document.querySelector(".modal");
   const buttonsModal = document.querySelectorAll(".btn");
   const closeBtn = document.querySelector(".close");
@@ -122,20 +185,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   prismaImages.forEach((image, index) => {
     image.addEventListener("click", () => {
       toggleCardAndButton(index);
     });
   });
 
-const complexCardsAnother = document.querySelectorAll(".complex-card");
+  const complexCardsAnother = document.querySelectorAll(".complex-card");
 
-complexCardsAnother.forEach((card) => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("active");
+  complexCardsAnother.forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("active");
+    });
   });
-});
 
   const articleContent = document.querySelector(".article-content");
   const readMoreBtn = document.querySelector(".read-more-btn");
@@ -183,42 +245,7 @@ complexCardsAnother.forEach((card) => {
     checkButtonVisibility();
   });
 
-  const accordionItems = document.querySelectorAll(".accordion-item");
 
-  accordionItems.forEach((item) => {
-    const upperBlock = item.querySelector(".upper-block");
-    const arrow = item.querySelector(".accordion-arrow");
-    const content = item.querySelector(".accordion-content");
-    const menuItems = document.querySelectorAll(".menu-item");
-    const dynamicContent = document.querySelector(".dynamic-content");
-
-    menuItems.forEach((item) => {
-      item.addEventListener("click", (event) => {
-        event.preventDefault();
-        const target = item.getAttribute("data-target");
-        updateDynamicContent(target);
-        positionDynamicContent(item);
-      });
-    });
-
-    upperBlock.addEventListener("click", () => {
-      const isOpen = content.classList.contains("open");
-
-      accordionItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem
-            .querySelector(".accordion-content")
-            .classList.remove("open");
-          otherItem.querySelector(".accordion-arrow").classList.remove("open");
-          otherItem.querySelector(".upper-block").classList.remove("open");
-        }
-      });
-
-      content.classList.toggle("open", !isOpen);
-      arrow.classList.toggle("open", !isOpen);
-      upperBlock.classList.toggle("open", !isOpen);
-    });
-  });
 
   const categoryButtons = document.querySelectorAll(".category-btn");
   const priceCategories = document.querySelectorAll(".price-category");
@@ -228,35 +255,6 @@ complexCardsAnother.forEach((card) => {
   const menuIcon = document.querySelector(".menu-icon");
   const menuContainer = document.querySelector(".menu-container");
   const header = document.querySelector(".header");
-
-  const wrappers = document.querySelectorAll('[class*="-wrapper"]');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
-
-  wrappers.forEach((wrapper) => {
-    observer.observe(wrapper);
-  });
-
-  function loadStyles() {
-    const style = document.createElement("link");
-    style.rel = "stylesheet";
-    style.href = "styles.css";
-    document.head.appendChild(style);
-  }
-
-  window.addEventListener("scroll", loadStyles, { once: true });
 
   const menuData = {
     "alcohol-treatment": {

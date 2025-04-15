@@ -27,8 +27,8 @@
 }
 
 ul li::marker {
-  color: rgba(60, 109, 88, 1);
-  font-size: 1em;
+  color: var(--red-color);
+  font-size: 1.4em;
 }
 
 .slick-dots {
@@ -3766,12 +3766,16 @@ button {
       cursor: pointer;
   }
 
+  
   .modal-content .checkbox-container {
       margin-top: 10px;
+      justify-content: center;
       font-size: 12px;
+      align-items: center;
   }
 
   .modal-content .checkbox-container input {
+      margin: 0;
       margin-right: 5px;
   }
 
@@ -3797,3 +3801,581 @@ button {
       }
 
   }
+
+
+  .line-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.line-list li {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.line-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.middle-form {
+    display: flex;
+    color: white;
+    gap: 40px;
+    background-color: var(--red-color);
+    margin: 40px 0;
+    padding: 8px;
+}
+
+.left-block-middle-form {
+    width: 40%;
+}
+
+.right-block-middle-form {
+    width: 60%;
+}
+
+.title-middle-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.title-middle-form img {
+    width: 30px;
+    height: 30px;
+}
+
+.left-block-middle-form ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.right-block-middle-form form {
+    background-color: #895b74;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.right-block-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.right-block-middle-form input[type="tel"] {
+    width: 305px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.right-block-middle-form button {
+    padding: 10px;
+    background-color: rgba(236, 234, 228, 1);
+    color: var(--red-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.right-block-middle-form button:hover {
+    background-color: var(--red-color);
+    color: white;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.checkbox-container label {
+    font-size: 12px;
+}
+
+.checkbox-container a {
+    text-decoration: underline;
+}
+
+.content-section {
+    margin: 40px 0;
+}
+
+
+.wrappernew {
+    display: flex;
+    gap: 80px;
+}
+
+.left-content {
+    width: 65%;
+}
+
+.right-content {
+    width: 35%;
+}
+
+/* Консультация */
+.consultation-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.consultation-form h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.consultation-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.consultation-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.consultation-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.consultation-form small {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Команда */
+.team-info {
+    margin-top: 20px;
+}
+
+.team-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.team-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+}
+
+.stat-item .icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.stat-item .count {
+    font-weight: bold;
+}
+
+/* Дополнительная информация */
+.additional-info {
+    margin-top: 20px;
+}
+
+.additional-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.additional-info p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.additional-info button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+   /* Баннер врача */
+   .banner-doctor-section {
+    padding: 40px 0;
+}
+
+
+/* Контент врача */
+.banner-doctor-section .doctor-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.banner-doctor-section .content-left {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+}
+
+.banner-doctor-section .content-right img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    border-radius: 10px;
+    bottom: -40px;
+    width: 360px;
+}
+
+/* Теги */
+.banner-doctor-section .tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.banner-doctor-section .tag-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    color: #495057;
+}
+
+.banner-doctor-section .tag-item img {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Заголовки и описание */
+.banner-doctor-section .doctor-name {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+
+}
+
+.banner-doctor-section .doctor-title {
+    font-size: 16px;
+    margin: 0 0 70px;
+    color: #6c757d;
+}
+
+/* Кнопки */
+.banner-doctor-section .buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.banner-doctor-section .btn-primary-doctor,
+.banner-doctor-section .btn-secondary-doctor {
+    padding: 17px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.banner-doctor-section .btn-primary-doctor {
+    background-color: var(--red-color);
+    color: #fff;
+}
+
+.banner-doctor-section .btn-primary-doctor:hover {
+    transform: scale(1.05);
+}
+
+
+.banner-doctor-section .btn-secondary-doctor:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .banner-doctor-section .doctor-name {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 10px;
+
+    }
+
+    .banner-doctor-section .doctor-title {
+        font-size: 14px;
+    }
+
+    .banner-doctor-section .btn-secondary-doctor {
+        background-color: rgba(236, 234, 228, 1);
+        color: black;
+        border: 1px solid black
+    }
+
+    .banner-doctor-section .btn-primary-doctor,
+    .banner-doctor-section .btn-secondary-doctor {
+        padding: 16px;
+    }
+    .banner-doctor-section .btn-primary-doctor:hover,
+    .banner-doctor-section .btn-secondary-doctor:hover {
+        transform: scale(1);
+
+    }
+
+    .doctor-content {
+        flex-direction: column;
+    }
+
+    .banner-doctor-section .buttons {
+        position: absolute;
+        bottom: 30px;
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .banner-doctor-section .content-left {
+        width: 100%;
+    }
+
+    .banner-doctor-section .content-right img {
+        width: 100%;
+        position: static;
+    }
+
+    .banner-doctor-section {
+        padding-bottom: 0;
+    }
+}
+
+
+.price-time-section {
+  padding: 40px 0 0 0;
+  background-color: rgba(248, 248, 246, 1);
+}
+
+.price-time-section .container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.price-time-section .price-block {
+  width: 70%;
+}
+
+.price-time-section .upper-block-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.price-time-section .rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-time-section .rating-stars img {
+  width: 25px;
+  height: 25px;
+}
+
+.price-time-section .rating-value {
+  color: rgba(192, 178, 149, 1);
+  font-weight: 600;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0%;
+
+}
+
+.price-time-section .price-block-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.price-time-section .price-block-prices {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-time-section .price-item {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.price-time-section .price-item .name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  vertical-align: middle;
+
+}
+
+.price-time-section .price-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.price-time-section .price-item .price {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 20px;
+  background-color: var(--red-color);
+}
+
+.price-time-section .time-block {
+  padding: 0 20px;
+  width: 27%;
+}
+
+.price-time-section .time-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.price-time-section .schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-time-section .schedule-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+.price-time-section .schedule-item:nth-child(even) {
+  background-color: white;
+
+}
+
+.price-time-section .schedule-item .day {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.price-time-section .schedule-item .time {
+  font-size: 16px;
+  color: var(--red-color);
+  font-weight: 500;
+}
+
+@media (max-width: 1080px) {
+  .price-time-section .container {
+      flex-direction: column;
+  }
+
+  .price-time-section .price-block {
+      width: 100%;
+  }
+
+  .price-time-section .time-block {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0;
+  }
+}
+
+@media  (max-width: 576px) {
+  .price-time-section .upper-block-price{
+      flex-direction: column;
+  }
+}
+
+.part-block{
+  width: 70%;
+}
+
+.education-title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.doctor-education-section {
+  background-color: rgba(248, 248, 246, 1);
+  padding: 20px 0 50px 0;
+}
+
+.education-items {
+  padding-left: 20px;
+}
+
+.education-items li {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: rgba(25, 19, 20, 0.7);
+  margin-bottom: 8px;
+  vertical-align: middle;
+}
+
+.education-item{
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1080px) {
+  .part-block{
+      width: 100%;
+  }
+  
+}
+
+.pre-footer-wrapper{
+  display: flex;
+}
+
+@media screen and (max-width: 973px) {
+  .pre-footer-wrapper{
+    flex-direction: column;
+  }
+}
