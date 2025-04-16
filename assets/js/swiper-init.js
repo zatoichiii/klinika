@@ -275,10 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const button = card.querySelector(".more");
 
         if (!text || !button) {
-          console.error("Не найдены необходимые элементы:", {
-            text,
-            button,
-          });
           return;
         }
 
@@ -410,7 +406,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const observeElement = (selector, callback) => {
     const element = document.querySelector(selector);
     if (!element) {
-      console.warn(`Элемент с селектором "${selector}" не найден.`);
       return;
     }
     const observer = new IntersectionObserver(
@@ -445,16 +440,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (isMobile) {
     setTimeout(() => {
-      swiperGallery.style.display = "contents";
+      if (swiperGallery) {
+        swiperGallery.style.display = "contents";
+      }
     }, 100);
   }
 
   window.addEventListener("resize", () => {
     const isMobileNow = window.matchMedia("(max-width: 768px)").matches;
-    if (isMobileNow) {
-      swiperGallery.style.display = "contents";
-    } else {
-      swiperGallery.style.display = "";
+    if (swiperGallery) {
+      if (isMobileNow) {
+        swiperGallery.style.display = "contents";
+      } else {
+        swiperGallery.style.display = "";
+      }
     }
   });
 
@@ -466,6 +465,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function filterSlides(target) {
     const slides = document.querySelectorAll(".swiper-slide.photo");
+
+    if (!slides || slides.length === 0) {
+      return;
+    }
+
     slides.forEach((slide) => {
       if (target === "all" || slide.dataset.target === target) {
         slide.style.display = "block";
@@ -473,7 +477,10 @@ document.addEventListener("DOMContentLoaded", function () {
         slide.style.display = "none";
       }
     });
-    swiper.update();
+
+    if (swiper && typeof swiper.update === "function") {
+      swiper.update();
+    }
   }
 
   const tags = document.querySelectorAll(".swiper-tag");
@@ -510,7 +517,6 @@ document.addEventListener("DOMContentLoaded", function () {
       initStagesSwiper();
       initComplexSwiper();
       initSwiperDoctors();
-      initBranchSwiper();
       initMethodsSwiper();
       initServicesSwiper();
       initAdvantagesSwiper();

@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Наркологическая клиника «Призма»</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
@@ -56,8 +55,10 @@
       </div>
 
       <div class="actions">
-        <div class="search-icon">
-          <img src="/assets/images/icons/search.png" alt="Поиск" />
+        <div class="search-container">
+          <div class="search-icon" id="searchIcon">
+            <img src="/assets/images/icons/search.png" alt="Поиск" />
+          </div>
         </div>
         <button class="btn btn-secondary ask-doctor">Задать вопрос врачу</button>
         <button class="btn btn-primary call-doctor">Вызвать врача</button>
@@ -69,7 +70,20 @@
         </a>
         <div class="menu-icon" id="menuIcon"><span></span></div>
       </div>
+
+      <div class="fullscreen-search-menu" id="searchMenu">
+        <div class="search-header">
+          <input type="text" id="searchInput" placeholder="Введите запрос..." />
+          <button class="btn-clear" id="clearSearch">Очистить</button>
+        </div>
+        <div class="search-results" id="searchResults">
+        </div>
+        <div class="close-icon" id="closeSearch">
+          Закрыть
+        </div>
+      </div>
     </header>
+
 
     <div class="container">
       <div class="menu-container" id="menuContainer">
@@ -99,7 +113,7 @@
           </div>
           <div class="dynamic-content">
             <div class="menu-column" id="dynamicContent">
-              <div class="dynamic-content-wrapper">
+              <div class="dynamic-content-wrap">
                 <div id="dynamicTitle">Выберите раздел</div>
                 <ul id="dynamicList"></ul>
               </div>
