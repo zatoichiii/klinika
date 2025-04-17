@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ------------------------------
+  // Filter Blog
+  // ------------------------------
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.dataset.category;
+
+        document.querySelectorAll('.blog-card').forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'grid';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
   
   // ------------------------------
   // Stars Rating

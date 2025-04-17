@@ -459,7 +459,7 @@
         });
 
         const DiplomDoctorSwiper = new Swiper('.swiper-diploms-doctor', {
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 20,
             navigation: {
                 nextEl: '.swiper-button-next.diploms',
@@ -630,6 +630,21 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 650px) {
+        .publications-section .upper-block{
+            margin-bottom: 0;
+        }
+        .publications-section .upper-block .swiper-buttons{
+            display: none;
+        }
+        .reviews-section-doctor .swiper-buttons{
+            display: none;
+        }
+        .reviews-section-doctor .upper-block{
+            margin-bottom: 0;
+        }
     }
 
     .publications-section .block-title-publications {
@@ -831,6 +846,23 @@
     .diploms-doctors-section .upper-block {
         display: flex;
         justify-content: space-between;
+    }
+
+    @media screen and (max-width: 768px) {
+        .diploms-doctors-section .upper-block {
+            flex-direction: column;
+        }
+
+        .diploms-doctors-section .upper-block .block-title-diplom {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .diploms-doctors-section .upper-block .swiper-buttons {
+            display: none;
+        }
+        
     }
 
     .swiper-button-next,
