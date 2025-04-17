@@ -1,6 +1,150 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
+  // ------------------------------
+  // Stars Rating
+  // ------------------------------
 
-  Fancybox.bind('[data-fancybox]')
+  const starsContainer = document.getElementById("rating-stars");
+  const thankYouMessage = document.getElementById("thankYouMessage");
+
+  if (starsContainer && thankYouMessage) {
+    const stars = starsContainer.querySelectorAll("span");
+    let selectedValue = 0;
+
+    function updateStars(value) {
+      stars.forEach((star, index) => {
+        if (index < value) {
+          star.classList.add("active");
+        } else {
+          star.classList.remove("active");
+        }
+      });
+    }
+
+    stars.forEach((star) => {
+      star.addEventListener("click", () => {
+        selectedValue = parseInt(star.getAttribute("data-value"), 10);
+        updateStars(selectedValue);
+
+        thankYouMessage.style.display = "block";
+
+        setTimeout(() => {
+          thankYouMessage.style.animation =
+            "slide-down 0.5s ease-in-out forwards";
+          setTimeout(() => {
+            thankYouMessage.style.display = "none";
+            thankYouMessage.style.animation = "";
+          }, 500);
+        }, 3000);
+      });
+
+      star.addEventListener("mouseover", () => {
+        const hoverValue = parseInt(star.getAttribute("data-value"), 10);
+        updateStars(hoverValue);
+      });
+
+      star.addEventListener("mouseout", () => {
+        updateStars(selectedValue);
+      });
+    });
+  }
+
+  // ------------------------------
+  // FAQ Article
+  // ------------------------------
+  const accordionContainer = document.getElementById("articleAccordion");
+  const contentsHeader = document.getElementById("contents-header");
+  const contentsContent = document.getElementById("contents-content");
+
+  if (accordionContainer && contentsHeader && contentsContent) {
+    contentsHeader.addEventListener("click", () => {
+      const isOpen = contentsContent.classList.contains("open");
+      if (isOpen) {
+        contentsContent.classList.remove("open");
+        contentsContent.style.maxHeight = null;
+      } else {
+        contentsContent.classList.add("open");
+        contentsContent.style.maxHeight =
+          contentsContent.scrollHeight + 200 + "px";
+      }
+    });
+
+    const headings = Array.from(
+      document.querySelector(".part-block").querySelectorAll("h2, h3, h4, h5")
+    );
+
+    let stack = [];
+
+    headings.forEach((heading, index) => {
+      const level = parseInt(heading.tagName.charAt(1));
+      heading.id = `article-heading-${index}`;
+
+      const accordionItem = document.createElement("div");
+      accordionItem.classList.add("article-accordion-item");
+
+      const header = document.createElement("div");
+      header.classList.add("article-accordion-header");
+      header.textContent = heading.textContent;
+
+      const content = document.createElement("div");
+      content.classList.add("article-accordion-content");
+
+      header.addEventListener("click", () => {
+        if (content.children.length === 0) {
+          smoothScrollTo(heading);
+        } else {
+          toggleAccordion(header, content);
+        }
+      });
+
+      accordionItem.appendChild(header);
+      accordionItem.appendChild(content);
+
+      while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+        stack.pop();
+      }
+
+      if (stack.length === 0) {
+        accordionContainer.appendChild(accordionItem);
+      } else {
+        stack[stack.length - 1].content.appendChild(accordionItem);
+      }
+
+      stack.push({
+        level,
+        content,
+      });
+    });
+
+    function toggleAccordion(header, content) {
+      const isOpen = content.classList.contains("open");
+
+      document
+        .querySelectorAll(".article-accordion-content.open")
+        .forEach((item) => {
+          if (item !== contentsContent) {
+            item.classList.remove("open");
+            item.style.maxHeight = null;
+          }
+        });
+
+      if (!isOpen) {
+        content.classList.add("open");
+      }
+    }
+
+    function smoothScrollTo(element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+
+  // ------------------------------
+  // fancybox
+  // ------------------------------
+  Fancybox.bind("[data-fancybox]");
   // ------------------------------
   // Комплекс
   // ------------------------------

@@ -1182,8 +1182,6 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -1482,10 +1480,6 @@ button {
   flex-direction: column;
   justify-content: space-between;
   height: 450px; /* Увеличено для размещения картинки */
-}
-
-.doctors-section .doctor-card:hover {
-  transform: translateY(-10px);
 }
 
 .doctors-section .placeholders {

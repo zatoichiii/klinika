@@ -768,38 +768,6 @@
         justify-content: space-between;
     }
 
-    ol {
-        counter-reset: item;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    ol li {
-        position: relative;
-        padding-left: 30px;
-        font-size: 16px;
-        margin-bottom: 22px;
-    }
-
-    ol li::before {
-        content: counter(item);
-        counter-increment: item;
-        color: white;
-        background-color: var(--red-color);
-        font-size: 16px;
-        padding: 2px 5px;
-        width: 10px;
-        height: 20px;
-        display: flex;
-        border-radius: 3px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        align-items: center;
-        justify-content: center;
-    }
 
     .profile-doctors-section {
         background-color: rgba(248, 248, 246, 1);
