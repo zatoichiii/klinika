@@ -1,24 +1,76 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // ------------------------------
+  // Service-Swipers
+  // ------------------------------
+  const proffesionalsServiceSwiper = new Swiper(
+    ".professionals-service-swiper",
+    {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    }
+  );
+
+  const advantagesServiceSwiper = new Swiper(".advantages-service-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+  
+  const MoreArticlesSwiper = new Swiper(".more-articles-wrapper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: null,
+      prevEl: null,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        pagination: {
+          el: null,
+        },
+        navigation: {
+          nextEl: ".more-articles-button.next",
+          prevEl: ".more-articles-button.prev",
+        },
+      },
+    },
+  });
+
   // ------------------------------
   // Filter Blog
   // ------------------------------
-  document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+  document.querySelectorAll(".filter-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
 
-        const category = button.dataset.category;
+      const category = button.dataset.category;
 
-        document.querySelectorAll('.blog-card').forEach(card => {
-            if (category === 'all' || card.dataset.category === category) {
-                card.style.display = 'grid';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+      document.querySelectorAll(".blog-card").forEach((card) => {
+        if (category === "all" || card.dataset.category === category) {
+          card.style.display = "grid";
+        } else {
+          card.style.display = "none";
+        }
+      });
     });
-});
-  
+  });
+
   // ------------------------------
   // Stars Rating
   // ------------------------------
