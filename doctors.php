@@ -36,7 +36,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="btn_consultation button">Задать вопрос врачу</button>
                 </div>
 
                 <div class="doctor-card">

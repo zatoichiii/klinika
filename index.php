@@ -11,7 +11,11 @@
         <a href="#" class="btn button">Бесплатная консультация</a>
       </div>
       <div class="image-wrapper">
-        <img src="assets/images/photos/corridor.png" alt="Коридор клиники" class="content-image">
+        <picture>
+          <source srcset="assets/images/photos/corridor.webp" type="image/webp">
+          <source srcset="assets/images/photos/corridor.png" type="image/png">
+          <img src="assets/images/photos/corridor.png" alt="Коридор клиники" class="content-image">
+        </picture>
       </div>
     </div>
     <div class="swiper-container-banner">
@@ -197,20 +201,17 @@
   </div>
 </section>
 
-
-<!-- Блок цен -->
 <section class="prices-section">
   <div class="container">
     <div class="prices-wrapper">
       <div class="block-title">
         <div>Прайс-лист клиники «Призма»</div>
       </div>
-
       <div class="categories">
-        <button class="category-btn active">Вывод из запоя</button>
-        <button class="category-btn">Нарколог на дом</button>
-        <button class="category-btn">Кодирование от алкоголизма</button>
-        <button class="category-btn">Лечение алкоголизма</button>
+        <button class="category-btn active" data-category="detox">Вывод из запоя</button>
+        <button class="category-btn" data-category="doctor">Нарколог на дом</button>
+        <button class="category-btn" data-category="coding">Кодирование от алкоголизма</button>
+        <button class="category-btn" data-category="alcoholism">Лечение алкоголизма</button>
         <div class="more-categories-btn">
           <button class="show-more-button">
             <span>Еще категории</span>
@@ -218,33 +219,28 @@
               <path d="M0.5 0.5L5 5.5L9.5 0.5" stroke="#000" stroke-width="2" />
             </svg>
           </button>
-          <div class="additional-categories dropdown" style="display: none;">
-            <button class="category-btn">Лечение наркомании</button>
-            <button class="category-btn">Реабилитация</button>
-            <button class="category-btn">Психологическая помощь</button>
-            <button class="category-btn">Детоксикация</button>
+          <div class="additional-categories dropdown">
+            <button class="category-btn" data-category="drugs">Лечение наркомании</button>
+            <button class="category-btn" data-category="rehabilitation">Реабилитация</button>
+            <button class="category-btn" data-category="psychology">Психологическая помощь</button>
+            <button class="category-btn" data-category="detoxification">Детоксикация</button>
           </div>
         </div>
-
-
-        <!-- Выпадающий список -->
-
       </div>
 
       <div class="prices-list">
-        <div class="price-category active">
+        <div class="price-category active" data-category="detox">
           <div class="price-item">
             <div class="price-info">
-              <p>Вывод из запоя в стационаре</p>
-              <button class="details-btn">Подробнее
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
                 </svg>
               </button>
               <div class="price-item details">
-                <p>Пребывание: в 3-4 местном номере со всеми удобствами: душевая, санузел, телевизор, спутниковое
-                  ТВ, Wi-Fi.</p>
-                <p>Длительность: 2-3 недели, по рекомендации лечащего врача.</p>
+                <p>Пребывание в стационаре со всеми удобствами.</p>
               </div>
             </div>
             <div class="price-value">
@@ -253,170 +249,137 @@
           </div>
           <div class="price-item">
             <div class="price-info">
-              <p>Медикаментозный вывод из запоя</p>
-              <button class="details-btn">Подробнее
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
                 </svg>
               </button>
               <div class="price-item details">
-                <p>Использование медикаментов для детоксикации организма.</p>
+                <p>Пребывание в стационаре со всеми удобствами.</p>
               </div>
             </div>
             <div class="price-value">
-              <span>7000 ₽</span>
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
+                </svg>
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
+                </svg>
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
+                </svg>
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
+                </svg>
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
+                </svg>
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
+                </svg>
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
             </div>
           </div>
         </div>
 
-        <div class="price-category">
-          <div class="price-item">
-            <div class="price-info">
-              <p>Выезд нарколога на дом</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Нарколог приедет в течение часа после вызова.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>5000 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Консультация нарколога на дому</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Предоставление рекомендаций по лечению.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>3000 ₽</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="price-category">
-          <div class="price-item">
-            <div class="price-info">
-              <p>Медикаментозное кодирование</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Использование препаратов для подавления тяги к алкоголю.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>12000 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Гипнотическое кодирование</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Сеанс гипноза для формирования отвращения к алкоголю.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>15000 ₽</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="price-category">
-          <div class="price-item">
-            <div class="price-info">
-              <p>Стационарное лечение</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>25000 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Стационарное лечение</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>25000 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Стационарное лечение</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>25000 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Амбулаторное лечение</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Посещение клиники несколько раз в неделю.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>18000 ₽</span>
-            </div>
-          </div>
-        </div>
-        <div class="price-category">
+        <div class="price-category" data-category="drugs">
           <div class="price-item">
             <div class="price-info">
               <p>Стационарное лечение наркомании</p>
-              <button class="details-btn">Подробнее
+              <button class="details-btn">
+                Подробнее
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
                 </svg>
               </button>
               <div class="price-item details">
                 <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
-                <p>Программа включает медикаментозную терапию и психологическую поддержку.</p>
               </div>
             </div>
             <div class="price-value">
@@ -425,56 +388,39 @@
           </div>
           <div class="price-item">
             <div class="price-info">
-              <p>Амбулаторное лечение наркомании</p>
-              <button class="details-btn">Подробнее
+              <p>Стационарное лечение наркомании</p>
+              <button class="details-btn">
+                Подробнее
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
                 </svg>
               </button>
               <div class="price-item details">
-                <p>Посещение клиники несколько раз в неделю.</p>
-                <p>Включает консультации врача и поддерживающую терапию.</p>
+                <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
               </div>
             </div>
             <div class="price-value">
-              <span>20000 ₽</span>
+              <span>30000 ₽</span>
             </div>
           </div>
           <div class="price-item">
             <div class="price-info">
-              <p>Кодирование от наркотиков</p>
-              <button class="details-btn">Подробнее
+              <p>Стационарное лечение наркомании</p>
+              <button class="details-btn">
+                Подробнее
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
                 </svg>
               </button>
               <div class="price-item details">
-                <p>Использование препаратов для подавления тяги к наркотикам.</p>
+                <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
               </div>
             </div>
             <div class="price-value">
-              <span>15000 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Реабилитация после наркомании</p>
-              <button class="details-btn">Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Программа реабилитации длительностью до 6 месяцев.</p>
-                <p>Включает групповые занятия, индивидуальные консультации и медикаментозную поддержку.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>50000 ₽</span>
+              <span>30000 ₽</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -797,7 +743,7 @@
         </div>
       </div>
       <div class="right-side-form">
-      <?php include 'includes/form-right-side.php'; ?>
+        <?php include 'includes/form-right-side.php'; ?>
       </div>
     </div>
   </div>

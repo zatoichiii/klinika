@@ -1,8 +1,130 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const phoneInputs = document.querySelectorAll('input[type="tel"]');
+
+  function applyPhoneMask(input) {
+    let value = input.value.replace(/\D/g, ""); 
+    let formattedValue = "";
+
+    if (value.length > 0) {
+      formattedValue = "+7 "; 
+    }
+    if (value.length > 1) {
+      formattedValue += `(${value.slice(1, 4)}`; 
+    }
+    if (value.length > 4) {
+      formattedValue += `) ${value.slice(4, 7)}`; 
+    }
+    if (value.length > 7) {
+      formattedValue += `-${value.slice(7, 9)}`;
+    }
+    if (value.length > 9) {
+      formattedValue += `-${value.slice(9, 11)}`; 
+    }
+
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+      formattedValue = formattedValue.slice(0, 18); 
+    }
+
+    input.value = formattedValue;
+  }
+
+  phoneInputs.forEach((input) => {
+    input.addEventListener("input", () => applyPhoneMask(input));
+    input.addEventListener("focus", () => {
+      if (!input.value) {
+        input.value = "+7 ("; 
+      }
+    });
+    input.addEventListener("blur", () => {
+      if (input.value === "+7 (") {
+        input.value = ""; 
+      }
+    });
+  });
+
+  // ------------------------------
+  // Price-block
+  // ------------------------------
+  const showMoreButton = document.querySelector(".show-more-button");
+  const additionalCategories = document.querySelector(".additional-categories");
+
+  if (showMoreButton && additionalCategories) {
+    showMoreButton.addEventListener("click", () => {
+      additionalCategories.classList.toggle("show");
+
+      const buttonText = showMoreButton.querySelector("span");
+      if (additionalCategories.classList.contains("show")) {
+        buttonText.textContent = "Скрыть категории";
+      } else {
+        buttonText.textContent = "Еще категории";
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        !showMoreButton.contains(event.target) &&
+        !additionalCategories.contains(event.target)
+      ) {
+        additionalCategories.classList.remove("show");
+        const buttonText = showMoreButton.querySelector("span");
+        buttonText.textContent = "Еще категории";
+      }
+    });
+  }
+
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const priceCategories = document.querySelectorAll(".price-category");
+  const detailsButtons = document.querySelectorAll(".details-btn");
+
+  if (categoryButtons && priceCategories && detailsButtons) {
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset.category;
+
+        categoryButtons.forEach((btn) => btn.classList.remove("active"));
+        priceCategories.forEach((cat) => cat.classList.remove("active"));
+
+        button.classList.add("active");
+        document
+          .querySelector(`.price-category[data-category="${category}"]`)
+          .classList.add("active");
+      });
+    });
+    detailsButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const details = button.nextElementSibling;
+        const svg = button.querySelector("svg");
+
+        details.classList.toggle("show");
+
+        button.classList.toggle("expanded");
+      });
+    });
+  }
 
   // ------------------------------
   // Service-Swipers
   // ------------------------------
+
+  const licenseServiceSwiper = new Swiper(".licenses-service-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  const galleryServiceSwiper = new Swiper(".gallery-service-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
   const proffesionalsServiceSwiper = new Swiper(
     ".professionals-service-swiper",
     {
@@ -23,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clickable: true,
     },
   });
-  
+
   const MoreArticlesSwiper = new Swiper(".more-articles-wrapper", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -373,6 +495,60 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) closeModal();
   });
 
+  // Логика для второго модального окна (если есть)
+  const modalConsultation = document.querySelector(".modal-consultation");
+  const buttonsModalConsultation =
+    document.querySelectorAll(".btn_consultation");
+  const closeBtnConsultation = document.querySelector(".close-consultation");
+
+  function openModalConsultation() {
+    modalConsultation.style.display = "flex";
+    setTimeout(() => modalConsultation.classList.add("open"), 10);
+  }
+
+  function closeModalConsultation() {
+    modalConsultation.classList.remove("open");
+    modalConsultation.style.animation = "fadeOut 0.3s ease-in-out";
+    setTimeout(() => {
+      modalConsultation.style.display = "none";
+      modalConsultation.style.animation = "";
+    }, 300);
+  }
+
+  buttonsModalConsultation.forEach((button) =>
+    button.addEventListener("click", openModalConsultation)
+  );
+  closeBtnConsultation?.addEventListener("click", closeModalConsultation);
+  modalConsultation?.addEventListener("click", (e) => {
+    if (e.target === modalConsultation) closeModalConsultation();
+  });
+
+  // Логика для нового модального окна
+  const modalReview = document.querySelector(".modal-review");
+  const buttonsModalReview = document.querySelectorAll(".btn-review-modal");
+  const closeBtnReview = document.querySelector(".close-review");
+
+  function openModalReview() {
+    modalReview.style.display = "flex";
+    setTimeout(() => modalReview.classList.add("open"), 10);
+  }
+
+  function closeModalReview() {
+    modalReview.classList.remove("open");
+    modalReview.style.animation = "fadeOut 0.3s ease-in-out";
+    setTimeout(() => {
+      modalReview.style.display = "none";
+      modalReview.style.animation = "";
+    }, 300);
+  }
+
+  buttonsModalReview.forEach((button) =>
+    button.addEventListener("click", openModalReview)
+  );
+  closeBtnReview?.addEventListener("click", closeModalReview);
+  modalReview?.addEventListener("click", (e) => {
+    if (e.target === modalReview) closeModalReview();
+  });
   // ------------------------------
   // Меню с подменю
   // ------------------------------

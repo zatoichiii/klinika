@@ -27,7 +27,7 @@
 
                         <div class="form-input">
                             <div class="upper">
-                                <input placeholder="+7 (___) ___ __-__" />
+                                <input type="tel" placeholder="+7 (___) ___ __-__" />
                                 <button type="submit">Получить консультацию</button>
                             </div>
                             <div class="lower">

@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
@@ -60,7 +59,7 @@
             <img src="/assets/images/icons/search.png" alt="Поиск" />
           </div>
         </div>
-        <button class="btn btn-secondary ask-doctor">Задать вопрос врачу</button>
+        <button class="btn_consultation btn-secondary ask-doctor">Задать вопрос врачу</button>
         <button class="btn btn-primary call-doctor">Вызвать врача</button>
         <a class="telegram-icon" href="tg://resolve?domain=mednarkolog_clinic" aria-label="Telegram">
           <img src="/assets/images/icons/telegram.png" alt="Telegram">

@@ -34,87 +34,6 @@
           <div class="swiper-slide">
             <div class="doctor-card">
               <div class="placeholders">
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
-                </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
-                </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
-                </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
-                </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
                 <div class="placeholder-item">
                   <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
                   Главный врач
@@ -130,6 +49,7 @@
             </div>
           </div>
         </div>
+        <div style="position: relative; margin-top: 20px" class="swiper-pagination "></div>
       </div>
     </div>
   </div>

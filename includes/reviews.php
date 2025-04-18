@@ -165,6 +165,9 @@
               </div>
             </div>
           </div>
+          <div style="position: relative; margin-top: 20px" class="swiper-pagination"></div>
+
         </div>
+        
       </div>
     </section>

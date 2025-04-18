@@ -147,14 +147,13 @@
 </footer>
 
 
-<!-- Модальное окно -->
 <div class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="modal-title"><b>Бесплатная</b> консультация</div>
         <p>Оставьте заявку, наш менеджер перезвонит вам в течение 10 минут</p>
         <form>
-            <input type="text" placeholder="+7 (___) ___ __-__">
+            <input type="tel" placeholder="+7 (___) ___ __-__">
             <button type="submit">Отправить</button>
         </form>
         <div class="checkbox-container">
@@ -163,6 +162,56 @@
         </div>
     </div>
 </div>
+
+<div class="modal modal-consultation">
+    <div class="modal-content">
+        <span class="close close-consultation">&times;</span>
+        <div class="modal-title"><b>Задайте вопрос</b> нашим специалистам</div>
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Ваше имя">
+                <input type="tel" placeholder="+7 (___) ___ __-__">
+            </div>
+            <textarea placeholder="Введите ваш вопрос"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="checkbox-container">
+            <input type="checkbox" id="agree-consultation">
+            <label for="agree-consultation">Отправляя данные вы соглашаетесь с <a href="#">политикой конфиденциальности</a></label>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-review">
+    <div class="modal-content">
+        <span class="close close-review">&times;</span>
+        <div class="modal-title"><b>Оставьте отзыв</b> о нашей работе</div>
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Ваше имя">
+                <input type="text" placeholder="Возраст">
+            </div>
+            <select placeholder="Город">
+                <option value="" disabled selected>Выберите город</option>
+                <option value="moscow">Москва</option>
+                <option value="saint-petersburg">Санкт-Петербург</option>
+                <option value="novosibirsk">Новосибирск</option>
+                <option value="yekaterinburg">Екатеринбург</option>
+                <option value="kazan">Казань</option>
+                <option value="other">Другой город</option>
+            </select> <textarea placeholder="Введите ваш отзыв"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="checkbox-container">
+            <input type="checkbox" id="agree-review">
+            <label for="agree-review">Отправляя данные вы соглашаетесь с <a href="#">политикой конфиденциальности</a></label>
+        </div>
+    </div>
+</div>
+
+<button id="back-to-top" title="Наверх">
+    <img style="width: 20px" src="/assets/images/icons/up-arrow.png" alt="Наверх" />
+</button>
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
 

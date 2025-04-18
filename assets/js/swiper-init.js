@@ -8,12 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let complexSwiper = null;
   let doctorsSwiper = null;
   let reviewsSwiper = null;
-  let BranchSwiper = null;
+  let branchSwiper = null;
 
-  BranchSwiper = new Swiper(".branches-swiper", {
+  // Инициализация Branch Swiper
+  branchSwiper = new Swiper(".branches-swiper", {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     navigation: {
       nextEl: ".swiper-button-next-branches-swiper",
       prevEl: ".swiper-button-prev-branches-swiper",
@@ -25,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  // Инициализация Complex Swiper
   const initComplexSwiper = () => {
     if (window.innerWidth < 768 && !complexSwiper) {
       complexSwiper = new Swiper(".swiper-container-complex", {
@@ -51,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Doctors Swiper
   const initSwiperDoctors = () => {
     if (!doctorsSwiper) {
       doctorsSwiper = new Swiper(".swiper-container-doctors", {
@@ -59,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
         navigation: {
           nextEl: ".next-button-doctors",
           prevEl: ".prev-button-doctors",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
         breakpoints: {
           480: {
@@ -79,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Banner Swiper
   const initBannerSwiper = () => {
     if (window.innerWidth > 0) {
       if (!bannerSwiper) {
@@ -93,26 +105,14 @@ document.addEventListener("DOMContentLoaded", function () {
             768: {
               slidesPerView: 3,
               spaceBetween: 30,
-              pagination: {
-                el: ".swiper-pagination-banner",
-                clickable: true,
-              },
             },
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
-              pagination: {
-                el: ".swiper-pagination-banner",
-                clickable: true,
-              },
             },
             320: {
               slidesPerView: 1,
               spaceBetween: 10,
-              pagination: {
-                el: ".swiper-pagination-banner",
-                clickable: true,
-              },
             },
           },
         });
@@ -124,6 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   };
+
+  // Инициализация Stock Swiper
   const initStockSwiper = () => {
     if (window.innerWidth > 0) {
       if (!stockSwiper) {
@@ -156,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Stages Swiper
   const initStagesSwiper = () => {
     if (window.innerWidth > 768) {
       if (!stagesSwiper) {
@@ -164,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nextEl: ".next-button-stages",
             prevEl: ".prev-button-stages",
           },
-          slidesPerView: 3,
+          slidesPerView: 1,
           spaceBetween: 20,
           breakpoints: {
             1024: {
@@ -186,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Methods Swiper
   const initMethodsSwiper = () => {
     if (window.innerWidth <= 1010) {
       if (!methodsSwiper) {
@@ -206,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Services Swiper
   const initServicesSwiper = () => {
     if (window.innerWidth <= 1170) {
       if (!servicesSwiper) {
@@ -243,13 +248,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Reviews Swiper
   const initReviewsSwiper = () => {
     if (window.innerWidth > 0) {
       if (!reviewsSwiper) {
-        const reviewsSwiper = new Swiper(".reviews-swiper", {
+        reviewsSwiper = new Swiper(".reviews-swiper", {
           loop: false,
           slidesPerView: 1,
           spaceBetween: 20,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
           navigation: {
             nextEl: ".swiper-button-next-reviews-swiper",
             prevEl: ".swiper-button-prev-reviews-swiper",
@@ -266,38 +276,34 @@ document.addEventListener("DOMContentLoaded", function () {
             },
           },
         });
+
+        // Логика для кнопки "Подробнее"
+        const reviewCards = document.querySelectorAll(".review-card");
+        reviewCards.forEach((card) => {
+          const text = card.querySelector(".text p");
+          const button = card.querySelector(".more");
+          if (!text || !button) return;
+
+          if (text.scrollHeight <= text.clientHeight) {
+            button.style.display = "none";
+          } else {
+            button.addEventListener("click", () => {
+              const imgMore = button.querySelector("img");
+              if (text.style.maxHeight) {
+                text.style.maxHeight = null;
+                button.innerHTML =
+                  '<span>Подробнее</span><img src="/assets/images/icons/down.png">';
+                imgMore.style.transform = "rotate(0deg)";
+              } else {
+                text.style.maxHeight = text.scrollHeight + "px";
+                button.innerHTML =
+                  '<span>Скрыть</span><img src="/assets/images/icons/down.png">';
+                imgMore.style.transform = "rotate(180deg)";
+              }
+            });
+          }
+        });
       }
-      // Логика для кнопки "Подробнее"
-      const reviewCards = document.querySelectorAll(".review-card");
-
-      reviewCards.forEach((card) => {
-        const text = card.querySelector(".text p");
-        const button = card.querySelector(".more");
-
-        if (!text || !button) {
-          return;
-        }
-
-        if (text.scrollHeight <= text.clientHeight) {
-          button.style.display = "none";
-        } else {
-          button.addEventListener("click", () => {
-            const imgMore = button.querySelector("img");
-
-            if (text.style.maxHeight) {
-              text.style.maxHeight = null;
-              button.innerHTML =
-                '<span>Подробнее</span><img src="/assets/images/icons/down.png">';
-              imgMore.style.transform = "rotate(0deg)";
-            } else {
-              text.style.maxHeight = text.scrollHeight + "px";
-              button.innerHTML =
-                '<span>Скрыть</span><img src="/assets/images/icons/down.png">';
-              imgMore.style.transform = "rotate(180deg)";
-            }
-          });
-        }
-      });
     } else {
       if (reviewsSwiper) {
         reviewsSwiper.destroy(true, true);
@@ -305,6 +311,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   };
+
+  // Инициализация Advantages Swiper
   const initAdvantagesSwiper = () => {
     if (window.innerWidth > 0) {
       if (!advantagesSwiper) {
@@ -343,13 +351,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Инициализация Accordion
   const handleAccordionClick = function () {
     const accordionIco = this.querySelector(".accordion-ico img");
     document.querySelectorAll(".accordion-header").forEach((otherHeader) => {
       if (otherHeader !== this) {
-        const otherDesc = otherHeader
-          .closest(".slider-content")
-          ?.querySelector(".slider-desc");
+        const otherDesc = otherHeader.closest(".slider-content")?.querySelector(".slider-desc");
         if (otherDesc) {
           otherDesc.classList.remove("open");
         }
@@ -359,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
+
     const sliderContent = this.closest(".slider-content");
     if (sliderContent) {
       const desc = sliderContent.querySelector(".slider-desc");
@@ -366,6 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
         desc.classList.toggle("open");
       }
     }
+
     if (accordionIco) {
       accordionIco.classList.toggle("active");
     }
@@ -374,12 +383,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const initAccordion = () => {
     const accordionHeaders = document.querySelectorAll(".accordion-header");
     if (!accordionHeaders.length) return;
+
     accordionHeaders.forEach((header) => {
       header.removeEventListener("click", handleAccordionClick);
       header.addEventListener("click", handleAccordionClick);
     });
   };
 
+  // Инициализация всех слайдеров
   const initializeAll = () => {
     observeElement(".swiper-container-banner", initBannerSwiper);
     observeElement(".swiper-container-stock", initStockSwiper);
@@ -395,6 +406,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // Debounce для оптимизации обработки resize
   const debounce = (func, delay) => {
     let timeout;
     return function (...args) {
@@ -403,11 +415,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   };
 
+  // Наблюдение за элементами
   const observeElement = (selector, callback) => {
     const element = document.querySelector(selector);
-    if (!element) {
-      return;
-    }
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -422,10 +434,10 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(element);
   };
 
+  // Инициализация Gallery Swiper
   const swiperGallery = document.querySelector(".swiper-gallery");
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-  const swiper = new Swiper(".swiper-gallery", {
+  const gallerySwiper = new Swiper(".swiper-gallery", {
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -457,18 +469,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Инициализация Fancybox
   Fancybox.bind('[data-fancybox="licenses-gallery"]', {
     animated: true,
     showClass: false,
     hideClass: false,
   });
 
+  // Фильтрация слайдов
   function filterSlides(target) {
     const slides = document.querySelectorAll(".swiper-slide.photo");
-
-    if (!slides || slides.length === 0) {
-      return;
-    }
+    if (!slides || slides.length === 0) return;
 
     slides.forEach((slide) => {
       if (target === "all" || slide.dataset.target === target) {
@@ -478,8 +489,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    if (swiper && typeof swiper.update === "function") {
-      swiper.update();
+    if (gallerySwiper && typeof gallerySwiper.update === "function") {
+      gallerySwiper.update();
     }
   }
 
@@ -488,7 +499,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tag.addEventListener("click", () => {
       tags.forEach((t) => t.classList.remove("active"));
       tag.classList.add("active");
-
       const target = tag.dataset.target || "all";
       filterSlides(target);
     });
@@ -496,19 +506,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   filterSlides("all");
 
+  // Инициализация Licenses Swiper
   const licenseSwiper = new Swiper(".swiper-licenses", {
     loop: true,
     spaceBetween: 10,
     slidesPerView: 2,
-
     pagination: {
       el: ".swiper-pagination.license",
       clickable: true,
     },
   });
 
+  // Инициализация всех компонентов
   initializeAll();
 
+  // Обработка resize событий
   window.addEventListener(
     "resize",
     debounce(() => {

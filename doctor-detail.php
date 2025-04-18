@@ -31,7 +31,7 @@
                 <p class="doctor-title">Главный врач, заведующий отделением наркологии</p>
 
                 <div class="buttons">
-                    <button class="btn btn-primary-doctor">Задать вопрос врачу</button>
+                    <button class="btn_consultation btn-primary-doctor">Задать вопрос врачу</button>
                     <button class="btn btn-secondary-doctor">Записаться на прием</button>
                 </div>
             </div>

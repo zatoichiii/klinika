@@ -5,7 +5,7 @@
             <div class="faq-content">
                 <div class="top-block-faq-page">
                     <div class="title-faq-page">Часто задаваемые вопросы</div>
-                    <div class="btn button">Задать вопрос</div>
+                    <div class="btn_consultation button">Задать вопрос</div>
                 </div>
 
                 <!-- Фильтры -->

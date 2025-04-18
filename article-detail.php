@@ -51,7 +51,7 @@
 
 <div class="article-detail-section">
     <div class="container">
-        <div class="article-detail-wrapper">
+        <div class="article-detail">
             <div class="part-block">
                 <div class="article-accordion-wrapper">
                     <div class="article-accordion-header" id="contents-header">Содержание статьи</div>
@@ -157,7 +157,7 @@
                     <div class="faq-wrapper">
                         <div class="faq-upper-block">
                             <div class="faq-title-main">Часто задаваемые вопросы</div>
-                            <div class="btn button">Задать вопрос</div>
+                            <div class="btn_consultation button">Задать вопрос</div>
                         </div>
                         <div class="accordion">
                             <div class="accordion-item">
@@ -375,10 +375,6 @@
         Спасибо за вашу оценку!
     </div>
 </div>
-<script>
-
-</script>
-
 
 <?php include 'includes/footer-map.php'; ?>
 <?php include 'includes/footer.php'; ?>
