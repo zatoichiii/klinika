@@ -1,42 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".dropdown-toggle");
+  const dropdownMenu = document.querySelector(".dropdown-menu");
 
+  if (toggleButton && dropdownMenu) {
+    toggleButton.addEventListener("click", () => {
+      dropdownMenu.classList.toggle("show");
+    });
 
-  // Функция для проверки ширины экрана и скрытия элемента
-function toggleLineVisibility() {
-  const line = document.querySelector('.method-line'); // Находим элемент .line
-  if (!line) return;
-  if (window.innerWidth <= 1011) {
-    // Если ширина экрана 1011px или меньше, удаляем элемент
-    if (line) line.remove();
+    document.addEventListener("click", (event) => {
+      if (
+        !toggleButton.contains(event.target) &&
+        !dropdownMenu.contains(event.target)
+      ) {
+        dropdownMenu.classList.remove("show");
+        toggleButton.classList.add("active");
+      }
+    });
   } else {
-    // Если ширина экрана больше 1011px, создаем элемент заново (если его нет)
-    if (!document.querySelector('.line')) {
-      const newLine = document.createElement('div');
-      newLine.className = 'line';
-      document.querySelector('.swiper-wrapper').appendChild(newLine); // Добавляем обратно
-    }
+    console.warn("Элементы .dropdown-toggle или .dropdown-menu не найдены.");
   }
-}
-
-// Вызываем функцию при загрузке страницы
-toggleLineVisibility();
-
-// Вызываем функцию при изменении размера окна
-window.addEventListener('resize', toggleLineVisibility);
-  const swiperDoctor = new Swiper(".swiper-doctor", {
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".pagination-doctor", 
-      clickable: true,
-    },
-  });
-
   const swiperClinic = new Swiper(".swiper-clinic", {
-    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1.2,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -48,13 +33,27 @@ window.addEventListener('resize', toggleLineVisibility);
   });
 
   const swiperRoom = new Swiper(".swiper-room", {
-    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1.2,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     pagination: {
-      el: ".pagination-room", 
+      el: ".pagination-room",
+      clickable: true,
+    },
+  });
+
+  const swiperDoctor = new Swiper(".swiper-doctor", {
+    spaceBetween: 20,
+    slidesPerView: 1.2,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".pagination-doctor",
       clickable: true,
     },
   });
@@ -81,33 +80,37 @@ window.addEventListener('resize', toggleLineVisibility);
   const reviews = document.querySelectorAll(".section-reviews .review-item");
 
   if (tags.length > 0) {
-      tags.forEach(tag => {
-          tag.addEventListener("click", () => {
-              const filter = tag.dataset.filter;
+    tags.forEach((tag) => {
+      tag.addEventListener("click", () => {
+        const filter = tag.dataset.filter;
 
-              tags.forEach(t => t.classList.remove("active"));
-              tag.classList.add("active");
+        tags.forEach((t) => t.classList.remove("active"));
+        tag.classList.add("active");
 
-              reviews.forEach(review => {
-                  if (filter === "all" || review.dataset.category === filter) {
-                      review.style.display = "block";
-                  } else {
-                      review.style.display = "none";
-                  }
-              });
-          });
+        reviews.forEach((review) => {
+          if (filter === "all" || review.dataset.category === filter) {
+            review.style.display = "block";
+          } else {
+            review.style.display = "none";
+          }
+        });
       });
+    });
   }
 
-  const showMoreButtons = document.querySelectorAll(".section-reviews .showMoreButton");
+  const showMoreButtons = document.querySelectorAll(
+    ".section-reviews .showMoreButton"
+  );
   if (showMoreButtons.length > 0) {
-      showMoreButtons.forEach(button => {
-          button.addEventListener("click", () => {
-              const reviewBody = button.previousElementSibling;
-              reviewBody.classList.toggle("expanded");
-              button.textContent = reviewBody.classList.contains("expanded") ? "Скрыть" : "Подробнее";
-          });
+    showMoreButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const reviewBody = button.previousElementSibling;
+        reviewBody.classList.toggle("expanded");
+        button.textContent = reviewBody.classList.contains("expanded")
+          ? "Скрыть"
+          : "Подробнее";
       });
+    });
   }
 
   document.querySelectorAll(".filter-btn").forEach((button) => {
@@ -138,8 +141,8 @@ window.addEventListener('resize', toggleLineVisibility);
   });
 
   const PublicationDoctorSwiper = new Swiper(".swiper-publications-doctor", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+    slidesPerView: 1.2,
+    spaceBetween: 20,
     navigation: {
       nextEl: ".swiper-button-next.publication",
       prevEl: ".swiper-button-prev.publication",
@@ -150,15 +153,15 @@ window.addEventListener('resize', toggleLineVisibility);
     },
     breakpoints: {
       578: {
-        slidesPerView: 2,
+        slidesPerView: 2.2,
         spaceBetween: 15,
       },
     },
   });
 
   const ReviewDoctorSwiper = new Swiper(".swiper-reviews-doctor", {
-    slidesPerView: 1,
-    spaceBetween: 30,
+    slidesPerView: 1.2,
+    spaceBetween: 20,
     navigation: {
       nextEl: ".swiper-button-next.reviews",
       prevEl: ".swiper-button-prev.reviews",
@@ -169,14 +172,14 @@ window.addEventListener('resize', toggleLineVisibility);
     },
     breakpoints: {
       578: {
-        slidesPerView: 2,
+        slidesPerView: 2.2,
         spaceBetween: 15,
       },
     },
   });
 
   const DiplomDoctorSwiper = new Swiper(".swiper-diploms-doctor", {
-    slidesPerView: 1,
+    slidesPerView: 1.2,
     spaceBetween: 20,
     navigation: {
       nextEl: ".swiper-button-next.diploms",
@@ -186,7 +189,7 @@ window.addEventListener('resize', toggleLineVisibility);
     pagination: false,
     breakpoints: {
       480: {
-        slidesPerView: 2,
+        slidesPerView: 2.2,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -568,17 +571,18 @@ window.addEventListener('resize', toggleLineVisibility);
   });
 
   if (prismaButtonsContainer) {
-  prismaButtonsContainer
-    .querySelectorAll("img[id^='prisma-']")
-    .forEach((button, index) => {
-      button.addEventListener("click", () => {
-        activateCardByIndex(index);
+    prismaButtonsContainer
+      .querySelectorAll("img[id^='prisma-']")
+      .forEach((button, index) => {
+        button.addEventListener("click", () => {
+          activateCardByIndex(index);
+        });
       });
-    });
   }
 
   // ------------------------------
   // Поиск
+
   // ------------------------------
   const searchIcon = document.getElementById("searchIcon");
   const searchMenu = document.getElementById("searchMenu");

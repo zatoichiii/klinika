@@ -217,14 +217,14 @@
         <button class="category-btn" data-category="doctor">Нарколог на дом</button>
         <button class="category-btn" data-category="coding">Кодирование от алкоголизма</button>
         <button class="category-btn" data-category="alcoholism">Лечение алкоголизма</button>
-        <div class="more-categories-btn">
-          <button class="show-more-button">
-            <span>Еще категории</span>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.5 0.5L5 5.5L9.5 0.5" stroke="#000" stroke-width="2" />
-            </svg>
+        <div class="dropdown-container">
+          <!-- Круглая кнопка со стрелкой -->
+          <button class="dropdown-toggle">
+            <img src="/assets/images/icons/category.png" />
           </button>
-          <div class="additional-categories dropdown">
+
+          <!-- Выпадающий список -->
+          <div class="dropdown-menu">
             <button class="category-btn" data-category="drugs">Лечение наркомании</button>
             <button class="category-btn" data-category="rehabilitation">Реабилитация</button>
             <button class="category-btn" data-category="psychology">Психологическая помощь</button>
@@ -235,57 +235,6 @@
 
       <div class="prices-list">
         <div class="price-category active" data-category="detox">
-          <div class="price-item">
-            <div class="price-info">
-              <p>Стационарный вывод из запоя</p>
-              <button class="details-btn">
-                Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Пребывание в стационаре со всеми удобствами.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>8500 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Стационарный вывод из запоя</p>
-              <button class="details-btn">
-                Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Пребывание в стационаре со всеми удобствами.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>8500 ₽</span>
-            </div>
-          </div>
-          <div class="price-item">
-            <div class="price-info">
-              <p>Стационарный вывод из запоя</p>
-              <button class="details-btn">
-                Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
-              </button>
-              <div class="price-item details">
-                <p>Пребывание в стационаре со всеми удобствами.</p>
-              </div>
-            </div>
-            <div class="price-value">
-              <span>8500 ₽</span>
-            </div>
-          </div>
           <div class="price-item">
             <div class="price-info">
               <p>Стационарный вывод из запоя</p>
@@ -438,15 +387,15 @@
     <div class="block-title">Акции клиники</div>
     <div class="swiper-container-stock swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="promotion swiper-slide">
           <div class="slide-content">
             <div class="slide-discount">Скидка</div>
-            <div class="slide-title">Консультация специалиста</div>
-            <ul class="slide-list">
-              <li>Бесплатная диагностика</li>
-              <li>Индивидуальный подход</li>
-              <li>Гарантия результата</li>
-            </ul>
+            <div class="slide-title">Скидка на услугу <b>«Кодирование методом Довженко»</b></div>
+            <p>При заказе услуги «Кодирование методом Довженко» через сайт</p>
+            <div class="price-value-promotion">
+              <div class="price-value-promotion-old">9500 руб.</div>
+              <div class="price-value-promotion-new">8500 руб.</div>
+            </div>
             <button class="btn btn-primary promotion">Заказать услугу</button>
           </div>
         </div>
@@ -595,7 +544,7 @@
       </div>
       <div class="swiper methods-slider">
         <div class="swiper-wrapper">
-          <div class="swiper-slide method-item right-line">
+          <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
@@ -611,16 +560,7 @@
             <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
               клиентов, их родственников, родных и близких.</p>
           </div>
-          <div class="swiper-slide method-item left-line">
-            <div class="upper-block">
-              <img src="/assets/images/icons/first.png" alt="Метод">
-              <div>Медикаментозная терапия</div>
-            </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
-          </div>
-          <div class="method-line"></div>
-          <div class="swiper-slide method-item right-line">
+          <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
@@ -636,7 +576,15 @@
             <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
               клиентов, их родственников, родных и близких.</p>
           </div>
-          <div class="swiper-slide method-item left-line">
+          <div class="swiper-slide method-item">
+            <div class="upper-block">
+              <img src="/assets/images/icons/first.png" alt="Метод">
+              <div>Медикаментозная терапия</div>
+            </div>
+            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+              клиентов, их родственников, родных и близких.</p>
+          </div>
+          <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
@@ -656,7 +604,7 @@
 <style>
 
 
-  
+
 </style>
 
 <!-- Преимущества -->

@@ -108,7 +108,10 @@
                     </div>
                 </div>
             </div>
-
+            <button class="button-eye mobile">
+                <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
+                Версия для слабовидящих
+            </button>
         </div>
     </div>
     <div class="container">

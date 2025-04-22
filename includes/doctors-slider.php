@@ -2,7 +2,7 @@
   <div class="container">
     <div class="doctors-wrapper">
       <div class="upper-block">
-        <div class="block-title">Наши врачи</div>
+        <div class="block-title">Профессиональные врачи наркологи</div>
         <div class="swiper-main-buttons-doctors">
           <button class="prev-button-doctors">
             <img src="./assets/images/icons/arrow-right.png" alt="Предыдущий">

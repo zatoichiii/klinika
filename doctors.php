@@ -13,7 +13,7 @@
         </div>
         <section class="doctors-section">
             <div class="upper-block">
-                <div class="doctors-title">Наши врачи</div>
+                <div class="doctors-title">Профессиональные врачи-наркологи</div>
                 <div class="swiper-main-buttons-doctors">
                     <!-- Убираем кнопки свайпера -->
                 </div>
