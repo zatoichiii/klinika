@@ -1,29 +1,225 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
+  // Функция для проверки ширины экрана и скрытия элемента
+function toggleLineVisibility() {
+  const line = document.querySelector('.method-line'); // Находим элемент .line
+  if (!line) return;
+  if (window.innerWidth <= 1011) {
+    // Если ширина экрана 1011px или меньше, удаляем элемент
+    if (line) line.remove();
+  } else {
+    // Если ширина экрана больше 1011px, создаем элемент заново (если его нет)
+    if (!document.querySelector('.line')) {
+      const newLine = document.createElement('div');
+      newLine.className = 'line';
+      document.querySelector('.swiper-wrapper').appendChild(newLine); // Добавляем обратно
+    }
+  }
+}
+
+// Вызываем функцию при загрузке страницы
+toggleLineVisibility();
+
+// Вызываем функцию при изменении размера окна
+window.addEventListener('resize', toggleLineVisibility);
+  const swiperDoctor = new Swiper(".swiper-doctor", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".pagination-doctor", 
+      clickable: true,
+    },
+  });
+
+  const swiperClinic = new Swiper(".swiper-clinic", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".pagination-clinic",
+      clickable: true,
+    },
+  });
+
+  const swiperRoom = new Swiper(".swiper-room", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".pagination-room", 
+      clickable: true,
+    },
+  });
+
+  const tagsForSwipers = document.querySelectorAll(".swiper-tag");
+  const sliders = document.querySelectorAll(".swiper");
+
+  tagsForSwipers.forEach((tag) => {
+    tag.addEventListener("click", () => {
+      tagsForSwipers.forEach((t) => t.classList.remove("active"));
+      sliders.forEach((slider) => slider.classList.remove("active"));
+
+      tag.classList.add("active");
+
+      const target = tag.getAttribute("data-target");
+      const activeSlider = document.querySelector(`.swiper-${target}`);
+      if (activeSlider) {
+        activeSlider.classList.add("active");
+      }
+    });
+  });
+
+  const tags = document.querySelectorAll(".section-reviews .data-block .tag");
+  const reviews = document.querySelectorAll(".section-reviews .review-item");
+
+  if (tags.length > 0) {
+      tags.forEach(tag => {
+          tag.addEventListener("click", () => {
+              const filter = tag.dataset.filter;
+
+              tags.forEach(t => t.classList.remove("active"));
+              tag.classList.add("active");
+
+              reviews.forEach(review => {
+                  if (filter === "all" || review.dataset.category === filter) {
+                      review.style.display = "block";
+                  } else {
+                      review.style.display = "none";
+                  }
+              });
+          });
+      });
+  }
+
+  const showMoreButtons = document.querySelectorAll(".section-reviews .showMoreButton");
+  if (showMoreButtons.length > 0) {
+      showMoreButtons.forEach(button => {
+          button.addEventListener("click", () => {
+              const reviewBody = button.previousElementSibling;
+              reviewBody.classList.toggle("expanded");
+              button.textContent = reviewBody.classList.contains("expanded") ? "Скрыть" : "Подробнее";
+          });
+      });
+  }
+
+  document.querySelectorAll(".filter-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const category = button.dataset.category;
+
+      document.querySelectorAll(".accordion-item").forEach((item) => {
+        if (category === "all" || item.dataset.category === category) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  Fancybox.bind('[data-fancybox="diplom"]', {
+    animated: true,
+    showClass: "fancybox-zoomIn",
+    hideClass: "fancybox-zoomOut",
+    infinite: true,
+    dragToClose: true,
+  });
+
+  const PublicationDoctorSwiper = new Swiper(".swiper-publications-doctor", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next.publication",
+      prevEl: ".swiper-button-prev.publication",
+    },
+    pagination: {
+      el: ".swiper-pagination.publications",
+      clickable: true,
+    },
+    breakpoints: {
+      578: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+    },
+  });
+
+  const ReviewDoctorSwiper = new Swiper(".swiper-reviews-doctor", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next.reviews",
+      prevEl: ".swiper-button-prev.reviews",
+    },
+    pagination: {
+      el: ".swiper-pagination.reviews",
+      clickable: true,
+    },
+    breakpoints: {
+      578: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+    },
+  });
+
+  const DiplomDoctorSwiper = new Swiper(".swiper-diploms-doctor", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next.diploms",
+      prevEl: ".swiper-button-prev.diploms",
+    },
+
+    pagination: false,
+    breakpoints: {
+      480: {
+        slidesPerView: 2,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      },
+    },
+  });
+
   const phoneInputs = document.querySelectorAll('input[type="tel"]');
 
   function applyPhoneMask(input) {
-    let value = input.value.replace(/\D/g, ""); 
+    let value = input.value.replace(/\D/g, "");
     let formattedValue = "";
 
     if (value.length > 0) {
-      formattedValue = "+7 "; 
+      formattedValue = "+7 ";
     }
     if (value.length > 1) {
-      formattedValue += `(${value.slice(1, 4)}`; 
+      formattedValue += `(${value.slice(1, 4)}`;
     }
     if (value.length > 4) {
-      formattedValue += `) ${value.slice(4, 7)}`; 
+      formattedValue += `) ${value.slice(4, 7)}`;
     }
     if (value.length > 7) {
       formattedValue += `-${value.slice(7, 9)}`;
     }
     if (value.length > 9) {
-      formattedValue += `-${value.slice(9, 11)}`; 
+      formattedValue += `-${value.slice(9, 11)}`;
     }
 
     if (value.length > 11) {
       value = value.slice(0, 11);
-      formattedValue = formattedValue.slice(0, 18); 
+      formattedValue = formattedValue.slice(0, 18);
     }
 
     input.value = formattedValue;
@@ -33,12 +229,12 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("input", () => applyPhoneMask(input));
     input.addEventListener("focus", () => {
       if (!input.value) {
-        input.value = "+7 ("; 
+        input.value = "+7 (";
       }
     });
     input.addEventListener("blur", () => {
       if (input.value === "+7 (") {
-        input.value = ""; 
+        input.value = "";
       }
     });
   });
@@ -338,32 +534,48 @@ document.addEventListener("DOMContentLoaded", () => {
   // fancybox
   // ------------------------------
   Fancybox.bind("[data-fancybox]");
+
   // ------------------------------
   // Комплекс
   // ------------------------------
   const complexCards = document.querySelectorAll(".complex-card");
   const prismaButtonsContainer = document.querySelector(".prisma-with-buttons");
 
+  const activateCardByIndex = (index) => {
+    complexCards.forEach((c) => c.classList.remove("active"));
+
+    if (complexCards[index]) {
+      complexCards[index].classList.add("active");
+    }
+
+    prismaButtonsContainer.querySelectorAll("img").forEach((button) => {
+      button.classList.remove("active-button");
+    });
+
+    const prismaId = `prisma-${index + 1}`;
+    const activePrismaButton = prismaButtonsContainer.querySelector(
+      `#${prismaId}`
+    );
+    if (activePrismaButton) {
+      activePrismaButton.classList.add("active-button");
+    }
+  };
+
   complexCards.forEach((card, index) => {
     card.addEventListener("click", () => {
-      complexCards.forEach((c) => c.classList.remove("active"));
-
-      card.classList.add("active");
-
-      const prismaId = `prisma-${index + 1}`;
-      const activePrismaButton = prismaButtonsContainer.querySelector(
-        `#${prismaId}`
-      );
-
-      prismaButtonsContainer.querySelectorAll("img").forEach((button) => {
-        button.classList.remove("active-button");
-      });
-
-      if (activePrismaButton) {
-        activePrismaButton.classList.add("active-button");
-      }
+      activateCardByIndex(index);
     });
   });
+
+  if (prismaButtonsContainer) {
+  prismaButtonsContainer
+    .querySelectorAll("img[id^='prisma-']")
+    .forEach((button, index) => {
+      button.addEventListener("click", () => {
+        activateCardByIndex(index);
+      });
+    });
+  }
 
   // ------------------------------
   // Поиск
@@ -575,13 +787,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-  // ------------------------------
-  // Динамическое меню
-  // ------------------------------
   const menuIcon = document.querySelector(".menu-icon");
   const menuContainer = document.querySelector(".menu-container");
-  const dynamicContent = document.querySelector(".menu-column.dynamic-content");
+  const dynamicContentElement = document.querySelector(".dynamic-content"); // Ищем элемент по классу
   const menuItems = document.querySelectorAll(".menu-item");
+
+  // Присваиваем id="dynamicContent" элементу с классом "dynamic-content", если он найден
+  if (dynamicContentElement && !dynamicContentElement.id) {
+    dynamicContentElement.id = "dynamicContent";
+  }
+
+  const dynamicContent = document.getElementById("dynamicContent"); // Теперь используем ID
 
   const menuData = {
     "alcohol-treatment": {
@@ -608,10 +824,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateDynamicContent(target) {
     const data = menuData[target];
-    if (!data) return;
+    if (!data) {
+      console.error(`Данные для "${target}" не найдены.`);
+      return;
+    }
 
     const dynamicTitle = document.getElementById("dynamicTitle");
     const dynamicList = document.getElementById("dynamicList");
+
+    if (!dynamicTitle || !dynamicList) {
+      console.error("Элементы dynamicTitle или dynamicList не найдены.");
+      return;
+    }
 
     dynamicTitle.textContent = data.title;
     dynamicList.innerHTML = "";
@@ -631,31 +855,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", (event) => {
-      event.preventDefault();
+  function moveDynamicContentUnderMenuItem(menuItem) {
+    if (!dynamicContent) return;
 
-      const target = menuItem.getAttribute("data-target");
-      if (!target) return;
+    if (dynamicContent.parentNode) {
+      dynamicContent.parentNode.removeChild(dynamicContent);
+    }
 
-      menuItems.forEach((item) => item.classList.remove("active"));
-      menuItem.classList.add("active");
+    menuItem.insertAdjacentElement("afterend", dynamicContent);
+  }
 
-      updateDynamicContent(target);
-
-      positionDynamicContent(menuItem);
-    });
-  });
-
-  function positionDynamicContent(menuItem) {
+  function positionDynamicContentInContainer(menuItem) {
     if (!menuItem || !menuItem.classList.contains("active")) return;
     if (!dynamicContent) return;
 
     if (dynamicContent.parentNode) {
-      dynamicContent.remove();
+      dynamicContent.parentNode.removeChild(dynamicContent);
     }
 
-    const parentUl = menuItem.closest("ul");
+    const parentUl = menuItem.closest(".menu-columns");
     if (parentUl) {
       parentUl.appendChild(dynamicContent);
     }
@@ -663,6 +881,30 @@ document.addEventListener("DOMContentLoaded", () => {
     dynamicContent.style.opacity = 0;
     setTimeout(() => (dynamicContent.style.opacity = 1), 50);
   }
+
+  function handleDynamicContent(menuItem) {
+    const target = menuItem.getAttribute("data-target");
+    if (!target) return;
+
+    menuItems.forEach((item) => item.classList.remove("active"));
+    menuItem.classList.add("active");
+
+    updateDynamicContent(target);
+
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      moveDynamicContentUnderMenuItem(menuItem);
+    } else {
+      positionDynamicContentInContainer(menuItem);
+    }
+  }
+
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener("click", (event) => {
+      event.preventDefault();
+      handleDynamicContent(menuItem);
+    });
+  });
+
   function initMenuIconHandler() {
     menuIcon?.addEventListener("click", () => {
       menuIcon.classList.toggle("active");
@@ -674,7 +916,9 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         header.style.borderBottomLeftRadius = "";
         header.style.borderBottomRightRadius = "";
-        if (dynamicContent.parentNode) dynamicContent.remove();
+        if (dynamicContent && dynamicContent.parentNode) {
+          dynamicContent.parentNode.removeChild(dynamicContent);
+        }
       }
     });
 
@@ -689,13 +933,28 @@ document.addEventListener("DOMContentLoaded", () => {
         menuContainer.classList.remove("active");
         header.style.borderBottomLeftRadius = "";
         header.style.borderBottomRightRadius = "";
-        if (dynamicContent.parentNode) dynamicContent.remove();
+        if (dynamicContent && dynamicContent.parentNode) {
+          dynamicContent.parentNode.removeChild(dynamicContent);
+        }
       }
     });
   }
 
   initMenuIconHandler();
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const firstMenuItem = document.querySelector(".menu-item");
+    if (firstMenuItem) {
+      handleDynamicContent(firstMenuItem);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    const activeMenuItem = document.querySelector(".menu-item.active");
+    if (activeMenuItem) {
+      handleDynamicContent(activeMenuItem);
+    }
+  });
   // ------------------------------
   // Yandex Maps
   // ------------------------------
@@ -791,15 +1050,19 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerView: "auto",
     spaceBetween: 20,
     slidesPerGroup: 1,
+    pagination: {
+      el: ".swiper-pagination",
+    },
     navigation: {
       nextEl: ".next-button-doctors",
       prevEl: ".prev-button-doctors",
     },
     breakpoints: {
-      480: { slidesPerView: 1, spaceBetween: 0 },
-      640: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-      1280: { slidesPerView: 4 },
+      0: { slidesPerView: 1.3, spaceBetween: 10 },
+      480: { slidesPerView: 1.2, spaceBetween: 20 },
+      640: { slidesPerView: 2.2 },
+      1024: { slidesPerView: 3.3 },
+      1280: { slidesPerView: 4.4 },
     },
   });
 
@@ -807,15 +1070,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const initSwiper = () => {
     if (window.innerWidth < 768 && !swiperInstance) {
       swiperInstance = new Swiper(".swiper-container-complex", {
-        slidesPerView: 1,
+        slidesPerView: 1.2,
         spaceBetween: 20,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
         },
         breakpoints: {
-          0: { slidesPerView: 1, spaceBetween: 10 },
-          578: { slidesPerView: 2, spaceBetween: 20 },
+          0: { slidesPerView: 1.2, spaceBetween: 10 },
+          578: { slidesPerView: 2.2, spaceBetween: 20 },
         },
       });
     } else if (window.innerWidth >= 768 && swiperInstance) {

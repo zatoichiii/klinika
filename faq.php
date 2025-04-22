@@ -5,7 +5,7 @@
             <div class="faq-content">
                 <div class="top-block-faq-page">
                     <div class="title-faq-page">Часто задаваемые вопросы</div>
-                    <div class="btn_consultation button">Задать вопрос</div>
+                    <div class="btn_consultation button faq-button">Задать вопрос</div>
                 </div>
 
                 <!-- Фильтры -->
@@ -183,139 +183,6 @@
 </div>
 
 
-<style>
-    .faq-page-section {
-        padding: 40px 0;
-    }
-
-    .faq-page-section .accordion-item {
-        border: none;
-        background-color: rgba(236, 234, 228, 1);
-        border-radius: 20px;
-    }
-
-    .title-faq-page {
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 60px;
-        margin: 30px 0;
-    }
-
-    .faq-page-section .upper-block {
-        border-radius: 20px;
-    }
-
-    .faq-page-section .accordion-title {
-        font-weight: 500;
-        font-size: 16px;
-        padding: 0 10px;
-        line-height: 22px;
-    }
-
-    .faq-page-section .respondent {
-        margin: 0 10px;
-    }
-
-    .faq-page-section .accordion-content p {
-        padding: 0 10px;
-        margin: 0;
-    }
-
-    .faq-page-section .accordion-item:hover {
-        border-radius: 20px;
-    }
-
-    .faq-page-section {
-        background-color: var(--bg-color);
-    }
-
-    .top-block-faq-page {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-    }
-
-    .faq-filter {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 30px;
-        overflow-x: auto;
-        scrollbar-width: thin;
-        scrollbar-color: var(--red-color) transparent;
-    }
-
-    .faq-filter::-webkit-scrollbar {
-        height: 8px;
-    }
-
-    .faq-filter::-webkit-scrollbar-thumb {
-        background-color: var(--red-color);
-        border-radius: 10px;
-    }
-
-    .faq-filter::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-
-    .filter-btn {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        background-color: #f0f0f0;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-        background-color: var(--red-color);
-        color: white;
-    }
-
-    .faq-main-block {
-        display: flex;
-        gap: 40px;
-        justify-content: space-between;
-    }
-
-    .right-block {
-        width: 28%;
-    }
-
-    @media screen and (max-width: 1130px) {
-        .faq-page-section .faq-main-block {
-            flex-direction: column;
-        }
-
-        .faq-page-section .part-block {
-            width: 100%;
-        }
-
-        .faq-page-section .right-block {
-            width: 100%;
-        }
-    }
-</style>
-
-<script>
-    document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            const category = button.dataset.category;
-
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                if (category === 'all' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-</script>
 
 <?php include 'includes/footer-map.php'; ?>
 <?php include 'includes/footer.php'; ?>

@@ -315,7 +315,6 @@
                     </div>
                     <div class="more-articles-wrapper swiper">
                         <div class="more-articles-container swiper-wrapper">
-                            <!-- Карточка 1 -->
                             <div class="more-articles-card swiper-slide">
                                 <div class="card-image">
                                     <img src="/assets/images/photos/article-image.png" alt="Article Image" />
@@ -327,7 +326,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Карточка 2 -->
                             <div class="more-articles-card swiper-slide">
                                 <div class="card-image">
                                     <img src="/assets/images/photos/article-image.png" alt="Article Image" />
@@ -362,8 +360,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="position: relative" class="swiper-pagination"></div>
                     </div>
+                    <div style="position: relative" class="swiper-pagination"></div>
                 </div>
             </div>
             <div class="right-block">

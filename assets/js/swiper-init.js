@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const initComplexSwiper = () => {
     if (window.innerWidth < 768 && !complexSwiper) {
       complexSwiper = new Swiper(".swiper-container-complex", {
-        slidesPerView: 1,
+        slidesPerView: 1.2,
         spaceBetween: 20,
         pagination: {
           el: ".swiper-pagination",
@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         breakpoints: {
           0: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             spaceBetween: 10,
           },
           578: {
-            slidesPerView: 2,
+            slidesPerView: 2.2,
             spaceBetween: 20,
           },
         },
@@ -57,39 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Инициализация Doctors Swiper
-  const initSwiperDoctors = () => {
-    if (!doctorsSwiper) {
-      doctorsSwiper = new Swiper(".swiper-container-doctors", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        navigation: {
-          nextEl: ".next-button-doctors",
-          prevEl: ".prev-button-doctors",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          480: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-          640: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-          1280: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    }
-  };
-
   // Инициализация Banner Swiper
   const initBannerSwiper = () => {
     if (window.innerWidth > 0) {
@@ -97,21 +64,24 @@ document.addEventListener("DOMContentLoaded", function () {
         bannerSwiper = new Swiper(".swiper-container-banner", {
           slidesPerView: 4,
           spaceBetween: 20,
+          pagination: {
+            el: ".swiper-pagination-banner",
+          },
           breakpoints: {
             1024: {
               slidesPerView: 4,
               spaceBetween: 40,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 3.2,
               spaceBetween: 30,
             },
             640: {
-              slidesPerView: 2,
+              slidesPerView: 2.2,
               spaceBetween: 20,
             },
             320: {
-              slidesPerView: 1,
+              slidesPerView: 1.2,
               spaceBetween: 10,
             },
           },
@@ -194,8 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 1010) {
       if (!methodsSwiper) {
         methodsSwiper = new Swiper(".methods-slider", {
-          slidesPerView: "auto",
-          spaceBetween: 20,
+          slidesPerView: 1.2,
+          spaceBetween: 30,
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -217,6 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
         servicesSwiper = new Swiper(".swiper-container-services", {
           slidesPerView: 4,
           spaceBetween: 20,
+          pagination: {
+            el: ".swiper-pagination",
+          },
+
           loop: false,
           breakpoints: {
             320: {
@@ -254,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!reviewsSwiper) {
         reviewsSwiper = new Swiper(".reviews-swiper", {
           loop: false,
-          slidesPerView: 1,
+          slidesPerView: 1.2,
           spaceBetween: 20,
           pagination: {
             el: ".swiper-pagination",
@@ -266,13 +240,13 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           breakpoints: {
             640: {
-              slidesPerView: 1,
+              slidesPerView: 1.2,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 2.2,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 3.3,
             },
           },
         });
@@ -322,6 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
             prevEl: ".prev-button-advantages",
           },
           slidesPerView: 3,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
           spaceBetween: 20,
           breakpoints: {
             1024: {
@@ -329,15 +307,11 @@ document.addEventListener("DOMContentLoaded", function () {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 2.2,
               spaceBetween: 15,
-              pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-              },
             },
             320: {
-              slidesPerView: 1,
+              slidesPerView: 1.2,
               spaceBetween: 10,
             },
           },
@@ -352,11 +326,14 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Инициализация Accordion
+  // Функция для обработки кликов на аккордеон
   const handleAccordionClick = function () {
     const accordionIco = this.querySelector(".accordion-ico img");
     document.querySelectorAll(".accordion-header").forEach((otherHeader) => {
       if (otherHeader !== this) {
-        const otherDesc = otherHeader.closest(".slider-content")?.querySelector(".slider-desc");
+        const otherDesc = otherHeader
+          .closest(".slider-content")
+          ?.querySelector(".slider-desc");
         if (otherDesc) {
           otherDesc.classList.remove("open");
         }
@@ -380,6 +357,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  document.querySelectorAll(".accordion-header").forEach((header) => {
+    header.addEventListener("click", handleAccordionClick);
+  });
+
+  const firstAccordionHeader = document.querySelector(".accordion-header");
+  if (firstAccordionHeader) {
+    const firstSliderContent = firstAccordionHeader.closest(".slider-content");
+    if (firstSliderContent) {
+      const firstDesc = firstSliderContent.querySelector(".slider-desc");
+      const firstIco = firstAccordionHeader.querySelector(".accordion-ico img");
+
+      if (firstDesc) {
+        firstDesc.classList.add("open");
+      }
+      if (firstIco) {
+        firstIco.classList.add("active");
+      }
+    }
+  }
   const initAccordion = () => {
     const accordionHeaders = document.querySelectorAll(".accordion-header");
     if (!accordionHeaders.length) return;
@@ -390,7 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Инициализация всех слайдеров
   const initializeAll = () => {
     observeElement(".swiper-container-banner", initBannerSwiper);
     observeElement(".swiper-container-stock", initStockSwiper);
@@ -433,78 +428,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     observer.observe(element);
   };
-
-  // Инициализация Gallery Swiper
-  const swiperGallery = document.querySelector(".swiper-gallery");
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  const gallerySwiper = new Swiper(".swiper-gallery", {
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    spaceBetween: 50,
-    pagination: {
-      el: ".swiper-pagination.photo",
-      clickable: true,
-    },
-  });
-
-  if (isMobile) {
-    setTimeout(() => {
-      if (swiperGallery) {
-        swiperGallery.style.display = "contents";
-      }
-    }, 100);
-  }
-
-  window.addEventListener("resize", () => {
-    const isMobileNow = window.matchMedia("(max-width: 768px)").matches;
-    if (swiperGallery) {
-      if (isMobileNow) {
-        swiperGallery.style.display = "contents";
-      } else {
-        swiperGallery.style.display = "";
-      }
-    }
-  });
-
-  // Инициализация Fancybox
-  Fancybox.bind('[data-fancybox="licenses-gallery"]', {
-    animated: true,
-    showClass: false,
-    hideClass: false,
-  });
-
-  // Фильтрация слайдов
-  function filterSlides(target) {
-    const slides = document.querySelectorAll(".swiper-slide.photo");
-    if (!slides || slides.length === 0) return;
-
-    slides.forEach((slide) => {
-      if (target === "all" || slide.dataset.target === target) {
-        slide.style.display = "block";
-      } else {
-        slide.style.display = "none";
-      }
-    });
-
-    if (gallerySwiper && typeof gallerySwiper.update === "function") {
-      gallerySwiper.update();
-    }
-  }
-
-  const tags = document.querySelectorAll(".swiper-tag");
-  tags.forEach((tag) => {
-    tag.addEventListener("click", () => {
-      tags.forEach((t) => t.classList.remove("active"));
-      tag.classList.add("active");
-      const target = tag.dataset.target || "all";
-      filterSlides(target);
-    });
-  });
-
-  filterSlides("all");
 
   // Инициализация Licenses Swiper
   const licenseSwiper = new Swiper(".swiper-licenses", {

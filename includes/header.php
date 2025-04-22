@@ -26,67 +26,71 @@
 </head>
 
 <body>
-  <section class="header-section container">
-    <header class="header">
-      <a href="/" class="logo">
-        <div class="logo-icon">
-          <img src="assets/images/photos/ico.png" alt="Логотип клиники 'Призма'">
-        </div>
-        <div>
-          <div class="logo-text">Призма</div>
-          <div class="logo-subtext">Наркология</div>
-        </div>
-      </a>
+  <section class="header-section">
+    <div class="container">
+      <header class="header">
+        <a href="/" class="logo">
+          <div class="logo-icon">
+            <img src="assets/images/photos/ico.png" alt="Логотип клиники 'Призма'">
+          </div>
+          <div>
+            <div class="logo-text">Призма</div>
+            <div class="logo-subtext">Наркология</div>
+          </div>
+        </a>
 
-      <div class="center-info">
-        <div class="address">
-          <p>Адрес call-центра:</p>
-          <img src="assets/images/icons/locPin.png" alt="Местоположение">
-          <span>г. Тула, ул. Ленина, д.2</span>
-        </div>
-      </div>
-      <div class="center-info">
-        <div class="phone">
-          <p>Круглосуточный номер</p>
-          <img src="assets/images/icons/phone.png" alt="Телефон">
-          <a href="tel:8 (888) 999-99-99">8 (888) 999-99-99</a>
-        </div>
-      </div>
-
-      <div class="actions">
-        <div class="search-container">
-          <div class="search-icon" id="searchIcon">
-            <img src="/assets/images/icons/search.png" alt="Поиск" />
+        <div class="center-info">
+          <div class="address">
+            <p>Адрес call-центра:</p>
+            <img src="assets/images/icons/locPin.png" alt="Местоположение">
+            <span>г. Тула, ул. Ленина, д.2</span>
           </div>
         </div>
-        <button class="btn_consultation btn-secondary ask-doctor">Задать вопрос врачу</button>
-        <button class="btn btn-primary call-doctor">Вызвать врача</button>
-        <a class="telegram-icon" href="tg://resolve?domain=mednarkolog_clinic" aria-label="Telegram">
-          <img src="/assets/images/icons/telegram.png" alt="Telegram">
-        </a>
-        <a class="phone-icon" href="tel:8 (888) 999-99-99" aria-label="Позвонить">
-          <img src="/assets/images/icons/phone-icon.png" alt="Телефон">
-        </a>
-        <div class="menu-icon" id="menuIcon"><span></span></div>
-      </div>
+        <div class="center-info">
+          <div class="phone">
+            <p>Круглосуточный номер</p>
+            <img src="assets/images/icons/phone.png" alt="Телефон">
+            <a href="tel:8 (888) 999-99-99">8 (888) 999-99-99</a>
+          </div>
+        </div>
 
-      <div class="fullscreen-search-menu" id="searchMenu">
-        <div class="search-header">
-          <input type="text" id="searchInput" placeholder="Введите запрос..." />
-          <button class="btn-clear" id="clearSearch">Очистить</button>
+        <div class="actions">
+          <div class="search-container">
+            <div class="search-icon" id="searchIcon">
+              <img src="/assets/images/icons/search.png" alt="Поиск" />
+            </div>
+          </div>
+          <button class="btn_consultation btn-secondary ask-doctor">Задать вопрос врачу</button>
+          <button class="btn btn-primary call-doctor">Вызвать врача</button>
+          <a class="telegram-icon" href="tg://resolve?domain=mednarkolog_clinic" aria-label="Telegram">
+            <img src="/assets/images/icons/telegram.png" alt="Telegram">
+          </a>
+          <a class="phone-icon" href="tel:8 (888) 999-99-99" aria-label="Позвонить">
+            <img src="/assets/images/icons/phone-icon.png" alt="Телефон">
+          </a>
+          <div class="menu-icon" id="menuIcon"><span></span></div>
         </div>
-        <div class="search-results" id="searchResults">
+
+        <div class="fullscreen-search-menu" id="searchMenu">
+          <div class="search-header">
+            <input type="text" id="searchInput" placeholder="Введите запрос..." />
+            <button class="btn-clear" id="clearSearch">Очистить</button>
+          </div>
+          <div class="search-results" id="searchResults">
+          </div>
+          <div class="close-icon" id="closeSearch">
+            Закрыть
+          </div>
         </div>
-        <div class="close-icon" id="closeSearch">
-          Закрыть
-        </div>
-      </div>
-    </header>
+      </header>
+    </div>
+
 
 
     <div class="container">
       <div class="menu-container" id="menuContainer">
         <div class="menu-columns">
+          <!-- Основное меню -->
           <div class="menu-column main-menu">
             <ul>
               <li class="menu-item" data-target="alcohol-treatment">
@@ -105,17 +109,35 @@
               <li><a href="#">Контакты</a></li>
               <li><a href="#">Карта сайта</a></li>
             </ul>
+            <div class="socials-dynimic mobile">
+              <p><b>Соц. сети:</b></p>
+              <div class="socials-dynimic-icons">
+                <a href="#" aria-label="Telegram">
+                  <img src="/assets/images/icons/tgicon.png" alt="Telegram">
+                </a>
+                <a href="#" aria-label="ВКонтакте">
+                  <img src="/assets/images/icons/vk.png" alt="ВКонтакте">
+                </a>
+                <a href="#" aria-label="Одноклассники">
+                  <img src="/assets/images/icons/odnoklassniki.png" alt="Одноклассники">
+                </a>
+              </div>
+              <button class="eye-dynimic">
+                <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
+                <span>Версия для слабовидящих</span>
+              </button>
+            </div>
             <div class="footer-info">
               <p><b>Режим работы:</b> Пн-Пт 9:00 - 18:00</p>
               <p><b>Медицинская лицензия:</b> №XXXXXX</p>
             </div>
           </div>
-          <div class="dynamic-content">
-            <div class="menu-column" id="dynamicContent">
-              <div class="dynamic-content-wrap">
-                <div id="dynamicTitle">Выберите раздел</div>
-                <ul id="dynamicList"></ul>
-              </div>
+
+          <!-- Динамический контент -->
+          <div class="menu-column dynamic-content">
+            <div class="dynamic-content-wrap">
+              <div id="dynamicTitle">Выберите раздел</div>
+              <ul id="dynamicList"></ul>
             </div>
             <div class="footer-dynamic-block">
               <div class="mobile-part">
@@ -137,12 +159,10 @@
                 </div>
               </div>
 
+              <!-- Социальные сети -->
               <div class="socials-dynimic">
                 <p><b>Соц. сети:</b></p>
                 <div class="socials-dynimic-icons">
-                  <a href="#" aria-label="WhatsApp">
-                    <img src="/assets/images/icons/whats.png" alt="WhatsApp">
-                  </a>
                   <a href="#" aria-label="Telegram">
                     <img src="/assets/images/icons/tgicon.png" alt="Telegram">
                   </a>
@@ -163,6 +183,7 @@
 
 
 
+          <!-- Акции -->
           <div class="menu-column promotions">
             <div class="promotion-item color">
               <div class="header-tag">Скидка</div>
@@ -184,6 +205,5 @@
       </div>
     </div>
   </section>
-
 
   <main>

@@ -22,7 +22,7 @@
                     </div>
                   </div>
                   <div class="slider-desc">
-                    Мы учитываем особенности каждого пациента и разрабатываем персонализированные программы лечения.
+                    Мы учитываем особенности каждого пациента.
                   </div>
                 </div>
 
@@ -66,7 +66,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination advantages" style="position: relative"></div>
+          <div class="swiper-pagination" style="position: relative; padding-top: 20px"></div>
         </div>
       </div>
     </div>

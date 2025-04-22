@@ -13,7 +13,6 @@
       <div class="image-wrapper">
         <picture>
           <source srcset="assets/images/photos/corridor.webp" type="image/webp">
-          <source srcset="assets/images/photos/corridor.png" type="image/png">
           <img src="assets/images/photos/corridor.png" alt="Коридор клиники" class="content-image">
         </picture>
       </div>
@@ -68,22 +67,26 @@
           <div id="map"></div>
           <div class="map-description">
             <span>Выезжаем по всей Тульской области</span>
-            <img src="assets/images/icons/locPin.png" alt="Местоположение">
+            <img src="assets/images/icons/newMapPin.png" alt="Местоположение">
           </div>
         </div>
         <div class="info-blocks">
           <div class="info-block">
             <div class="info-text">
               <img src="assets/images/icons/timePin.png" alt="Время">
-              <p class="time">30 минут</p>
-              <p class="description">время приезда</p>
+              <div class="time-line">
+                <p class="time">30 минут</p>
+                <p class="description">время приезда</p>
+              </div>
             </div>
           </div>
           <div class="info-block">
             <div class="info-text">
               <img src="assets/images/icons/carPin.png" alt="Скорая помощь">
-              <p class="brigade-count">15 бригад</p>
-              <p class="description">сейчас дежурит</p>
+              <div class="time-line">
+                <p class="brigade-count">15 бригад</p>
+                <p class="description">сейчас дежурит</p>
+              </div>
             </div>
           </div>
         </div>
@@ -186,6 +189,7 @@
               flex-direction: column;
               height: 100%;
               justify-content: space-between;
+              min-width: max-content
               ">
               <div class="slide-title">
                 Другие услуги клиники
@@ -196,6 +200,7 @@
             </div>
           </div>
         </div>
+        <div style="position: relative;" class="swiper-pagination"></div>
       </div>
     </div>
   </div>
@@ -590,7 +595,7 @@
       </div>
       <div class="swiper methods-slider">
         <div class="swiper-wrapper">
-          <div class="swiper-slide method-item">
+          <div class="swiper-slide method-item right-line">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
@@ -606,7 +611,16 @@
             <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
               клиентов, их родственников, родных и близких.</p>
           </div>
-          <div class="swiper-slide method-item">
+          <div class="swiper-slide method-item left-line">
+            <div class="upper-block">
+              <img src="/assets/images/icons/first.png" alt="Метод">
+              <div>Медикаментозная терапия</div>
+            </div>
+            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+              клиентов, их родственников, родных и близких.</p>
+          </div>
+          <div class="method-line"></div>
+          <div class="swiper-slide method-item right-line">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
@@ -622,15 +636,7 @@
             <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
               клиентов, их родственников, родных и близких.</p>
           </div>
-          <div class="swiper-slide method-item">
-            <div class="upper-block">
-              <img src="/assets/images/icons/first.png" alt="Метод">
-              <div>Медикаментозная терапия</div>
-            </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
-          </div>
-          <div class="swiper-slide method-item">
+          <div class="swiper-slide method-item left-line">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
@@ -639,13 +645,19 @@
               клиентов, их родственников, родных и близких.</p>
           </div>
         </div>
+        <div class="swiper-pagination" style="position: relative; padding-top: 20px"></div>
+
       </div>
-      <div class="swiper-pagination" style="position: relative"></div>
     </div>
 
   </div>
 </section>
 
+<style>
+
+
+  
+</style>
 
 <!-- Преимущества -->
 <?php include 'includes/advantages.php'; ?>
@@ -667,7 +679,7 @@
               методикам лечения и заботе о пациентах, мы смогли достичь значительных результатов.
             </p>
           </div>
-          <button class="more-button">Подробнее о клинике</button>
+          <button class="more-button"><a href="/about">Подробнее о клинике</a></button>
         </div>
 
         <div class="right-column">

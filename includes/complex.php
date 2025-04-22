@@ -6,12 +6,12 @@
           <div class="block-title">Комплексный подход клиники <b>«Призма»</b></div>
           <div class="prisma-with-buttons">
             <img src="/assets/images/photos/prisma-complex.png" />
-            <img id="prisma-first" src="/assets/images/icons/prisma-first.png" />
-            <img id="prisma-second" src="/assets/images/icons/prisma-second.png" />
-            <img id="prisma-third" src="/assets/images/icons/prisma-third.png" />
-            <img id="prisma-fourth" src="/assets/images/icons/prisma-fourth.png" />
-            <img id="prisma-fifth" src="/assets/images/icons/prisma-fifth.png" />
-            <img id="prisma-sixth" src="/assets/images/icons/prisma-sixth.png" />
+            <img id="prisma-1" src="/assets/images/icons/prisma-first.png" />
+            <img id="prisma-2" src="/assets/images/icons/prisma-second.png" />
+            <img id="prisma-3" src="/assets/images/icons/prisma-third.png" />
+            <img id="prisma-4" src="/assets/images/icons/prisma-fourth.png" />
+            <img id="prisma-5" src="/assets/images/icons/prisma-fifth.png" />
+            <img id="prisma-6" src="/assets/images/icons/prisma-sixth.png" />
           </div>
         </div>
 

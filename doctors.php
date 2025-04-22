@@ -30,9 +30,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Иванов Иван Иванович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Заведующий отделением наркологии. Специалист по лечению зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor.png" alt="Петров Петр Петрович">
                     </div>
@@ -49,9 +49,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
@@ -68,9 +68,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
@@ -87,29 +87,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
-                    <div class="doctor-image">
-                        <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
-                    </div>
-                    <button class="button">Задать вопрос врачу</button>
-                </div>
-
-
-                <div class="doctor-card">
-                    <div class="placeholders">
-                        <div class="placeholder-item">
-                            Врач
-                        </div>
-                        <div class="placeholder-item">
-                            Стаж: 10 лет
-                        </div>
-                    </div>
-                    <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
-                        Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
@@ -127,9 +107,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
@@ -147,9 +127,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
@@ -167,9 +147,9 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </div>
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
@@ -187,9 +167,29 @@
                         </div>
                     </div>
                     <div class="doctor-name">Петров Петр Петрович</div>
-                    <div class="doctor-description">
+                    <a href="/doctor-detail" class="doctor-description">
                         Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
+                    </a>
+                    <div class="doctor-image">
+                        <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>
+                    <button class="button">Задать вопрос врачу</button>
+                </div>
+
+
+                <div class="doctor-card">
+                    <div class="placeholders">
+                        <div class="placeholder-item">
+                            Врач
+                        </div>
+                        <div class="placeholder-item">
+                            Стаж: 10 лет
+                        </div>
+                    </div>
+                    <div class="doctor-name">Петров Петр Петрович</div>
+                    <a href="/doctor-detail" class="doctor-description">
+                        Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
+                    </a>
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doctor2.png" alt="Петров Петр Петрович">
                     </div>

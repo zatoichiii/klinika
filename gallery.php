@@ -40,106 +40,6 @@ $galleryItems = [
 echo '<script>const galleryData = ' . json_encode($galleryItems) . ';</script>';
 ?>
 
-<style>
-    .gallery-upper-block {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 60px;
-        padding-top: 40px;
-    }
-
-    .gallery-title {
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 60px;
-
-    }
-
-    .gallery-filter {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .filter-btn {
-        padding: 10px 15px;
-        border: none;
-        background-color: #f0f0f0;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s, color 0.3s;
-        font-size: 14px;
-    }
-
-    .filter-btn.active {
-        background-color: var(--red-color);
-        color: white;
-    }
-
-    .gallery-wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
-        margin-bottom: 20px;
-    }
-
-    .gallery-item {
-        opacity: 0;
-        transform: scale(0.9);
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    }
-
-    .gallery-item.visible {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 200px;
-        border-radius: 10px;
-        object-fit: cover;
-        display: block;
-    }
-
-    .gallery-item:hover {
-        transform: scale(1.05);
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        padding-bottom: 40px;
-    }
-
-    .pagination button {
-        padding: 10px 15px;
-        border: none;
-        background-color: var(--red-color);
-        color: white;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-
-    .pagination button.active {
-        background-color: rgb(156 100 130);
-    }
-
-    @media screen and (max-width: 768px) {
-        .gallery-upper-block {
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .gallery-title {
-            font-size: 32px;
-            line-height: 1.2;
-        }
-    }
-</style>
 
 <script>
     let currentPage = 1;
@@ -233,7 +133,6 @@ echo '<script>const galleryData = ' . json_encode($galleryItems) . ';</script>';
             Fancybox.bind('[data-fancybox="gallery"]');
         }
 
-        // Первичная загрузка
         filterGallery('all');
     });
 </script>

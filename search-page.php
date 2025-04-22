@@ -83,21 +83,19 @@ $mydata = [
             return;
         }
 
-        let currentPage = 1; // Текущая страница
-        const itemsPerPage = 8; // Количество элементов на странице
-        let filteredData = []; // Глобальная переменная для хранения отфильтрованных данных
+        let currentPage = 1; 
+        const itemsPerPage = 8; 
+        let filteredData = []; 
 
-        // Функция для отображения результатов
         function displayResults(results, page) {
-            searchResultsPage.innerHTML = ""; // Очищаем предыдущие результаты
+            searchResultsPage.innerHTML = ""; 
 
             if (results.length === 0) {
                 searchResultsPage.innerHTML = "<div class='item'>Ничего не найдено</div>";
-                paginationContainer.innerHTML = ""; // Убираем пагинацию
+                paginationContainer.innerHTML = ""; 
                 return;
             }
 
-            // Разбиваем результаты на страницы
             const startIndex = (page - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
             const paginatedResults = results.slice(startIndex, endIndex);
@@ -121,11 +119,11 @@ $mydata = [
         }
 
         function updatePagination(totalItems, currentPage) {
-            const totalPages = Math.ceil(totalItems / itemsPerPage); // Общее количество страниц
-            paginationContainer.innerHTML = ""; // Очищаем предыдущую пагинацию
+            const totalPages = Math.ceil(totalItems / itemsPerPage); 
+            paginationContainer.innerHTML = "";
 
             if (totalPages <= 1) {
-                return; // Если страница только одна, пагинация не нужна
+                return; 
             }
 
             for (let i = 1; i <= totalPages; i++) {
@@ -134,27 +132,25 @@ $mydata = [
                 button.classList.toggle("active", i === currentPage);
 
                 button.addEventListener("click", () => {
-                    currentPage = i; // Обновляем текущую страницу
-                    displayResults(filteredData, currentPage); // Показываем результаты для новой страницы
+                    currentPage = i; 
+                    displayResults(filteredData, currentPage); 
                 });
 
                 paginationContainer.appendChild(button);
             }
         }
 
-        // Функция для поиска
         function performSearch(query) {
             const lowerCaseQuery = query.toLowerCase();
 
-            // Фильтруем данные
             filteredData = mydata.filter(item => {
                 const title = item.title.trim().toLowerCase();
                 const category = item.category.trim().toLowerCase();
                 return title.includes(lowerCaseQuery) || category.includes(lowerCaseQuery);
             });
 
-            currentPage = 1; // Сбрасываем текущую страницу при новом поиске
-            displayResults(filteredData, currentPage); // Отображаем результаты
+            currentPage = 1; 
+            displayResults(filteredData, currentPage); 
         }
 
         // Обработчик ввода текста
@@ -164,8 +160,8 @@ $mydata = [
             if (query.length > 0) {
                 performSearch(query);
             } else {
-                searchResultsPage.innerHTML = ""; // Очищаем результаты, если поле пустое
-                paginationContainer.innerHTML = ""; // Убираем пагинацию
+                searchResultsPage.innerHTML = ""; 
+                paginationContainer.innerHTML = ""; 
             }
         });
     });

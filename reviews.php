@@ -133,45 +133,6 @@
 </div>
 </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const tags = document.querySelectorAll(".section-reviews .data-block .tag");
-        const reviews = document.querySelectorAll(".section-reviews .review-item");
-
-        if (tags.length > 0) {
-            tags.forEach(tag => {
-                tag.addEventListener("click", () => {
-                    const filter = tag.dataset.filter;
-
-                    tags.forEach(t => t.classList.remove("active"));
-                    tag.classList.add("active");
-
-                    reviews.forEach(review => {
-                        if (filter === "all" || review.dataset.category === filter) {
-                            review.style.display = "block";
-                        } else {
-                            review.style.display = "none";
-                        }
-                    });
-                });
-            });
-        }
-
-        const showMoreButtons = document.querySelectorAll(".section-reviews .showMoreButton");
-        if (showMoreButtons.length > 0) {
-            showMoreButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    const reviewBody = button.previousElementSibling;
-                    reviewBody.classList.toggle("expanded");
-                    button.textContent = reviewBody.classList.contains("expanded") ? "Скрыть" : "Подробнее";
-                });
-            });
-        }
-    });
-</script>
-<style>
-
-</style>
 
 <?php include 'includes/footer-map.php'; ?>
 <?php include 'includes/footer.php'; ?>
