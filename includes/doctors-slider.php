@@ -1,104 +1,132 @@
 <section class="doctors-section">
   <div class="container container-swiper">
     <div class="doctors-wrapper">
-        <div class="upper-block">
-          <div class="block-title">Профессиональные врачи наркологи</div>
-          <div class="swiper-main-buttons-doctors">
-            <button class="prev-button-doctors">
-              <img src="./assets/images/icons/arrow-right.png" alt="Предыдущий">
-            </button>
-            <button class="next-button-doctors">
-              <img src="./assets/images/icons/arrow-right.png" alt="Следующий">
-            </button>
-          </div>
+      <div class="upper-block">
+        <div class="block-title">Профессиональные врачи наркологи</div>
+        <div class="swiper-main-buttons-doctors">
+          <button class="swiper-button-prev doctors-item"></button>
+          <button class="swiper-button-next doctors-item"></button>
         </div>
+      </div>
       <div class="swiper-container-doctors">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
+              <!-- Ссылка, обертывающая всю карточку -->
+              <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
+                <div class="placeholders">
+                  <div class="placeholder-item">
+                    <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
+                    Главный врач
+                  </div>
+                  <div class="placeholder-item">Стаж: 15 лет</div>
                 </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <a href="/doctor-detail" class="doctor-description">Главный врач, заведующий отделением наркологии</a>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
+                <div class="doctor-name">Иванов Иван Иванович</div>
+                <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
+                <!-- Изображение врача -->
+                <div class="doctor-image">
+                  <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <a href="/doctor-detail" class="doctor-description">Главный врач, заведующий отделением наркологии</a>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
-              <button class="btn button">Задать вопрос врачу</button>
-            </div>
-          </div>
+              </a>
 
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
-                </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <a href="/doctor-detail" class="doctor-description">Главный врач, заведующий отделением наркологии</a>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
+              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>
+          <div class="swiper-slide">
+            <div class="doctor-card">
+              <!-- Ссылка, обертывающая всю карточку -->
+              <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
+                <div class="placeholders">
+                  <div class="placeholder-item">
+                    <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
+                    Главный врач
+                  </div>
+                  <div class="placeholder-item">Стаж: 15 лет</div>
+                </div>
+                <div class="doctor-name">Иванов Иван Иванович</div>
+                <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-          <div class="swiper-slide">
-            <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
+                <!-- Изображение врача -->
+                <div class="doctor-image">
+                  <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <a href="/doctor-detail" class="doctor-description">Главный врач, заведующий отделением наркологии</a>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
+              </a>
+
+              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="doctor-card">
-              <div class="placeholders">
-                <div class="placeholder-item">
-                  <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
-                  Главный врач
+              <!-- Ссылка, обертывающая всю карточку -->
+              <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
+                <div class="placeholders">
+                  <div class="placeholder-item">
+                    <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
+                    Главный врач
+                  </div>
+                  <div class="placeholder-item">Стаж: 15 лет</div>
                 </div>
-                <div class="placeholder-item">Стаж: 15 лет</div>
-              </div>
-              <div class="doctor-name">Иванов Иван Иванович</div>
-              <a href="/doctor-detail" class="doctor-description">Главный врач, заведующий отделением наркологии</a>
-              <div class="doctor-image">
-                <img src="/assets/images/photos/doctor.png" alt="Фото врача">
-              </div>
+                <div class="doctor-name">Иванов Иван Иванович</div>
+                <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
+
+                <!-- Изображение врача -->
+                <div class="doctor-image">
+                  <img src="/assets/images/photos/doctor.png" alt="Фото врача">
+                </div>
+              </a>
+
+              <!-- Кнопка -->
+              <button class="btn button">Задать вопрос врачу</button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="doctor-card">
+              <!-- Ссылка, обертывающая всю карточку -->
+              <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
+                <div class="placeholders">
+                  <div class="placeholder-item">
+                    <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
+                    Главный врач
+                  </div>
+                  <div class="placeholder-item">Стаж: 15 лет</div>
+                </div>
+                <div class="doctor-name">Иванов Иван Иванович</div>
+                <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
+
+                <!-- Изображение врача -->
+                <div class="doctor-image">
+                  <img src="/assets/images/photos/doctor.png" alt="Фото врача">
+                </div>
+              </a>
+
+              <!-- Кнопка -->
+              <button class="btn button">Задать вопрос врачу</button>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="doctor-card">
+              <!-- Ссылка, обертывающая всю карточку -->
+              <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
+                <div class="placeholders">
+                  <div class="placeholder-item">
+                    <img src="/assets/images/icons/main-ico.png" alt="Главный врач">
+                    Главный врач
+                  </div>
+                  <div class="placeholder-item">Стаж: 15 лет</div>
+                </div>
+                <div class="doctor-name">Иванов Иван Иванович</div>
+                <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
+
+                <!-- Изображение врача -->
+                <div class="doctor-image">
+                  <img src="/assets/images/photos/doctor.png" alt="Фото врача">
+                </div>
+              </a>
+
+              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>

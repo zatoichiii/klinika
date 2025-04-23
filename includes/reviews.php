@@ -4,11 +4,9 @@
         <div class="upper-block">
           <div class="block-title">Отзывы</div>
           <div class="swiper-arrows">
-            <div class="swiper-button-prev-reviews-swiper">
-              <img class="button-left" src="./assets/images/icons/arrow-right.png">
+            <div class="swiper-button-prev reviews-swiper-btn">
             </div>
-            <div class="swiper-button-next-reviews-swiper">
-              <img class="button-rigjt" src="./assets/images/icons/arrow-right.png">
+            <div class="swiper-button-next reviews-swiper-btn">
             </div>
           </div>
         </div>

@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   const swiperClinic = new Swiper(".swiper-clinic", {
     spaceBetween: 20,
-    slidesPerView: 1.2,
+    slidesPerView: 1,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next.own",
+      prevEl: ".swiper-button-prev.own",
     },
     pagination: {
       el: ".pagination-clinic",
@@ -72,10 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swiperRoom = new Swiper(".swiper-room", {
     spaceBetween: 20,
-    slidesPerView: 1.2,
+    slidesPerView: 1,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next.own",
+      prevEl: ".swiper-button-prev.own",
     },
     pagination: {
       el: ".pagination-room",
@@ -85,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const swiperDoctor = new Swiper(".swiper-doctor", {
     spaceBetween: 20,
-    slidesPerView: 1.2,
+    slidesPerView: 1,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next.own",
+      prevEl: ".swiper-button-prev.own",
     },
     pagination: {
       el: ".pagination-doctor",
@@ -201,8 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesPerView: 1.2,
     spaceBetween: 20,
     navigation: {
-      nextEl: ".swiper-button-next.reviews",
-      prevEl: ".swiper-button-prev.reviews",
+      nextEl: ".swiper-button-next.reviews-swiper-btn",
+      prevEl: ".swiper-button-prev.reviews-swiper-btn",
     },
     pagination: {
       el: ".swiper-pagination.reviews",
@@ -1055,15 +1055,15 @@ document.addEventListener("DOMContentLoaded", () => {
       el: ".swiper-pagination",
     },
     navigation: {
-      nextEl: ".next-button-doctors",
-      prevEl: ".prev-button-doctors",
+      nextEl: ".swiper-button-next.doctors-item",
+      prevEl: ".swiper-button-prev.doctors-item",
     },
     breakpoints: {
       0: { slidesPerView: 1.3, spaceBetween: 10 },
       480: { slidesPerView: 1.2, spaceBetween: 20 },
       640: { slidesPerView: 2.2 },
       1024: { slidesPerView: 3.3 },
-      1280: { slidesPerView: 4.4 },
+      1280: { slidesPerView: 4 },
     },
   });
 
@@ -1175,3 +1175,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const tabs = document.querySelectorAll('.tabs');
+if (tabs.length) {
+  tabs.forEach((elem) => {
+    const tabsList = elem.querySelectorAll('.tab');
+    const contentList = elem.querySelectorAll('.tab-content');
+    const activeTab = elem.querySelector('.tab-active-tab');
+    const tabWrapper = elem.querySelector('.tab-wrapper');
+    if (tabsList.length && contentList.length) {
+      for (let i = 0; i < tabsList.length; i++) {
+        tabsList[i].addEventListener('click', () => {
+          if (!item.classList.contains('active')); {
+            contentList.forEach((content) => {
+              content.classList.remove('active');
+            })
+            tabsList.forEach((content) => {
+              content.classList.remove('active');
+            })
+            tabsList[i].classList.add('active');
+            contentList[i].classList.add('active');
+            if (activeTab && tabWrapper) {
+                textContent = tabsList[i].textContent;
+                tabWrapper.classList.remove('active');
+            }
+
+          }
+        })
+        if (activeTab && tabWrapper) {
+          activeTab.textContent = tabsList[0].textContent;
+        
+          tabsList[0].classList.add('tab-hide');
+          activeTab.addEventListener('click', () => {
+            if (!tabWrapper.classList.contains('active')) {
+              tabWrapper.classList.add('active');
+            }
+        }
+      )
+        }
+        if (elem.querySelector('.tab-toggle')) {
+
+        }
+      }
+      tabsList[0].click();
+      }
+
+    }
+  )
+}

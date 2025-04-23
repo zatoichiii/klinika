@@ -19,7 +19,7 @@
                 <img src="/assets/images/photos/galleryitem.png" alt="Врач">
               </div>
             </div>
-            <div class="swiper-pagination pagination-doctor"></div>
+            <div  class="swiper-pagination pagination-doctor"></div>
           </div>
 
           <div class="swiper swiper-clinic">
@@ -31,7 +31,7 @@
                 <img src="/assets/images/photos/image-service.png" alt="Клиника">
               </div>
             </div>
-            <div class="swiper-pagination pagination-clinic"></div>
+            <div  class="swiper-pagination pagination-clinic"></div>
           </div>
 
           <div class="swiper swiper-room">

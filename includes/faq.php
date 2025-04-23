@@ -3,7 +3,7 @@
     <div class="faq-wrapper">
       <div class="left-side">
         <div class="block-title">Часто задаваемые вопросы</div>
-        <a href="/faq" class="button">Задать вопрос врачу</a>
+        <a href="/faq" class="button">Задать вопрос</a>
       </div>
       <div class="right-side">
         <div class="accordion">

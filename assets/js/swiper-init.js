@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next-branches-swiper",
-      prevEl: ".swiper-button-prev-branches-swiper",
+      nextEl: ".swiper-button-next.branches-button",
+      prevEl: ".swiper-button-prev.branches-button",
     },
     breakpoints: {
       768: {
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Инициализация Stock Swiper
   const initStockSwiper = () => {
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1320) {
       if (!stockSwiper) {
         stockSwiper = new Swiper(".swiper-container-stock", {
           slidesPerView: 1.3,
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
               slidesPerView: 2.3,
             },
             778: {
-              slidesPerView: 3.3,
+              slidesPerView: 3,
             },
             1024: {
               slidesPerView: 4,
@@ -146,9 +146,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > 768) {
       if (!stagesSwiper) {
         stagesSwiper = new Swiper(".stages-swiper", {
+          autoHeight: true,
           navigation: {
-            nextEl: ".next-button-stages",
-            prevEl: ".prev-button-stages",
+            nextEl: ".swiper-button-next.stages",
+            prevEl: ".swiper-button-prev.stages",
           },
           slidesPerView: 1,
           spaceBetween: 20,
@@ -287,8 +288,8 @@ document.addEventListener("DOMContentLoaded", function () {
             clickable: true,
           },
           navigation: {
-            nextEl: ".swiper-button-next-reviews-swiper",
-            prevEl: ".swiper-button-prev-reviews-swiper",
+            nextEl: ".swiper-button-next.reviews-swiper-btn",
+            prevEl: ".swiper-button-prev.reviews-swiper-btn",
           },
           breakpoints: {
             640: {
@@ -298,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
               slidesPerView: 2.2,
             },
             1024: {
-              slidesPerView: 3.3,
+              slidesPerView: 3,
             },
           },
         });
@@ -338,46 +339,49 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   };
+// Инициализация Advantages Swiper
+const initAdvantagesSwiper = () => {
+  if (window.innerWidth > 0) {
+    if (!advantagesSwiper) {
+      advantagesSwiper = new Swiper(".advantages-swiper", {
+        navigation: {
+          nextEl: ".swiper-button-next.advantages",
+          prevEl: ".swiper-button-prev.advantages",
+        },
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          },
+          768: {
+            slidesPerView: 2.2,
+            spaceBetween: 15,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          },
+          320: {
+            slidesPerView: 1.2,
+            spaceBetween: 10,
 
-  // Инициализация Advantages Swiper
-  const initAdvantagesSwiper = () => {
-    if (window.innerWidth > 0) {
-      if (!advantagesSwiper) {
-        advantagesSwiper = new Swiper(".advantages-swiper", {
-          navigation: {
-            nextEl: ".next-button-advantages",
-            prevEl: ".prev-button-advantages",
           },
-          slidesPerView: 3,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          spaceBetween: 20,
-          breakpoints: {
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2.2,
-              spaceBetween: 15,
-            },
-            320: {
-              slidesPerView: 1.2,
-              spaceBetween: 10,
-            },
-          },
-        });
-      }
-    } else {
-      if (advantagesSwiper) {
-        advantagesSwiper.destroy(true, true);
-        advantagesSwiper = null;
-      }
+        },
+      });
     }
-  };
-
+  } else {
+    if (advantagesSwiper) {
+      advantagesSwiper.destroy(true, true);
+      advantagesSwiper = null;
+    }
+  }
+};
   // Инициализация Accordion
   // Функция для обработки кликов на аккордеон
   const handleAccordionClick = function () {
@@ -495,7 +499,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 10,
       },
       768: {
-        slidesPerView: 2.2,
+        slidesPerView: 2,
         spaceBetween: 20,
       },
         }

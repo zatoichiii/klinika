@@ -5,12 +5,10 @@
           <div class="upper-block">
             <div class="block-title">Филиалы клиники</div>
             <div class="swiper-arrows">
-              <div class="swiper-button-prev-branches-swiper">
-                <img class="button-left" src="./assets/images/icons/arrow-right.png" alt="Previous">
-              </div>
-              <div class="swiper-button-next-branches-swiper">
-                <img class="button-right" src="./assets/images/icons/arrow-right.png" alt="Next">
-              </div>
+              <button class="swiper-button-prev branches-button">
+              </button>
+              <button class="swiper-button-next branches-button">
+              </button>
             </div>
           </div>
           <div class="swiper branches-swiper">

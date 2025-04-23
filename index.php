@@ -5,7 +5,7 @@
   <div class="container">
     <div class="banner-wrapper">
       <div class="content">
-        <h1 class="content-title">Наркологическая клиника «Призма»</h1>
+        <h1 class="content-title">Наркологическая клиника <b>«Призма»</b></h1>
         <p class="content-description">Наши специализированные программы лечения алкоголизма предлагают комплексный
           подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные планы реабилитации.</p>
         <a href="#" class="btn button">Бесплатная консультация</a>
@@ -213,7 +213,7 @@
         <div>Прайс-лист клиники «Призма»</div>
       </div>
       <div class="categories">
-        <button class="category-btn" data-category="detox">Вывод из запоя</button>
+        <button class="category-btn active" data-category="detox">Вывод из запоя</button>
         <button class="category-btn" data-category="doctor">Нарколог на дом</button>
         <button class="category-btn" data-category="coding">Кодирование от алкоголизма</button>
         <button class="category-btn" data-category="alcoholism">Лечение алкоголизма</button>
@@ -451,10 +451,8 @@
       <div class="left-side">
         <div class="block-title">Этапы лечения</div>
         <div class="swiper-main-buttons">
-          <button class="prev-button-stages"><img class="button-left"
-              src="./assets/images/icons/arrow-right.png"></button>
-          <button class="next-button-stages"><img class="button-right"
-              src="./assets/images/icons/arrow-right.png"></button>
+          <button class="swiper-button-prev stages"></button>
+          <button class="swiper-button-next stages"></button>
         </div>
       </div>
       <div class="right-side stages">
@@ -646,19 +644,19 @@
       </div>
       <div class="info-blocks">
         <div class="info-item">
-          <span class="number" data-target="10">0</span>
+          <span class="number" data-target="10" data-symbol="+">10</span>
           <p class="text">Лет успешной работы</p>
         </div>
         <div class="info-item">
-          <span class="number" data-target="20">0</span>
+          <span class="number" data-target="20" >20</span>
           <p class="text">Опытных специалистов</p>
         </div>
         <div class="info-item">
-          <span class="number" data-target="50">0</span>
+          <span class="number" data-target="50" data-symbol="+">50</span>
           <p class="text">Методик лечения</p>
         </div>
         <div class="info-item">
-          <span class="number" data-target="250">0</span>
+          <span class="number" data-target="250" data-symbol="+">250</span>
           <p class="text">Здоровых пациентов</p>
         </div>
       </div>
