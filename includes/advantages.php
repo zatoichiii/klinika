@@ -1,15 +1,16 @@
 <section class="advantages-section">
-  <div class="container">
+  <div class="container container-swiper">
     <div class="advantages-wrapper">
-      <div class="left-side">
-        <div class="block-title">Наши преимущества</div>
-        <div class="swiper-main-buttons">
-          <button class="prev-button-advantages"><img class="button-left"
-              src="./assets/images/icons/arrow-right.png"></button>
-          <button class="next-button-advantages"><img class="button-right"
-              src="./assets/images/icons/arrow-right.png"></button>
+        <div class="left-side">
+          <div class="block-title">Наши преимущества</div>
+          <div class="swiper-main-buttons">
+            <button class="prev-button-advantages"><img class="button-left"
+                src="./assets/images/icons/arrow-right.png"></button>
+            <button class="next-button-advantages"><img class="button-right"
+                src="./assets/images/icons/arrow-right.png"></button>
+          </div>
         </div>
-      </div>
+
       <div class="right-side advantages">
         <div class="swiper advantages-swiper">
           <div class="swiper-wrapper advantages">

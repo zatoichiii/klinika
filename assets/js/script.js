@@ -1,24 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const toggleButtonTime = document.getElementById("schedule-toggle");
+  const scheduleContent = document.getElementById("schedule-content");
+
+  if (toggleButtonTime && scheduleContent) {
+    const arrowIcon = toggleButtonTime.querySelector(".arrow-icon");
+
+    if (arrowIcon) {
+      toggleButtonTime.addEventListener("click", function () {
+        scheduleContent.classList.toggle("open");
+
+        if (scheduleContent.classList.contains("open")) {
+          arrowIcon.style.transform = "translateY(-50%) rotate(180deg)";
+        } else {
+          arrowIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        }
+      });
+    }
+  }
+
+  // Выбор всех элементов
   const toggleButton = document.querySelector(".dropdown-toggle");
   const dropdownMenu = document.querySelector(".dropdown-menu");
+  const categoryButtons = document.querySelectorAll(".category-btn");
+  const priceCategories = document.querySelectorAll(".price-category");
 
+  // Открытие/закрытие выпадающего меню
   if (toggleButton && dropdownMenu) {
     toggleButton.addEventListener("click", () => {
       dropdownMenu.classList.toggle("show");
+      toggleButton.classList.toggle("active");
     });
 
+    // Закрытие выпадающего меню при клике вне его области
     document.addEventListener("click", (event) => {
       if (
         !toggleButton.contains(event.target) &&
         !dropdownMenu.contains(event.target)
       ) {
         dropdownMenu.classList.remove("show");
-        toggleButton.classList.add("active");
+        toggleButton.classList.remove("active");
       }
     });
-  } else {
-    console.warn("Элементы .dropdown-toggle или .dropdown-menu не найдены.");
   }
+
+  // Обработка выбора категории
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedCategory = button.dataset.category;
+
+      // Удаляем активный класс у всех кнопок
+      categoryButtons.forEach((btn) => btn.classList.remove("active"));
+
+      // Добавляем активный класс только выбранной кнопке
+      button.classList.add("active");
+
+      // Скрываем все категории цен
+      priceCategories.forEach((category) => {
+        category.classList.remove("active");
+      });
+
+      // Показываем только выбранную категорию
+      const selectedPriceCategory = document.querySelector(
+        `.price-category[data-category="${selectedCategory}"]`
+      );
+      if (selectedPriceCategory) {
+        selectedPriceCategory.classList.add("active");
+      }
+
+      // Закрываем выпадающее меню после выбора
+      if (dropdownMenu.classList.contains("show")) {
+        dropdownMenu.classList.remove("show");
+        toggleButton.classList.remove("active");
+      }
+    });
+  });
+
+  // Обработка кнопок "Подробнее"
+  document.querySelectorAll(".details-btn").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation(); // Предотвращаем всплытие события
+
+      const details = button.nextElementSibling; // Находим блок с деталями
+      if (details) {
+        details.classList.toggle("visible"); // Переключаем видимость
+      }
+    });
+  });
   const swiperClinic = new Swiper(".swiper-clinic", {
     spaceBetween: 20,
     slidesPerView: 1.2,
@@ -185,15 +252,13 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".swiper-button-next.diploms",
       prevEl: ".swiper-button-prev.diploms",
     },
-
-    pagination: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     breakpoints: {
       480: {
         slidesPerView: 2.2,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
       },
     },
   });
@@ -242,65 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ------------------------------
-  // Price-block
-  // ------------------------------
-  const showMoreButton = document.querySelector(".show-more-button");
-  const additionalCategories = document.querySelector(".additional-categories");
 
-  if (showMoreButton && additionalCategories) {
-    showMoreButton.addEventListener("click", () => {
-      additionalCategories.classList.toggle("show");
-
-      const buttonText = showMoreButton.querySelector("span");
-      if (additionalCategories.classList.contains("show")) {
-        buttonText.textContent = "Скрыть категории";
-      } else {
-        buttonText.textContent = "Еще категории";
-      }
-    });
-
-    document.addEventListener("click", (event) => {
-      if (
-        !showMoreButton.contains(event.target) &&
-        !additionalCategories.contains(event.target)
-      ) {
-        additionalCategories.classList.remove("show");
-        const buttonText = showMoreButton.querySelector("span");
-        buttonText.textContent = "Еще категории";
-      }
-    });
-  }
-
-  const categoryButtons = document.querySelectorAll(".category-btn");
-  const priceCategories = document.querySelectorAll(".price-category");
-  const detailsButtons = document.querySelectorAll(".details-btn");
-
-  if (categoryButtons && priceCategories && detailsButtons) {
-    categoryButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const category = button.dataset.category;
-
-        categoryButtons.forEach((btn) => btn.classList.remove("active"));
-        priceCategories.forEach((cat) => cat.classList.remove("active"));
-
-        button.classList.add("active");
-        document
-          .querySelector(`.price-category[data-category="${category}"]`)
-          .classList.add("active");
-      });
-    });
-    detailsButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const details = button.nextElementSibling;
-        const svg = button.querySelector("svg");
-
-        details.classList.toggle("show");
-
-        button.classList.toggle("expanded");
-      });
-    });
-  }
 
   // ------------------------------
   // Service-Swipers
@@ -440,25 +447,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-  // ------------------------------
-  // FAQ Article
-  // ------------------------------
   const accordionContainer = document.getElementById("articleAccordion");
   const contentsHeader = document.getElementById("contents-header");
   const contentsContent = document.getElementById("contents-content");
 
   if (accordionContainer && contentsHeader && contentsContent) {
+    // Обработчик клика на "Содержание статьи"
     contentsHeader.addEventListener("click", () => {
       const isOpen = contentsContent.classList.contains("open");
+
       if (isOpen) {
         contentsContent.classList.remove("open");
         contentsContent.style.maxHeight = null;
       } else {
         contentsContent.classList.add("open");
         contentsContent.style.maxHeight =
-          contentsContent.scrollHeight + 200 + "px";
+          contentsContent.scrollHeight + 500 + "px";
       }
+
+      // Добавляем/удаляем класс open для поворота стрелки
+      contentsHeader.classList.toggle("open");
     });
 
     const headings = Array.from(
@@ -511,18 +519,25 @@ document.addEventListener("DOMContentLoaded", () => {
     function toggleAccordion(header, content) {
       const isOpen = content.classList.contains("open");
 
-      document
-        .querySelectorAll(".article-accordion-content.open")
-        .forEach((item) => {
-          if (item !== contentsContent) {
-            item.classList.remove("open");
-            item.style.maxHeight = null;
-          }
-        });
+      closeSiblingAccordions(content.parentElement);
 
       if (!isOpen) {
         content.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + 600 + "px";
+      } else {
+        content.classList.remove("open");
+        content.style.maxHeight = null;
       }
+    }
+
+    function closeSiblingAccordions(parentElement) {
+      const siblings = parentElement.querySelectorAll(
+        ".article-accordion-content.open"
+      );
+      siblings.forEach((sibling) => {
+        sibling.classList.remove("open");
+        sibling.style.maxHeight = null;
+      });
     }
 
     function smoothScrollTo(element) {
@@ -532,7 +547,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
   // ------------------------------
   // fancybox
   // ------------------------------

@@ -41,16 +41,21 @@
         <div class="article-detail service-section">
             <div class="part-block">
                 <div class="article-accordion-wrapper">
-                    <div class="article-accordion-header" id="contents-header">Содержание статьи</div>
+                    <div class="article-accordion-header open" id="contents-header">
+                        Содержание статьи
+                        <img src="./assets/images/icons/faq-button.png" alt="Стрелка" class="arrow-icon" />
+                    </div>
                     <div class="article-accordion-content open" id="contents-content">
                         <div class="article-accordion" id="articleAccordion"></div>
                     </div>
                 </div>
-
                 <h2>
                     H2 Краткий заголовок
                 </h2>
                 <h3>H3 Длинный заголовок для статьи о лечении</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque dolor cumque aut quaerat dignissimos natus ipsa molestiae repellat ipsam, quo magni, nihil facere est voluptatibus nesciunt quis pariatur ipsum sapiente?</p>
+                <h4>H4 Длинный заголовок для статьи о лечении</h4>
+                <h5>H5 Длинный заголовок для статьи о лечении</h5>
                 <h2>H2 Краткий заголовок</h2>
                 <h3>
                     H3 Длинный заголовок для статьи о лечении
@@ -75,13 +80,20 @@
                     <li>Проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</li>
                 </ol>
 
-                <blockquote>
-                    <p class="quote">Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
-                    <div class="author-info">
-                        <cite class="author-name">Иванов Иван Иванович</cite>
-                        <span class="author-position">Главный врач, психиатр-нарколог</span>
+                <blockquote class="blockquote-service">
+                    <p class="quote-service">Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
+                    <div class="arrow-down"></div>
+                    <div class="author-info-service">
+                        <img src="/assets/images/photos/doctor.png" alt="Фото врача" class="author-photo">
+                        <div class="author-details">
+                            <cite class="author-name-service">Иванов Иван Иванович</cite>
+                            <span class="author-position-service">Главный врач, психиатр-нарколог</span>
+                        </div>
                     </div>
                 </blockquote>
+
+
+
                 <h3>
                     H3 Длинный заголовок для статьи о лечении
                 </h3>
@@ -94,6 +106,40 @@
                     Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
                 </p>
 
+                <div class="attention-part">
+                    <img src="/assets/images/icons/attention.png" alt="Внимание" />
+                    <p>Не занимайтесь самолечением, обращайтесь за помощью к квалифицированным специалистам клиники «Призма»</p>
+                </div>
+                <div class="symptom-block">
+                    <div class="left-side">
+                        <div class="symptom-header">
+                            <img src="/assets/images/icons/call.png" alt="Иконка симптомов" class="symptom-icon">
+                            <span class="symptom-title">Заметили похожие симптомы?</span>
+                        </div>
+                        <ul class="symptom-list">
+                            <li>Тошнота;</li>
+                            <li>Головокружение;</li>
+                            <li>Тремор;</li>
+                            <li>Высокая температура;</li>
+                        </ul>
+                    </div>
+                    <div class="right-side">
+                        <form action="#" method="POST" class="form-container">
+                            <div class="form-header">
+                                <span class="form-title">Оставьте заявку!</span>
+                                <p class="form-subtitle">Мы можем вам помочь</p>
+                            </div>
+                            <div class="input-group">
+                                <input type="tel" placeholder="+7 (___) ___ __-__" required>
+                                <button type="submit">Отправить</button>
+                            </div>
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span>Согласен с политикой конфиденциальности</span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
                 <h3>
                     H3 Длинный заголовок для статьи о лечении
                 </h3>

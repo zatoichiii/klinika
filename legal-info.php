@@ -79,7 +79,7 @@
                         </div>
                         <div class="item-detail">
                             <div class="subtitle">Электронная почта:</div>
-                            <a href="mail:info@reg63.roszdravnadzor.gov.ru">info@reg63.roszdravnadzor.gov.ru</a>
+                            <a class="mail" href="mail:info@reg63.roszdravnadzor.gov.ru">info@reg63.roszdravnadzor.gov.ru</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -110,7 +110,7 @@
                         </div>
                         <div class="item-detail">
                             <div class="subtitle">Электронная почта:</div>
-                            <a href="mail:info@reg63.roszdravnadzor.gov.ru">info@reg63.roszdravnadzor.gov.ru</a>
+                            <a class="mail" href="mail:info@reg63.roszdravnadzor.gov.ru">info@reg63.roszdravnadzor.gov.ru</a>
                         </div>
                     </div>
                 </div>

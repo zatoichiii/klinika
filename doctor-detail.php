@@ -75,8 +75,11 @@
             </div>
         </div>
         <div class="time-block">
-            <div class="time-title">График работы</div>
-            <div class="schedule-container">
+            <div class="time-title" id="schedule-toggle">
+                График работы
+                <img style="transform: translateY(-50%) rotate(180deg);" src="/assets/images/icons/toggle-time.png" alt="Открыть" class="arrow-icon"/>
+            </div>
+            <div class="schedule-container open" id="schedule-content">
                 <div class="schedule-item">
                     <span class="day">Понедельник</span>
                     <span class="time">Выходной</span>
@@ -169,7 +172,7 @@
                 <div class="block-title-diplom">Дипломы и документы главного врача</div>
                 <div class="swiper-buttons">
                     <div class="swiper-button-next diploms" style="position: relative"></div>
-                <div class="swiper-button-prev diploms" style="position: relative"></div>
+                    <div class="swiper-button-prev diploms" style="position: relative"></div>
 
                 </div>
             </div>
@@ -200,7 +203,7 @@
                     </div>
                 </div>
 
-                <div class="swiper-pagination new"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>

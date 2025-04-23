@@ -9,6 +9,11 @@ main {
   overflow-x: hidden;
 }
 
+
+input[type="checkbox"]:hover {
+  border-color: var(--red-color);
+}
+
 select option {
   padding: 10px;
   background-color: white;
@@ -1346,7 +1351,7 @@ button {
   text-align: center;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12.6px);
   bottom: 0;
   color: white;
   border-radius: 20px;
@@ -1506,9 +1511,21 @@ button {
 
 .advantages-section .left-side {
   width: 30%;
+  padding: 0 16px;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1320px) {
+  .advantages-section .right-side.advantages,
+  .doctors-section .swiper-container-doctors {
+    padding-left: 16px;
+  }
+
+  .method-section .methods-slider {
+    padding-left: 16px;
+  }
 }
 
 .advantages-section .swiper-main-buttons button {
@@ -1565,6 +1582,7 @@ button {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  padding: 15px 0;
 }
 
 .doctors-section .swiper-main-buttons-doctors {
@@ -2778,7 +2796,7 @@ button {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 113px;
 }
-.footer-section .left-column{
+.footer-section .left-column {
   width: 80%;
 }
 .footer-section .left-column,
@@ -2821,7 +2839,7 @@ button {
   padding: 10px 0;
 }
 
-.menu-title-no-accord{
+.menu-title-no-accord {
   padding-bottom: 15px;
 }
 
@@ -3019,8 +3037,6 @@ button {
   align-items: center;
   z-index: 1000;
 }
-
-
 
 /* Анимация появления */
 @keyframes fadeIn {
@@ -3837,7 +3853,7 @@ button {
 }
 
 .error-wrapper .categories li::before {
-  content: ">";
+  content: url("/assets/images//icons/arrow-right-sitemap.png");
   position: absolute;
   right: 0;
   top: 50%;
@@ -3848,6 +3864,7 @@ button {
 .error-wrapper .categories a {
   text-decoration: none;
   font-weight: 600;
+  padding-right: 8px;
   transition: color 0.3s ease;
 }
 
@@ -4562,7 +4579,8 @@ button {
     font-size: 10px;
   }
   .price-time-section .upper-block-price {
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   .main-form-section .form-title {
     font-size: 18px;
@@ -5417,7 +5435,7 @@ blockquote p.quote::before {
   text-align: center;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12.6px);
   bottom: 0;
   color: white;
   border-radius: 20px;
@@ -5568,7 +5586,7 @@ blockquote p.quote::before {
 
 @media screen and (max-width: 1050px) {
   .banner-article-detail-section .article-detail-content {
-    gap: px;
+    gap: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6195,7 +6213,6 @@ td {
   cursor: pointer;
   border-bottom: 1px solid rgba(1, 1, 1, 0.2);
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -6244,7 +6261,7 @@ td {
 
 @media screen and (max-width: 1320px) {
   .article-detail {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 20px;
   }
 
@@ -6753,6 +6770,7 @@ td {
 
 .section-reviews .data-block {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 30px;
 }
@@ -7610,9 +7628,8 @@ td {
   flex-direction: column;
   gap: 15px;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(192, 178, 149, 1);
   border-radius: 10px;
-  background-color: #fff;
   transition: box-shadow 0.3s ease;
 }
 
@@ -7621,7 +7638,8 @@ td {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(192, 178, 149, 1);
 }
 
 .reviews-section-doctor .person-image {
@@ -7946,22 +7964,21 @@ td {
 }
 
 @media screen and (max-width: 768px) {
-  .article-section .title-article{
-font-weight: 500;
-font-size: 24px;
-line-height: 32px;
-
+  .article-section .title-article {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
   }
 
-  .branches-section .details-block{
+  .branches-section .details-block {
     display: contents;
   }
 
-  .branches-section .card-content{
+  .branches-section .card-content {
     display: contents;
   }
 
-  .branches-section .work-time{
+  .branches-section .work-time {
     order: 3;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -7969,15 +7986,15 @@ line-height: 32px;
   .branches-section .branches-card {
     gap: 0;
   }
-  .branches-section .description{
+  .branches-section .description {
     order: 5;
   }
 
-  .branches-section .branches-card img{
+  .branches-section .branches-card img {
     order: 2;
     margin-bottom: 16px;
   }
-  .branches-section .branch-address{
+  .branches-section .branch-address {
     border: none;
     padding-bottom: 5px;
   }
@@ -7994,7 +8011,7 @@ line-height: 32px;
   .diploms-doctors-section .upper-block .swiper-buttons {
     display: none;
   }
-  .pre-footer-section .map-block{
+  .pre-footer-section .map-block {
     display: contents;
   }
 }
@@ -8676,7 +8693,12 @@ line-height: 32px;
   background-color: #f0f0f0;
 }
 
-.dropdown-toggle.active {
+.dropdown-toggle img{
+  transition: all 0.3s;
+}
+
+
+.dropdown-toggle.active img{
   background-color: #f0f0f0;
   transform: rotate(180deg);
 }
@@ -8760,108 +8782,577 @@ line-height: 32px;
   .about-section .info-blocks {
     grid-template-columns: repeat(2, 1fr); /* 2 колонки */
   }
-  
-  .about-section .left-column{
+
+  .about-section .left-column {
     display: contents;
   }
-  .about-section .main-content{
-    display: contents
+  .about-section .main-content {
+    display: contents;
   }
-  .about-section .right-column{
+  .about-section .right-column {
     order: 1;
   }
-  .about-section .info-blocks{
+  .about-section .info-blocks {
     order: 2;
   }
-  .about-section .clinic-description{
+  .about-section .clinic-description {
     margin-top: 20px;
     order: 3;
   }
-  .about-section .more-button{
+  .about-section .more-button {
     order: 4;
     width: 100%;
     padding: 17px 0;
   }
-  .about-section .info-blocks{
+  .about-section .info-blocks {
     gap: 10px;
     padding-bottom: 20px;
   }
 
-  .map-description{
+  .map-description {
     order: 5;
     text-align: center;
   }
-  .footer-section .button-eye{
+  .footer-section .button-eye {
     display: none;
   }
-  .footer-section .upper-block{
+  .footer-section .upper-block {
     flex-direction: column;
     align-items: baseline;
   }
-  .footer-section .buttons{
+  .footer-section .buttons {
     width: 100%;
     padding-top: 31px;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     margin-top: 20px;
   }
-  .footer-section .call{
+  .footer-section .call {
     width: 100%;
     padding: 17px 0;
   }
-  .link-item:first-child a{
+  .link-item:first-child a {
     font-size: 24px;
   }
-  .footer-section .grid-container{
-    gap: 20px
+  .footer-section .grid-container {
+    gap: 20px;
   }
 }
-.additional-content a{
+.additional-content a {
   text-decoration: underline;
 }
-.about-wrapper{
+.about-wrapper {
   display: flex;
   flex-direction: column;
 }
-.about-section .info-blocks{
+.about-section .info-blocks {
   border-top: 0;
 }
 
-.doctors-section .block-title{
-font-weight: 500;
-font-size: 24px;
-line-height: 32px;
-letter-spacing: 0%;
-text-align: center;
-
+.doctors-section .block-title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
-.footer-section .submenu li{
+.footer-section .submenu li {
   margin-bottom: 12px;
   color: var(--red-color);
 }
 
-.footer-section .link-item:last-child{
+.footer-section .link-item:last-child {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-.button-eye.mobile{
+.button-eye.mobile {
   display: none;
 }
 
 @media screen and (max-width: 480px) {
-  .button-eye.mobile{
+  .button-eye.mobile {
     display: flex;
     width: 100%;
     justify-content: center;
   }
-  
 }
 
-.modal-content form{
+.modal-content form {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
+}
+
+.legal-info-section .accordion-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.legal-info-section .accordion-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.legal-info-section .mail {
+  text-decoration: underline;
+  color: var(--red-color);
+}
+
+.doctors-wrapper .doctors-section .upper-block .doctors-title {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .doctors-wrapper .doctors-section .upper-block .doctors-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+/* Стили для стрелки */
+.price-time-section .time-title {
+  position: relative;
+  cursor: pointer;
+}
+
+.price-time-section .arrow-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+/* Аккордеон на мобильных устройствах */
+@media (max-width: 768px) {
+  .price-time-section .schedule-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .price-time-section .schedule-container.open {
+    max-height: 500px; /* Установите значение больше, чем высота контента */
+    padding: 10px 0;
+  }
+
+  .price-time-section .arrow-icon {
+    display: inline-block;
+  }
+}
+
+/* На больших экранах скрываем стрелку */
+@media (min-width: 769px) {
+  .price-time-section .arrow-icon {
+    display: none;
+  }
+}
+
+.diploms-doctors-section .swiper-pagination {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .right-block .tax-block {
+    margin: 20px 0;
+  }
+  .about-section .description {
+    font-size: 12px;
+  }
+  .diploms-doctors-section .swiper-pagination {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .diploms-doctors-section .about-diplom {
+    padding: 0;
+  }
+  .about-section .info-item {
+    padding: 16px 17px;
+    min-width: 24%;
+    min-height: 106px;
+  }
+}
+
+.container-swiper {
+  padding: 0;
+}
+
+@media screen and (max-width: 1320px) {
+  .method-section .method-upper-text,
+  .reviews-section .upper-block,
+  .doctors-section .upper-block,
+  .branches-section .upper-block,
+  .services-section .block-title,
+  .stock-section .block-title {
+    padding: 0 16px;
+  }
+
+  .reviews-section .reviews-swiper,
+  .branches-section .branches-swiper,
+  .services-section .swiper-container-services,
+  .stock-section .swiper-container-stock {
+    padding-left: 16px;
+  }
+}
+
+.doctors-section .block-title {
+  cursor: auto;
+}
+
+.block-title {
+  cursor: auto;
+}
+
+#contents-header {
+  position: relative;
+  cursor: pointer;
+}
+
+#contents-header .arrow-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  color: #333;
+}
+
+#contents-header.open .arrow-icon {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.article-accordion-header:not(:first-child)::before {
+  content: "—";
+  margin-right: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+#contents-header {
+  position: relative;
+  cursor: pointer;
+}
+
+.article-accordion-header .arrow-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+#contents-header.open .arrow-icon {
+  transform: translateY(-50%) rotate(180);
+}
+
+.article-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.article-accordion-content.open {
+  max-height: 500px;
+}
+
+.blockquote-service {
+  margin: 40px 0;
+  padding: 0px;
+  position: relative;
+  line-height: 1.6;
+  background-color: rgba(248, 248, 246, 1);
+}
+
+/* Стиль для текста цитаты */
+blockquote .quote-service {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  background-color: rgba(236, 234, 228, 1);
+  font-size: 18px;
+  font-style: italic;
+  border-radius: 20px;
+  margin: 0;
+  padding: 24px;
+  padding-left: 80px;
+  position: relative;
+}
+
+blockquote .quote-service::before {
+  content: url("/assets/images/icons/quote.png");
+  position: absolute;
+  left: 23px;
+  top: -12px;
+  font-size: 80px;
+  color: rgba(192, 178, 149, 1);
+  line-height: 1;
+}
+
+blockquote .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 20px solid rgba(236, 234, 228, 1);
+  position: absolute;
+  left: 10%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 630px) {
+  blockquote .arrow-down {
+    left: 18%;
+    transform: translateX(-50%);
+  }
+}
+blockquote .author-info-service {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+blockquote .author-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+blockquote .author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+blockquote .author-name-service {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+blockquote .author-position-service {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.attention-part {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  padding: 24px;
+  background-color: rgba(236, 234, 228, 1);
+  border-radius: 20px;
+}
+
+.attention-part img {
+  width: 38px;
+  height: 38px;
+}
+
+.attention-part p {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  padding: 0;
+}
+/* Общий контейнер */
+.symptom-block {
+  display: flex;
+  margin: 40px 0;
+  align-items: center;
+  color: white;
+  background-color: rgba(124, 73, 100, 1);
+  border-radius: 15px;
+  padding: 8px;
+  padding-left: 26px;
+  width: 100%;
+}
+
+/* Левая часть */
+.symptom-block .left-side {
+  width: 40%;
+  padding-right: 30px;
+}
+
+.symptom-block .left-side .symptom-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.symptom-block .left-side .symptom-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.symptom-block .left-side .symptom-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.symptom-block .left-side .symptom-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.symptom-block .left-side .symptom-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.symptom-block .left-side .symptom-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.symptom-block .right-side {
+  width: 60%;
+  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.symptom-block .form-container {
+  background-color: rgb(137, 91, 116);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.symptom-block .form-container .form-header {
+  margin-bottom: 20px;
+}
+
+.symptom-block .form-container .form-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.symptom-block .form-container .form-subtitle {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.symptom-block .form-container .input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.symptom-block .form-container .input-group input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+}
+.symptom-block .form-container .input-group input::placeholder {
+  color: white;
+}
+
+.symptom-block .form-container button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: rgba(124, 73, 100, 1);
+  background-color: rgba(236, 234, 228, 1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+
+.symptom-block .checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.symptom-block .checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.symptom-block .checkbox-container span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .symptom-block {
+    flex-direction: column;
+    padding: 8px;
+  }
+  .symptom-block .left-side,
+  .symptom-block .right-side {
+    width: 100%;
+    padding: 8px;
+  }
+  .symptom-block .checkbox-container {
+    padding-left: 42px;
+  }
+}
+
+.right-block .form-body button {
+  padding: 17px 0;
+  width: 100%;
+  background-color: rgba(236, 234, 228, 1);
+  font-family: Montserrat;
+  border-radius: 20px;
+  color: var(--red-color);
+  margin: 20px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: center;
+  
+}
+
+@media screen and (max-width: 876px ) {
+  .dropdown-container, .dropdown-toggle{
+    width: 100%;
+    border-radius: 20px;
+  } 
+  .dropdown-menu{
+    width: 100%;
+  }
+
 }

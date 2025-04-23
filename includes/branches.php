@@ -1,6 +1,6 @@
     <!-- Филиалы клиники -->
     <section class="branches-section">
-      <div class="container">
+      <div class="container container-swiper">
         <div class="branches-wrapper">
           <div class="upper-block">
             <div class="block-title">Филиалы клиники</div>

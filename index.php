@@ -100,7 +100,7 @@
 
 <!-- Блок услуг -->
 <section class="services-section">
-  <div class="container">
+  <div class="container container-swiper">
     <div class="services-wrapper">
       <div class="block-title">Наши услуги</div>
 
@@ -213,7 +213,7 @@
         <div>Прайс-лист клиники «Призма»</div>
       </div>
       <div class="categories">
-        <button class="category-btn active" data-category="detox">Вывод из запоя</button>
+        <button class="category-btn" data-category="detox">Вывод из запоя</button>
         <button class="category-btn" data-category="doctor">Нарколог на дом</button>
         <button class="category-btn" data-category="coding">Кодирование от алкоголизма</button>
         <button class="category-btn" data-category="alcoholism">Лечение алкоголизма</button>
@@ -383,7 +383,7 @@
 
 <!-- Блок акций -->
 <section class="stock-section">
-  <div class="container">
+  <div class="container container-swiper">
     <div class="block-title">Акции клиники</div>
     <div class="swiper-container-stock swiper">
       <div class="swiper-wrapper">
@@ -536,12 +536,12 @@
 
 <!-- Методы -->
 <section class="method-section">
-  <div class="container">
+  <div class="container container-swiper">
     <div class="method-wrapper">
-      <div class="method-upper-text">
-        <div class="block-title">Методы лечения</div>
-        <button class="order-btn">Заказать услугу</button>
-      </div>
+        <div class="method-upper-text">
+          <div class="block-title">Методы лечения</div>
+          <button class="order-btn">Заказать услугу</button>
+        </div>
       <div class="swiper methods-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide method-item">
@@ -627,7 +627,7 @@
               методикам лечения и заботе о пациентах, мы смогли достичь значительных результатов.
             </p>
           </div>
-          <button class="more-button"><a href="/about">Подробнее о клинике</a></button>
+          <a href="/about" class="more-button">Подробнее о клинике</a>
         </div>
 
         <div class="right-column">

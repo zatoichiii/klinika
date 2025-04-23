@@ -1,6 +1,6 @@
     <!-- Отзывы -->
     <section class="reviews-section">
-      <div class="container">
+      <div class="container container-swiper">
         <div class="upper-block">
           <div class="block-title">Отзывы</div>
           <div class="swiper-arrows">

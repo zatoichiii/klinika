@@ -1,17 +1,17 @@
 <section class="doctors-section">
-  <div class="container">
+  <div class="container container-swiper">
     <div class="doctors-wrapper">
-      <div class="upper-block">
-        <div class="block-title">Профессиональные врачи наркологи</div>
-        <div class="swiper-main-buttons-doctors">
-          <button class="prev-button-doctors">
-            <img src="./assets/images/icons/arrow-right.png" alt="Предыдущий">
-          </button>
-          <button class="next-button-doctors">
-            <img src="./assets/images/icons/arrow-right.png" alt="Следующий">
-          </button>
+        <div class="upper-block">
+          <div class="block-title">Профессиональные врачи наркологи</div>
+          <div class="swiper-main-buttons-doctors">
+            <button class="prev-button-doctors">
+              <img src="./assets/images/icons/arrow-right.png" alt="Предыдущий">
+            </button>
+            <button class="next-button-doctors">
+              <img src="./assets/images/icons/arrow-right.png" alt="Следующий">
+            </button>
+          </div>
         </div>
-      </div>
       <div class="swiper-container-doctors">
         <div class="swiper-wrapper">
           <div class="swiper-slide">

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Инициализация Branch Swiper
   branchSwiper = new Swiper(".branches-swiper", {
-    slidesPerView: 1,
+    slidesPerView: 1.3,
     spaceBetween: 20,
     loop: false,
     pagination: {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth < 1050) {
       if (!stockSwiper) {
         stockSwiper = new Swiper(".swiper-container-stock", {
-          slidesPerView: 1,
+          slidesPerView: 1.3,
           spaceBetween: 20,
           pagination: {
             el: ".swiper-pagination-stock",
@@ -120,10 +120,10 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           breakpoints: {
             544: {
-              slidesPerView: 2,
+              slidesPerView: 2.3,
             },
             778: {
-              slidesPerView: 3,
+              slidesPerView: 3.3,
             },
             1024: {
               slidesPerView: 4,
@@ -235,15 +235,15 @@ document.addEventListener("DOMContentLoaded", function () {
           loop: false,
           breakpoints: {
             320: {
-              slidesPerView: 1,
+              slidesPerView: 1.4,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 2.2,
               spaceBetween: 20,
             },
             940: {
-              slidesPerView: 3,
+              slidesPerView: 3.3,
               spaceBetween: 20,
             },
             1170: {

@@ -3720,6 +3720,7 @@ button {
 .error-wrapper .categories li {
   width: calc(50% - 10px);
   position: relative;
+
 }
 
 .error-wrapper .categories li::before {
@@ -3734,6 +3735,8 @@ button {
 .error-wrapper .categories a {
   text-decoration: none;
   font-weight: 600;
+  padding-right: 8px;
+
   transition: color 0.3s ease;
 }
 

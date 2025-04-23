@@ -360,8 +360,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div style="position: relative" class="swiper-pagination"></div>
+
                     </div>
-                    <div style="position: relative" class="swiper-pagination"></div>
                 </div>
             </div>
             <div class="right-block">
