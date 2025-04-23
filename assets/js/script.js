@@ -1,37 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleButtonTime = document.getElementById("schedule-toggle");
-  const scheduleContent = document.getElementById("schedule-content");
-
-  if (toggleButtonTime && scheduleContent) {
-    const arrowIcon = toggleButtonTime.querySelector(".arrow-icon");
-
-    if (arrowIcon) {
-      toggleButtonTime.addEventListener("click", function () {
-        scheduleContent.classList.toggle("open");
-
-        if (scheduleContent.classList.contains("open")) {
-          arrowIcon.style.transform = "translateY(-50%) rotate(180deg)";
-        } else {
-          arrowIcon.style.transform = "translateY(-50%) rotate(0deg)";
-        }
-      });
-    }
-  }
-
-  // Выбор всех элементов
   const toggleButton = document.querySelector(".dropdown-toggle");
   const dropdownMenu = document.querySelector(".dropdown-menu");
   const categoryButtons = document.querySelectorAll(".category-btn");
   const priceCategories = document.querySelectorAll(".price-category");
 
-  // Открытие/закрытие выпадающего меню
   if (toggleButton && dropdownMenu) {
     toggleButton.addEventListener("click", () => {
       dropdownMenu.classList.toggle("show");
       toggleButton.classList.toggle("active");
     });
 
-    // Закрытие выпадающего меню при клике вне его области
     document.addEventListener("click", (event) => {
       if (
         !toggleButton.contains(event.target) &&
@@ -43,23 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Обработка выбора категории
   categoryButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedCategory = button.dataset.category;
 
-      // Удаляем активный класс у всех кнопок
       categoryButtons.forEach((btn) => btn.classList.remove("active"));
 
-      // Добавляем активный класс только выбранной кнопке
       button.classList.add("active");
 
-      // Скрываем все категории цен
       priceCategories.forEach((category) => {
         category.classList.remove("active");
       });
 
-      // Показываем только выбранную категорию
       const selectedPriceCategory = document.querySelector(
         `.price-category[data-category="${selectedCategory}"]`
       );
@@ -67,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedPriceCategory.classList.add("active");
       }
 
-      // Закрываем выпадающее меню после выбора
       if (dropdownMenu.classList.contains("show")) {
         dropdownMenu.classList.remove("show");
         toggleButton.classList.remove("active");
@@ -75,14 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Обработка кнопок "Подробнее"
   document.querySelectorAll(".details-btn").forEach((button) => {
     button.addEventListener("click", (event) => {
-      event.stopPropagation(); // Предотвращаем всплытие события
+      event.stopPropagation();
 
-      const details = button.nextElementSibling; // Находим блок с деталями
+      const details = button.nextElementSibling;
       if (details) {
-        details.classList.toggle("visible"); // Переключаем видимость
+        details.classList.toggle("visible");
       }
     });
   });
@@ -306,8 +277,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-
 
   // ------------------------------
   // Service-Swipers
@@ -973,6 +942,7 @@ document.addEventListener("DOMContentLoaded", () => {
       handleDynamicContent(activeMenuItem);
     }
   });
+
   // ------------------------------
   // Yandex Maps
   // ------------------------------
@@ -984,11 +954,18 @@ document.addEventListener("DOMContentLoaded", () => {
         zoom: 10,
         controls: [],
       });
+
       const myPlacemark = new ymaps.Placemark(
         [54.1377, 37.5903],
         {},
-        { iconColor: "#6c5ce7" }
+        {
+          iconLayout: "default#image", 
+          iconImageHref: "/assets/images/icons/mapPin.png", 
+          iconImageSize: [20, 30], 
+          iconImageOffset: [-20, -40], 
+        }
       );
+
       myMap.geoObjects.add(myPlacemark);
     }
 
@@ -999,6 +976,7 @@ document.addEventListener("DOMContentLoaded", () => {
         zoom: 15,
         controls: ["zoomControl"],
       });
+
       const myPlacemarkSecond = new ymaps.Placemark(
         [54.193278, 37.619196],
         {
@@ -1006,12 +984,17 @@ document.addEventListener("DOMContentLoaded", () => {
           balloonContent:
             "Проблема в том, что вместе с положительным эффектом...",
         },
-        { iconColor: "#ff6f61" }
+        {
+          iconLayout: "default#image",
+          iconImageHref: "/assets/images/icons/mapPin.png", 
+          iconImageSize: [20, 30], 
+          iconImageOffset: [-20, -40], 
+        }
       );
+
       myMapSecond.geoObjects.add(myPlacemarkSecond);
     }
   });
-
   // ------------------------------
   // Счетчики
   // ------------------------------

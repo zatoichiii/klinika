@@ -233,6 +233,8 @@
         </div>
       </div>
 
+      
+
       <div class="prices-list">
         <div class="price-category active" data-category="detox">
           <div class="price-item">

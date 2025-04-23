@@ -28,18 +28,52 @@
 
 <?php
 $galleryItems = [
-    ['src' => 'assets/images/photos/galleryitem.png', 'alt' => 'Палата 1', 'category' => 'wards'],
-    ['src' => 'assets/images/photos/galleryitem.png', 'alt' => 'Палата 2', 'category' => 'wards'],
-    ['src' => 'assets/images/photos/galleryitem.png', 'alt' => 'Палата 3', 'category' => 'wards'],
-    ['src' => 'assets/images/photos/corridor.png', 'alt' => 'Клиника 1', 'category' => 'clinic'],
-    ['src' => 'assets/images/photos/corridor.png', 'alt' => 'Клиника 2', 'category' => 'clinic'],
-    ['src' => 'assets/images/photos/doctor.png', 'alt' => 'Врач 1', 'category' => 'doctors'],
-    ['src' => 'assets/images/photos/doctor2.png', 'alt' => 'Врач 2', 'category' => 'doctors'],
+    [
+        'src' => 'assets/images/photos/galleryitem.png',
+        'webp' => 'assets/images/photos/galleryitem.webp',
+        'alt' => 'Палата 1',
+        'category' => 'wards'
+    ],
+    [
+        'src' => 'assets/images/photos/galleryitem.png',
+        'webp' => 'assets/images/photos/galleryitem.webp',
+        'alt' => 'Палата 2',
+        'category' => 'wards'
+    ],
+    [
+        'src' => 'assets/images/photos/galleryitem.png',
+        'webp' => 'assets/images/photos/galleryitem.webp',
+        'alt' => 'Палата 3',
+        'category' => 'wards'
+    ],
+    [
+        'src' => 'assets/images/photos/corridor.png',
+        'webp' => 'assets/images/photos/corridor.webp',
+        'alt' => 'Клиника 1',
+        'category' => 'clinic'
+    ],
+    [
+        'src' => 'assets/images/photos/corridor.png',
+        'webp' => 'assets/images/photos/corridor.webp',
+        'alt' => 'Клиника 2',
+        'category' => 'clinic'
+    ],
+    [
+        'src' => 'assets/images/photos/doctor.png',
+        'webp' => 'assets/images/photos/doctor.webp',
+        'alt' => 'Врач 1',
+        'category' => 'doctors'
+    ],
+    [
+        'src' => 'assets/images/photos/doctor2.png',
+        'webp' => 'assets/images/photos/doctor2.webp',
+        'alt' => 'Врач 2',
+        'category' => 'doctors'
+    ],
 ];
 
 echo '<script>const galleryData = ' . json_encode($galleryItems) . ';</script>';
 ?>
-
 
 <script>
     let currentPage = 1;
@@ -49,7 +83,6 @@ echo '<script>const galleryData = ' . json_encode($galleryItems) . ';</script>';
         const galleryWrapper = document.querySelector('.gallery-wrapper');
         const paginationContainer = document.querySelector('.pagination');
         const filterButtons = document.querySelectorAll('.filter-btn');
-
 
         function displayGalleryItems(filteredItems) {
             const currentItems = galleryWrapper.querySelectorAll('.gallery-item');
@@ -72,7 +105,10 @@ echo '<script>const galleryData = ' . json_encode($galleryItems) . ';</script>';
                     galleryItem.classList.add('gallery-item');
                     galleryItem.innerHTML = `
                     <a href="${item.src}" data-fancybox="gallery" data-caption="${item.alt}">
-                        <img src="${item.src}" alt="${item.alt}">
+                        <picture>
+                            <source srcset="${item.webp}" type="image/webp">
+                            <img src="${item.src}" alt="${item.alt}">
+                        </picture>
                     </a>
                 `;
                     galleryWrapper.appendChild(galleryItem);
@@ -83,7 +119,6 @@ echo '<script>const galleryData = ' . json_encode($galleryItems) . ';</script>';
                 setupPagination(filteredItems.length);
             }, 500);
         }
-
 
         function setupPagination(totalItems) {
             paginationContainer.innerHTML = '';
