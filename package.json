@@ -1,0 +1,25 @@
+{
+  "name": "example.local",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zatoichiii/klinika.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zatoichiii/klinika/issues"
+  },
+  "homepage": "https://github.com/zatoichiii/klinika#readme",
+  "description": "",
+  "devDependencies": {
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-combine-media-query": "^1.0.1"
+  }
+}
