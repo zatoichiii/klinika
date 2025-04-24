@@ -163,7 +163,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block open">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow open" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow open">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content open">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -177,10 +179,13 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -197,7 +202,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -214,7 +221,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -231,7 +240,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.

@@ -47,19 +47,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelectorAll(".details-btn").forEach((button) => {
+  const priceToggleButotn =document.querySelectorAll(".details-btn");
+  priceToggleButotn.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.stopPropagation();
 
       const details = button.nextElementSibling;
       if (details) {
+        button.classList.toggle("active");
         details.classList.toggle("visible");
       }
     });
   });
   const swiperClinic = new Swiper(".swiper-clinic", {
     spaceBetween: 20,
-    slidesPerView: 1,
+    slidesPerView: 1.3,
     navigation: {
       nextEl: ".swiper-button-next.own",
       prevEl: ".swiper-button-prev.own",
@@ -68,11 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
       el: ".pagination-clinic",
       clickable: true,
     },
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+    },
   });
 
   const swiperRoom = new Swiper(".swiper-room", {
     spaceBetween: 20,
-    slidesPerView: 1,
+    slidesPerView: 1.3,
     navigation: {
       nextEl: ".swiper-button-next.own",
       prevEl: ".swiper-button-prev.own",
@@ -81,11 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
       el: ".pagination-room",
       clickable: true,
     },
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+    },
   });
 
   const swiperDoctor = new Swiper(".swiper-doctor", {
     spaceBetween: 20,
-    slidesPerView: 1,
+    slidesPerView: 1.3,
     navigation: {
       nextEl: ".swiper-button-next.own",
       prevEl: ".swiper-button-prev.own",
@@ -93,6 +107,12 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination: {
       el: ".pagination-doctor",
       clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
     },
   });
 
@@ -1175,51 +1195,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-const tabs = document.querySelectorAll('.tabs');
-if (tabs.length) {
-  tabs.forEach((elem) => {
-    const tabsList = elem.querySelectorAll('.tab');
-    const contentList = elem.querySelectorAll('.tab-content');
-    const activeTab = elem.querySelector('.tab-active-tab');
-    const tabWrapper = elem.querySelector('.tab-wrapper');
-    if (tabsList.length && contentList.length) {
-      for (let i = 0; i < tabsList.length; i++) {
-        tabsList[i].addEventListener('click', () => {
-          if (!item.classList.contains('active')); {
-            contentList.forEach((content) => {
-              content.classList.remove('active');
-            })
-            tabsList.forEach((content) => {
-              content.classList.remove('active');
-            })
-            tabsList[i].classList.add('active');
-            contentList[i].classList.add('active');
-            if (activeTab && tabWrapper) {
-                textContent = tabsList[i].textContent;
-                tabWrapper.classList.remove('active');
-            }
-
-          }
-        })
-        if (activeTab && tabWrapper) {
-          activeTab.textContent = tabsList[0].textContent;
-        
-          tabsList[0].classList.add('tab-hide');
-          activeTab.addEventListener('click', () => {
-            if (!tabWrapper.classList.contains('active')) {
-              tabWrapper.classList.add('active');
-            }
-        }
-      )
-        }
-        if (elem.querySelector('.tab-toggle')) {
-
-        }
-      }
-      tabsList[0].click();
-      }
-
-    }
-  )
-}

@@ -110,78 +110,96 @@
 
           <div class="swiper-slide">
             <div class="slide-content">
-              <div class="slide-title">
-                <img src="assets/images/icons/first.png" alt="Иконка">
-                Вывод из запоя
+              <div class="services__description">
+                <div class="slide-title">
+                  <img src="assets/images/icons/first.png" alt="Иконка">
+                  Вывод из запоя
+                </div>
+                <ul>
+                  <li>Вывод из запоя</li>
+                  <li>Нарколог на дом</li>
+                  <li>Кодирование от алкоголизма</li>
+                  <li>Лечение алкоголизма</li>
+                </ul>
               </div>
-              <ul>
-                <li>Вывод из запоя</li>
-                <li>Нарколог на дом</li>
-                <li>Кодирование от алкоголизма</li>
-                <li>Лечение алкоголизма</li>
-              </ul>
-              <button class="btn">Подробнее
-              </button>
+              <button class="btn">Подробнее</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide-content">
-              <div class="slide-title">
-                <img src="assets/images/icons/first.png" alt="Иконка">
-                Вывод из запоя
+              <div class="services__description">
+                <div class="slide-title">
+                  <img src="assets/images/icons/first.png" alt="Иконка">
+                  Вывод из запоя
+                </div>
+                <ul>
+                  <li>Вывод из запоя</li>
+                  <li>Нарколог на дом</li>
+                  <li>Кодирование от алкоголизма</li>
+                  <li>Лечение алкоголизма</li>
+                </ul>
+
               </div>
-              <ul>
-                <li>Вывод из запоя</li>
-                <li>Нарколог на дом</li>
-                <li>Кодирование от алкоголизма</li>
-                <li>Лечение алкоголизма</li>
-              </ul>
               <button>Подробнее</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide-content">
-              <div class="slide-title">
-                <img src="assets/images/icons/first.png" alt="Иконка">
-                Вывод из запоя
+              <div class="services__description">
+                <div class="slide-title">
+                  <img src="assets/images/icons/first.png" alt="Иконка">
+                  Вывод из запоя
+                </div>
+                <ul>
+                  <li>Вывод из запоя</li>
+                  <li>Нарколог на дом</li>
+                  <li>Кодирование от алкоголизма</li>
+                  <li>Лечение алкоголизма</li>
+                </ul>
+                
+                <a class="services__price-block">
+                  <div class="services__price-description">
+                    <span class="services__price-title">Все услуги</span>
+                    <span class=services__price-subtitle> / 8 услуг</span>
+                  </div>
+                  <img src="/assets/images/icons/service-arrow.png" class="services__arrow" />
+                </a>
               </div>
-              <ul>
-                <li>Вывод из запоя</li>
-                <li>Нарколог на дом</li>
-                <li>Кодирование от алкоголизма</li>
-                <li>Лечение алкоголизма</li>
-              </ul>
-              <button>Подробнее</button>
+              <button class="btn">Подробнее</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide-content">
-              <div class="slide-title">
-                <img src="assets/images/icons/first.png" alt="Иконка">
-                Вывод из запоя
+              <div class="services__description">
+                <div class="slide-title">
+                  <img src="assets/images/icons/first.png" alt="Иконка">
+                  Вывод из запоя
+                </div>
+                <ul>
+                  <li>Вывод из запоя</li>
+                  <li>Нарколог на дом</li>
+                  <li>Кодирование от алкоголизма</li>
+                  <li>Лечение алкоголизма</li>
+                </ul>
               </div>
-              <ul>
-                <li>Вывод из запоя</li>
-                <li>Нарколог на дом</li>
-                <li>Кодирование от алкоголизма</li>
-                <li>Лечение алкоголизма</li>
-              </ul>
-              <button>Подробнее</button>
+              <button class="btn">Подробнее</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="slide-content">
-              <div class="slide-title">
-                <img src="assets/images/icons/first.png" alt="Иконка">
-                Вывод из запоя
+              <div class="services__description">
+                <div class="slide-title">
+                  <img src="assets/images/icons/first.png" alt="Иконка">
+                  Вывод из запоя
+                </div>
+                <ul>
+                  <li>Вывод из запоя</li>
+                  <li>Нарколог на дом</li>
+                  <li>Кодирование от алкоголизма</li>
+                  <li>Лечение алкоголизма</li>
+                </ul>
               </div>
-              <ul>
-                <li>Вывод из запоя</li>
-                <li>Нарколог на дом</li>
-                <li>Кодирование от алкоголизма</li>
-                <li>Лечение алкоголизма</li>
-              </ul>
-              <button>Подробнее</button>
+              <button class="btn">Подробнее</button>
             </div>
           </div>
           <div class="swiper-slide">
@@ -233,7 +251,7 @@
         </div>
       </div>
 
-      
+
 
       <div class="prices-list">
         <div class="price-category active" data-category="detox">
@@ -242,9 +260,7 @@
               <p>Стационарный вывод из запоя</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Пребывание в стационаре со всеми удобствами.</p>
@@ -259,9 +275,7 @@
               <p>Стационарный вывод из запоя</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Пребывание в стационаре со всеми удобствами.</p>
@@ -276,9 +290,7 @@
               <p>Стационарный вывод из запоя</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Пребывание в стационаре со всеми удобствами.</p>
@@ -293,9 +305,7 @@
               <p>Стационарный вывод из запоя</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Пребывание в стационаре со всеми удобствами.</p>
@@ -310,9 +320,67 @@
               <p>Стационарный вывод из запоя</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
+              </button>
+              <div class="price-item details">
+                <p>Пребывание в стационаре со всеми удобствами.</p>
+              </div>
+            </div>
+            <div class="price-value">
+              <span>8500 ₽</span>
+            </div>
+          </div>
+          <div class="price-item">
+            <div class="price-info">
+              <p>Стационарный вывод из запоя</p>
+              <button class="details-btn">
+                Подробнее
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Пребывание в стационаре со всеми удобствами.</p>
@@ -330,9 +398,7 @@
               <p>Стационарное лечение наркомании</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
@@ -347,9 +413,7 @@
               <p>Стационарное лечение наркомании</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
@@ -364,9 +428,7 @@
               <p>Стационарное лечение наркомании</p>
               <button class="details-btn">
                 Подробнее
-                <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.5 0.5L4 4L7.5 0.5" stroke="#000" stroke-width="2"></path>
-                </svg>
+                <img src="/assets/images/icons/showMore-button.png" alt="Подробнее" />
               </button>
               <div class="price-item details">
                 <p>Полное погружение в процесс лечения под наблюдением врачей.</p>
@@ -416,12 +478,8 @@
         <div class="swiper-slide">
           <div class="slide-content">
             <div class="slide-discount">Скидка</div>
-            <div class="slide-title">Имплантация зубов</div>
-            <ul class="slide-list">
-              <li>Все виды имплантов</li>
-              <li>Гарантия 5 лет</li>
-              <li>Безопасность процедуры</li>
-            </ul>
+            <div class="slide-title">Скидка -10% действующим военнослужащим</div>
+            <p>Акция распространяется только на действующих военных.</p>
             <button class="btn btn-primary promotion">Заказать услугу</button>
           </div>
         </div>
@@ -538,10 +596,10 @@
 <section class="method-section">
   <div class="container container-swiper">
     <div class="method-wrapper">
-        <div class="method-upper-text">
-          <div class="block-title">Методы лечения</div>
-          <button class="order-btn">Заказать услугу</button>
-        </div>
+      <div class="method-upper-text">
+        <div class="block-title">Методы лечения</div>
+        <button class="order-btn">Заказать услугу</button>
+      </div>
       <div class="swiper methods-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide method-item">
@@ -648,7 +706,7 @@
           <p class="text">Лет успешной работы</p>
         </div>
         <div class="info-item">
-          <span class="number" data-target="20" >20</span>
+          <span class="number" data-target="20">20</span>
           <p class="text">Опытных специалистов</p>
         </div>
         <div class="info-item">

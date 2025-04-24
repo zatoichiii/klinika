@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Инициализация Branch Swiper
   branchSwiper = new Swiper(".branches-swiper", {
-    slidesPerView: 1.3,
-    spaceBetween: 20,
+    slidesPerView: 1.2,
+    spaceBetween: 10,
     loop: false,
     pagination: {
       el: ".swiper-pagination",
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     breakpoints: {
       768: {
         slidesPerView: 2,
+        spaceBetween: 20,
       },
     },
   });
@@ -304,7 +305,6 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         });
 
-        // Логика для кнопки "Подробнее"
         const reviewCards = document.querySelectorAll(".review-card");
         reviewCards.forEach((card) => {
           const text = card.querySelector(".text p");
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
               } else {
                 text.style.maxHeight = text.scrollHeight + "px";
                 button.innerHTML =
-                  '<span>Скрыть</span><img src="/assets/images/icons/down.png">';
+                  '<span>Скрыть</span>';
                 imgMore.style.transform = "rotate(180deg)";
               }
             });

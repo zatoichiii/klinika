@@ -20,9 +20,26 @@
                     <div class="part-block">
                         <div class="accordion">
                             <div class="accordion-item" data-category="clinic">
+                                <div class="upper-block open">
+                                    <div class="accordion-title">В какое время можно обратиться в клинику?</div>
+                                    <img class="accordion-arrow open" src="./assets/images/icons/up-arrow.png">
+                                </div>
+                                <div class="accordion-content open">
+                                    <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
+                                    <div class="respondent">
+                                        <img src="./assets/images/photos/doctor.png" alt="Фото врача">
+                                        <div class="respondent-info">
+                                            <div class="respondent-placeholder">На вопрос ответил врач:</div>
+                                            <div class="respondent-name">Королькова Ольга Николаевна</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
@@ -39,7 +56,7 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
@@ -56,7 +73,7 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
@@ -73,7 +90,7 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
@@ -90,7 +107,7 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
@@ -107,24 +124,7 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
-                                </div>
-                                <div class="accordion-content">
-                                    <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
-                                    <div class="respondent">
-                                        <img src="./assets/images/photos/doctor.png" alt="Фото врача">
-                                        <div class="respondent-info">
-                                            <div class="respondent-placeholder">На вопрос ответил врач:</div>
-                                            <div class="respondent-name">Королькова Ольга Николаевна</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item" data-category="clinic">
-                                <div class="upper-block">
-                                    <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
@@ -141,7 +141,7 @@
                             <div class="accordion-item" data-category="doctor">
                                 <div class="upper-block">
                                     <div class="accordion-title">Какие врачи работают в клинике?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Мы сотрудничаем с высококвалифицированными специалистами в различных областях медицины...</p>
@@ -158,7 +158,7 @@
                             <div class="accordion-item" data-category="service">
                                 <div class="upper-block">
                                     <div class="accordion-title">Какие услуги предоставляет клиника?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
                                 </div>
                                 <div class="accordion-content">
                                     <p>Клиника предлагает широкий спектр медицинских услуг, включая диагностику, лечение и реабилитацию...</p>

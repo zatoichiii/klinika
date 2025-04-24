@@ -12,7 +12,6 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="doctor-card">
-              <!-- Ссылка, обертывающая всю карточку -->
               <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
                 <div class="placeholders">
                   <div class="placeholder-item">
@@ -24,19 +23,16 @@
                 <div class="doctor-name">Иванов Иван Иванович</div>
                 <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-                <!-- Изображение врача -->
                 <div class="doctor-image">
                   <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
               </a>
 
-              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="doctor-card">
-              <!-- Ссылка, обертывающая всю карточку -->
               <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
                 <div class="placeholders">
                   <div class="placeholder-item">
@@ -48,19 +44,16 @@
                 <div class="doctor-name">Иванов Иван Иванович</div>
                 <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-                <!-- Изображение врача -->
                 <div class="doctor-image">
                   <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
               </a>
 
-              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="doctor-card">
-              <!-- Ссылка, обертывающая всю карточку -->
               <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
                 <div class="placeholders">
                   <div class="placeholder-item">
@@ -72,19 +65,16 @@
                 <div class="doctor-name">Иванов Иван Иванович</div>
                 <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-                <!-- Изображение врача -->
                 <div class="doctor-image">
                   <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
               </a>
 
-              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="doctor-card">
-              <!-- Ссылка, обертывающая всю карточку -->
               <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
                 <div class="placeholders">
                   <div class="placeholder-item">
@@ -96,19 +86,16 @@
                 <div class="doctor-name">Иванов Иван Иванович</div>
                 <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-                <!-- Изображение врача -->
                 <div class="doctor-image">
                   <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
               </a>
 
-              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
             <div class="doctor-card">
-              <!-- Ссылка, обертывающая всю карточку -->
               <a href="/doctor-detail" class="doctor-card-link" aria-label="Подробнее о враче Иванове Иване Ивановиче">
                 <div class="placeholders">
                   <div class="placeholder-item">
@@ -120,13 +107,11 @@
                 <div class="doctor-name">Иванов Иван Иванович</div>
                 <div class="doctor-description">Главный врач, заведующий отделением наркологии</div>
 
-                <!-- Изображение врача -->
                 <div class="doctor-image">
                   <img src="/assets/images/photos/doctor.png" alt="Фото врача">
                 </div>
               </a>
 
-              <!-- Кнопка -->
               <button class="btn button">Задать вопрос врачу</button>
             </div>
           </div>

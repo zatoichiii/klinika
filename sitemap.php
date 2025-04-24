@@ -18,7 +18,9 @@
                 <div class="accordion-item">
                     <div class="upper-block">
                         <div class="accordion-title">О компании</div>
-                        <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                        <div class="accordion-arrow">
+                            <img src="./assets/images/icons/up-arrow.png">
+                        </div>
                     </div>
                     <div class="accordion-content">
                         <ul>
@@ -33,7 +35,9 @@
                 <div class="accordion-item">
                     <div class="upper-block">
                         <div class="accordion-title">Услуги</div>
-                        <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                        <div class="accordion-arrow">
+                            <img src="./assets/images/icons/up-arrow.png">
+                        </div>
                     </div>
                     <div class="accordion-content">
                         <ul>
@@ -48,7 +52,9 @@
                 <div class="accordion-item">
                     <div class="upper-block">
                         <div class="accordion-title">Статьи и новости</div>
-                        <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                        <div class="accordion-arrow">
+                            <img src="./assets/images/icons/up-arrow.png">
+                        </div>
                     </div>
                     <div class="accordion-content">
                         <ul>
@@ -62,7 +68,9 @@
                 <div class="accordion-item">
                     <div class="upper-block">
                         <div class="accordion-title">Контакты</div>
-                        <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                        <div class="accordion-arrow">
+                            <img src="./assets/images/icons/up-arrow.png">
+                        </div>
                     </div>
                     <div class="accordion-content">
                         <ul>

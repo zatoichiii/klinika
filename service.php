@@ -13,12 +13,18 @@
 
         <div class="article-detail-content">
             <div class="content-left">
-                <div>
+                <div class="article-detail-content__title">
                     <h1>Лечение алкоголизма методом Двоженко</h1>
+                    <div class="article-detail-content__price">
+                        <span>Стоимость лечения:</span>
+                        <span>от 5000 ₽</span>
+                    </div>
                     <p>
-                        Каждый из нас хотя бы раз слышал фразу «выпить для настроения». Действительно, многие используют спиртное как способ справиться с негативными эмоциями, стрессом или просто «расслабиться» после тяжёлого дня.
+                        Наши специализированные программы лечения алкоголизма предлагают комплексный подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные планы реабилитации
                     </p>
+                    <a href="tel:8 (888) 999-99-99">+7(999) 999-99-99</a>
                 </div>
+
                 <div class="article-detail-info service">
                     <div class="article-detail-info-item">
                         <button class="btn button">Бесплатная консультация</button>
@@ -43,7 +49,7 @@
                 <div class="article-accordion-wrapper">
                     <div class="article-accordion-header open" id="contents-header">
                         Содержание статьи
-                        <img src="./assets/images/icons/faq-button.png" alt="Стрелка" class="arrow-icon" />
+                        <img src="./assets/images/icons/up-arrow.png" alt="Стрелка" class="arrow-icon" />
                     </div>
                     <div class="article-accordion-content open" id="contents-content">
                         <div class="article-accordion" id="articleAccordion"></div>
@@ -199,7 +205,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block open">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow open" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow open">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content open">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -213,10 +221,13 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -233,7 +244,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -250,7 +263,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -267,7 +282,9 @@
                             <div class="accordion-item">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в кликнику</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png" />
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -560,7 +577,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div style="position: relative; margin-top: 20px" class="swiper-pagination"></div>
+                            <div style="position: relative; margin-top: 35px" class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>

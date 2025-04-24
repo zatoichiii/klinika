@@ -117,7 +117,7 @@ button {
   padding: 10px 20px;
   margin: 20px auto;
   border-radius: 20px;
-  background-color: var(--bg-color);
+  background-color: white;
   transition: all 0.3s ease-in-out;
 }
 
@@ -887,6 +887,7 @@ button {
 .details-btn svg {
   margin-left: 5px;
 }
+
 
 .price-value {
   background-color: var(--red-color);
