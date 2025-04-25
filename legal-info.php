@@ -1,15 +1,26 @@
 <?php include 'includes/header.php'; ?>
 <div class="legal-info-section">
     <div class="container">
+    <div class="breadcrumbs">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><img src="/assets/images/icons/home.png" alt="Главная"></a></li>
+                    <li>/</li>
+                    <li class="breadcrumb-item active" aria-current="page">Юридическая информация</li>
+                </ul>
+            </nav>
+        </div>
         <div class="legal-wrapper">
             <div class="part-block">
                 <div class="main-info">
-                    <div class="block-title">Юридическая информация</div>
+                    <h1 class="block-title">Юридическая информация</h1>
                     <div class="accordion">
                         <div class="accordion-item">
                             <div class="upper-block">
                                 <div class="accordion-title">H3 Порядок и условия предоставления платных медицинских услуг</div>
-                                <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                <div class="accordion-arrow"> 
+              <img src="./assets/images/icons/up-arrow.png">
+            </div>
                             </div>
                             <div class="accordion-content">
                                 <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -20,7 +31,9 @@
                         <div class="accordion-item">
                             <div class="upper-block">
                                 <div class="accordion-title">H3 Порядок и условия предоставления платных медицинских услуг</div>
-                                <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                <div class="accordion-arrow"> 
+              <img src="./assets/images/icons/up-arrow.png">
+            </div>
                             </div>
                             <div class="accordion-content">
                                 <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -31,7 +44,9 @@
                         <div class="accordion-item">
                             <div class="upper-block">
                                 <div class="accordion-title">H3 Порядок и условия предоставления платных медицинских услуг</div>
-                                <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                <div class="accordion-arrow"> 
+              <img src="./assets/images/icons/up-arrow.png">
+            </div>
                             </div>
                             <div class="accordion-content">
                                 <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -42,7 +57,9 @@
                         <div class="accordion-item">
                             <div class="upper-block">
                                 <div class="accordion-title">H3 Порядок и условия предоставления платных медицинских услуг</div>
-                                <img class="accordion-arrow" src="./assets/images/icons/faq-button.png">
+                                <div class="accordion-arrow"> 
+              <img src="./assets/images/icons/up-arrow.png">
+            </div>
                             </div>
                             <div class="accordion-content">
                                 <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.
@@ -96,10 +113,10 @@
                     </div>
                 </div>
                 <div class="contact-block">
-                    <div class="contact-title">Адреса и телефоны надзорных органов</div>
+                    <div class="contact-title last">Адреса и телефоны надзорных органов</div>
 
-                    <div class="contact-item">
-                    <div class="description">Мы ценим обратную связь и внимательно относимся ко всем обращениям. Все обращения рассматриваются в соответствии с порядком, установленным Законом РФ «О защите прав потребителей».</div>
+                    <div class="contact-item last">
+                    <div class="description last">Мы ценим обратную связь и внимательно относимся ко всем обращениям. Все обращения рассматриваются в соответствии с порядком, установленным Законом РФ «О защите прав потребителей».</div>
 
                         <div class="item-detail">
                             <div class="subtitle">Адрес:</div>

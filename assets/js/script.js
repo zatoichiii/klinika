@@ -1,117 +1,249 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const menuTitles = document.querySelectorAll(".menu-title");
+
+  if (menuTitles) {
+    menuTitles.forEach((title) => {
+      title.addEventListener("click", () => {
+        const submenuContainer = title.nextElementSibling;
+
+        if (
+          submenuContainer &&
+          submenuContainer.classList.contains("submenu-container")
+        ) {
+          submenuContainer.classList.toggle("open");
+          title.classList.toggle("open");
+        }
+      });
+    });
+  }
+
+  const menuItems = document.querySelectorAll(".column-select__item");
+  const rightSideItems = document.querySelectorAll(".right-side-select__item");
+
+  menuItems.forEach((item, index) => {
+    item.setAttribute("data-index", index);
+  });
+
+  rightSideItems.forEach((item, index) => {
+    item.setAttribute("data-index", index);
+  });
+
+  function setMobileOrder() {
+    if (window.innerWidth <= 768) {
+      menuItems.forEach((item, index) => {
+        item.style.order = index * 2 + 1;
+      });
+
+      rightSideItems.forEach((item, index) => {
+        item.style.order = index * 2 + 2;
+      });
+    } else {
+      menuItems.forEach((item) => {
+        item.style.order = "";
+      });
+
+      rightSideItems.forEach((item) => {
+        item.style.order = "";
+      });
+    }
+  }
+
+  setMobileOrder();
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
+
+      menuItems.forEach((el) => el.classList.remove("active"));
+      rightSideItems.forEach((el) => el.classList.remove("active"));
+
+      if (!isActive) {
+        item.classList.add("active");
+
+        const index = item.getAttribute("data-index");
+        const correspondingItem = document.querySelector(
+          `.right-side-select__item[data-index="${index}"]`
+        );
+
+        if (correspondingItem) {
+          correspondingItem.classList.add("active");
+        }
+      }
+    });
+  });
+
+  window.addEventListener("resize", setMobileOrder);
 
   const priceItems = document.querySelectorAll(".price-item");
   const modalPrice = document.querySelector(".modal-price");
   const modalTitle = document.querySelector(".modal-price .modal-title b");
   const closeModalPrice = document.querySelector(".close-price");
-  
+
   if (priceItems.length > 0 && modalPrice && modalTitle && closeModalPrice) {
-      priceItems.forEach((item) => {
-          const price = item.querySelector(".price, .price-value"); 
-          const name = item.querySelector(".name, .price-info p"); 
-  
-          if (price && name) {
-              price.addEventListener("click", () => {
-                  modalTitle.textContent = 'Заявка на ' + name.textContent;
-  
-                  modalPrice.classList.add("open");
-              });
-          }
-      });
-  
-      closeModalPrice.addEventListener("click", () => {
-          modalPrice.classList.remove("open");
-      });
-  
-      modalPrice.addEventListener("click", (e) => {
-          if (e.target === modalPrice) {
-              modalPrice.classList.remove("open");
-          }
-      });
+    priceItems.forEach((item) => {
+      const price = item.querySelector(".price, .price-value");
+      const name = item.querySelector(".name, .price-info p");
+
+      if (price && name) {
+        price.addEventListener("click", () => {
+          modalTitle.textContent = "Заявка на " + name.textContent;
+
+          modalPrice.classList.add("open");
+        });
+      }
+    });
+
+    closeModalPrice.addEventListener("click", () => {
+      modalPrice.classList.remove("open");
+    });
+
+    modalPrice.addEventListener("click", (e) => {
+      if (e.target === modalPrice) {
+        modalPrice.classList.remove("open");
+      }
+    });
   } else {
-      console.warn("Необходимые элементы для модального окна не найдены.");
+    console.warn("Необходимые элементы для модального окна не найдены.");
   }
 
   const scheduleToggle = document.getElementById("schedule-toggle");
   const scheduleContent = document.getElementById("schedule-content");
 
-  if (scheduleToggle || scheduleContent){
-  const arrowIcon = scheduleToggle.querySelector(".arrow-icon");
+  if (scheduleToggle || scheduleContent) {
+    const arrowIcon = scheduleToggle.querySelector(".arrow-icon");
 
     scheduleToggle.addEventListener("click", () => {
       scheduleContent.classList.toggle("open");
-  
+
       const isOpen = scheduleContent.classList.contains("open");
-  
+
       arrowIcon.alt = isOpen ? "Закрыть" : "Открыть";
-  
+
       arrowIcon.style.transform = isOpen
         ? "translateY(-50%) rotate(180deg)"
         : "translateY(-50%) rotate(0deg)";
     });
-  
   }
-
   const toggleButton = document.querySelector(".dropdown-toggle");
   const dropdownMenu = document.querySelector(".dropdown-menu");
   const categoryButtons = document.querySelectorAll(".category-btn");
   const priceCategories = document.querySelectorAll(".price-category");
 
-  if (toggleButton && dropdownMenu) {
-    toggleButton.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("show");
-      toggleButton.classList.toggle("active");
+  if (toggleButton && dropdownMenu && categoryButtons && priceCategories) {
+    function updateActiveCategoryText(button) {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+      if (isMobile) {
+        const existingSpan = toggleButton.querySelector("span");
+        if (existingSpan) {
+          existingSpan.remove();
+        }
+
+        const span = document.createElement("span");
+        span.textContent = button.textContent;
+        toggleButton.append(span);
+      }
+    }
+
+    function setupMobileDropdown() {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+      if (isMobile) {
+        categoryButtons.forEach((button) => {
+          if (!dropdownMenu.contains(button)) {
+            dropdownMenu.appendChild(button);
+          }
+        });
+
+        const activeCategory = document.querySelector(".category-btn.active");
+        if (activeCategory) {
+          updateActiveCategoryText(activeCategory);
+        }
+
+        toggleButton.addEventListener("click", () => {
+          dropdownMenu.classList.toggle("modal");
+          document.body.classList.toggle("modal-open");
+        });
+
+        document.addEventListener("click", (event) => {
+          if (
+            !toggleButton.contains(event.target) &&
+            !dropdownMenu.contains(event.target)
+          ) {
+            dropdownMenu.classList.remove("modal");
+            document.body.classList.remove("modal-open");
+          }
+        });
+      } else {
+        const categoriesContainer = document.querySelector(".categories");
+
+        toggleButton.addEventListener("click", () => {
+          dropdownMenu.classList.toggle("show");
+        });
+
+        categoryButtons.forEach((button) => {
+          if (!categoriesContainer.contains(button)) {
+            categoriesContainer.insertBefore(
+              button,
+              toggleButton.parentElement
+            );
+          }
+        });
+
+        dropdownMenu.classList.remove("modal");
+        document.body.classList.remove("modal-open");
+      }
+    }
+
+    setupMobileDropdown();
+
+    window.addEventListener("resize", () => {
+      setupMobileDropdown();
     });
 
-    document.addEventListener("click", (event) => {
-      if (
-        !toggleButton.contains(event.target) &&
-        !dropdownMenu.contains(event.target)
-      ) {
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedCategory = button.dataset.category;
+
+        categoryButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
         dropdownMenu.classList.remove("show");
-        toggleButton.classList.remove("active");
-      }
+
+        priceCategories.forEach((category) => {
+          category.classList.remove("active");
+        });
+
+        const selectedPriceCategory = document.querySelector(
+          `.price-category[data-category="${selectedCategory}"]`
+        );
+        if (selectedPriceCategory) {
+          selectedPriceCategory.classList.add("active");
+        }
+
+        if (dropdownMenu.classList.contains("modal")) {
+          dropdownMenu.classList.remove("modal");
+          document.body.classList.remove("modal-open");
+        }
+
+        updateActiveCategoryText(button);
+      });
+    });
+
+    const priceToggleButton = document.querySelectorAll(".details-btn");
+    priceToggleButton.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const details = button.nextElementSibling;
+        if (details) {
+          button.classList.toggle("active");
+          details.classList.toggle("visible");
+        }
+      });
     });
   }
 
-  categoryButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selectedCategory = button.dataset.category;
-
-      categoryButtons.forEach((btn) => btn.classList.remove("active"));
-
-      button.classList.add("active");
-
-      priceCategories.forEach((category) => {
-        category.classList.remove("active");
-      });
-
-      const selectedPriceCategory = document.querySelector(
-        `.price-category[data-category="${selectedCategory}"]`
-      );
-      if (selectedPriceCategory) {
-        selectedPriceCategory.classList.add("active");
-      }
-
-      if (dropdownMenu.classList.contains("show")) {
-        dropdownMenu.classList.remove("show");
-        toggleButton.classList.remove("active");
-      }
-    });
-  });
-
-  const priceToggleButotn = document.querySelectorAll(".details-btn");
-  priceToggleButotn.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.stopPropagation();
-
-      const details = button.nextElementSibling;
-      if (details) {
-        button.classList.toggle("active");
-        details.classList.toggle("visible");
-      }
-    });
-  });
   const swiperClinic = new Swiper(".swiper-clinic", {
     spaceBetween: 20,
     slidesPerView: 1.3,
@@ -821,149 +953,12 @@ document.addEventListener("DOMContentLoaded", () => {
   modalReview?.addEventListener("click", (e) => {
     if (e.target === modalReview) closeModalReview();
   });
+
   // ------------------------------
   // Меню с подменю
   // ------------------------------
-  const menuTitles = document.querySelectorAll(".menu-title");
-  menuTitles.forEach((title) => {
-    title.addEventListener("click", () => {
-      const menuItem = title.closest(".menu-item");
-      if (!menuItem) return;
 
-      const submenuContainer = menuItem.querySelector(".submenu-container");
-      if (!submenuContainer) return; // Проверка на существование
-
-      submenuContainer.classList.toggle("open");
-      title.classList.toggle("active");
-
-      menuTitles.forEach((otherTitle) => {
-        if (otherTitle !== title) {
-          otherTitle.classList.remove("active");
-          const otherSubmenu = otherTitle
-            .closest(".menu-item")
-            ?.querySelector(".submenu-container");
-          if (otherSubmenu) otherSubmenu.classList.remove("open");
-        }
-      });
-    });
-  });
   const menuIcon = document.querySelector(".menu-icon");
-  const menuContainer = document.querySelector(".menu-container");
-  const dynamicContentElement = document.querySelector(".dynamic-content"); // Ищем элемент по классу
-  const menuItems = document.querySelectorAll(".menu-item");
-
-  // Присваиваем id="dynamicContent" элементу с классом "dynamic-content", если он найден
-  if (dynamicContentElement && !dynamicContentElement.id) {
-    dynamicContentElement.id = "dynamicContent";
-  }
-
-  const dynamicContent = document.getElementById("dynamicContent"); // Теперь используем ID
-
-  const menuData = {
-    "alcohol-treatment": {
-      title: "Лечение алкоголизма",
-      items: [
-        "Кодирование от алкоголизма",
-        "Психологическая помощь",
-        "Реабилитация",
-      ],
-    },
-    detox: {
-      title: "Вывод из запоя",
-      items: [
-        "Медикаментозный вывод из запоя",
-        "Дезинтоксикационная терапия",
-        "Поддерживающая терапия",
-      ],
-    },
-    "about-clinic": {
-      title: "О клинике",
-      items: ["История клиники", "Наши врачи", "Отзывы пациентов"],
-    },
-  };
-
-  function updateDynamicContent(target) {
-    const data = menuData[target];
-    if (!data) {
-      console.error(`Данные для "${target}" не найдены.`);
-      return;
-    }
-
-    const dynamicTitle = document.getElementById("dynamicTitle");
-    const dynamicList = document.getElementById("dynamicList");
-
-    if (!dynamicTitle || !dynamicList) {
-      console.error("Элементы dynamicTitle или dynamicList не найдены.");
-      return;
-    }
-
-    dynamicTitle.textContent = data.title;
-    dynamicList.innerHTML = "";
-
-    data.items.forEach((item) => {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.textContent = item;
-      a.href = "#";
-      li.appendChild(a);
-      dynamicList.appendChild(li);
-    });
-
-    if (dynamicContent) {
-      dynamicContent.style.opacity = 0;
-      setTimeout(() => (dynamicContent.style.opacity = 1), 50);
-    }
-  }
-
-  function moveDynamicContentUnderMenuItem(menuItem) {
-    if (!dynamicContent) return;
-
-    if (dynamicContent.parentNode) {
-      dynamicContent.parentNode.removeChild(dynamicContent);
-    }
-
-    menuItem.insertAdjacentElement("afterend", dynamicContent);
-  }
-
-  function positionDynamicContentInContainer(menuItem) {
-    if (!menuItem || !menuItem.classList.contains("active")) return;
-    if (!dynamicContent) return;
-
-    if (dynamicContent.parentNode) {
-      dynamicContent.parentNode.removeChild(dynamicContent);
-    }
-
-    const parentUl = menuItem.closest(".menu-columns");
-    if (parentUl) {
-      parentUl.appendChild(dynamicContent);
-    }
-
-    dynamicContent.style.opacity = 0;
-    setTimeout(() => (dynamicContent.style.opacity = 1), 50);
-  }
-
-  function handleDynamicContent(menuItem) {
-    const target = menuItem.getAttribute("data-target");
-    if (!target) return;
-
-    menuItems.forEach((item) => item.classList.remove("active"));
-    menuItem.classList.add("active");
-
-    updateDynamicContent(target);
-
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      moveDynamicContentUnderMenuItem(menuItem);
-    } else {
-      positionDynamicContentInContainer(menuItem);
-    }
-  }
-
-  menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", (event) => {
-      event.preventDefault();
-      handleDynamicContent(menuItem);
-    });
-  });
 
   function initMenuIconHandler() {
     menuIcon?.addEventListener("click", () => {
@@ -976,9 +971,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         header.style.borderBottomLeftRadius = "";
         header.style.borderBottomRightRadius = "";
-        if (dynamicContent && dynamicContent.parentNode) {
-          dynamicContent.parentNode.removeChild(dynamicContent);
-        }
       }
     });
 
@@ -993,19 +985,11 @@ document.addEventListener("DOMContentLoaded", () => {
         menuContainer.classList.remove("active");
         header.style.borderBottomLeftRadius = "";
         header.style.borderBottomRightRadius = "";
-        if (dynamicContent && dynamicContent.parentNode) {
-          dynamicContent.parentNode.removeChild(dynamicContent);
-        }
       }
     });
   }
 
   initMenuIconHandler();
-
-    const firstMenuItem = document.querySelector(".menu-item");
-    if (firstMenuItem) {
-      handleDynamicContent(firstMenuItem);
-    }
 
   window.addEventListener("resize", () => {
     const activeMenuItem = document.querySelector(".menu-item.active");
@@ -1197,7 +1181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       readMoreBtn.textContent = "Скрыть";
     } else {
       articleContent.style.maxHeight = `${initialHeight}px`;
-      readMoreBtn.textContent = "Читать полностью";
+      readMoreBtn.textContent = "Читать полностью ";
     }
 
     isExpanded = !isExpanded;
@@ -1212,35 +1196,4 @@ document.addEventListener("DOMContentLoaded", () => {
       articleContent.style.maxHeight = `${initialHeight}px`;
     }
   });
-
-    const reviewCards = document.querySelectorAll(".review-card");
-
-    reviewCards.forEach((card) => {
-      const moreButton = card.querySelector(".more");
-      const textBlock = card.querySelector(".text p");
-
-      if (!moreButton || !textBlock) return;
-
-      let isExpanded = false;
-
-      const initialHeight = textBlock.clientHeight;
-
-      textBlock.style.maxHeight = `${initialHeight}px`;
-      textBlock.style.overflow = "hidden";
-      textBlock.style.transition = "max-height 0.3s ease-in-out";
-
-      moreButton.addEventListener("click", () => {
-        if (!isExpanded) {
-          textBlock.style.maxHeight = `${textBlock.scrollHeight}px`;
-          moreButton.innerHTML =
-            '<span>Скрыть</span><img src="/assets/images/icons/up.png">';
-        } else {
-          textBlock.style.maxHeight = `${initialHeight}px`;
-          moreButton.innerHTML =
-            '<span>Подробнее</span><img src="/assets/images/icons/down.png">';
-        }
-
-        isExpanded = !isExpanded;
-      });
-    });
 });

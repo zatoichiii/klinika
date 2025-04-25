@@ -1,6 +1,15 @@
 <?php include 'includes/header.php'; ?>
 <div class="faq-page-section">
     <div class="container">
+        <div class="breadcrumbs">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><img src="/assets/images/icons/home.png" alt="Главная"></a></li>
+                    <li>/</li>
+                    <li class="breadcrumb-item active" aria-current="page">Часто задаваемые вопросы</li>
+                </ul>
+            </nav>
+        </div>
         <div class="faq-page-wrapper">
             <div class="faq-content">
                 <div class="top-block-faq-page">
@@ -24,18 +33,19 @@
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
                                     <div class="accordion-arrow open">
                                         <img src="./assets/images/icons/up-arrow.png" />
-                                    </div>                                </div>
+                                    </div>
+                                </div>
                                 <div class="accordion-content open">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -46,19 +56,21 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -69,19 +81,21 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -92,19 +106,21 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -115,19 +131,21 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -138,19 +156,21 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -161,19 +181,21 @@
                             <div class="accordion-item" data-category="clinic">
                                 <div class="upper-block">
                                     <div class="accordion-title">В какое время можно обратиться в клинику?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Королькова Ольга Николаевна</div>
                                         </div>
@@ -184,19 +206,21 @@
                             <div class="accordion-item" data-category="doctor">
                                 <div class="upper-block">
                                     <div class="accordion-title">Какие врачи работают в клинике?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Мы сотрудничаем с высококвалифицированными специалистами в различных областях медицины...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Иванов Иван Иванович</div>
                                         </div>
@@ -207,19 +231,21 @@
                             <div class="accordion-item" data-category="service">
                                 <div class="upper-block">
                                     <div class="accordion-title">Какие услуги предоставляет клиника?</div>
-                                    <img class="accordion-arrow" src="./assets/images/icons/up-arrow.png">
+                                    <div class="accordion-arrow">
+                                        <img src="./assets/images/icons/up-arrow.png">
+                                    </div>
                                 </div>
                                 <div class="accordion-content">
                                     <p>Клиника предлагает широкий спектр медицинских услуг, включая диагностику, лечение и реабилитацию...</p>
                                     <div class="respondent">
                                         <picture>
-  <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
-  <img
-    src="./assets/images/photos/doctor.png"
-    alt="Фото врача"
-    class="slide-image"
-  />
-</picture>                                        <div class="respondent-info">
+                                            <source srcset="./assets/images/photos/doctor.webp" type="image/webp">
+                                            <img
+                                                src="./assets/images/photos/doctor.png"
+                                                alt="Фото врача"
+                                                class="slide-image" />
+                                        </picture>
+                                        <div class="respondent-info">
                                             <div class="respondent-placeholder">На вопрос ответил врач:</div>
                                             <div class="respondent-name">Сидорова Мария Петровна</div>
                                         </div>

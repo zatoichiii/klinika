@@ -65,7 +65,7 @@ $galleryItems = [
         'category' => 'doctors'
     ],
     [
-        'src' => 'assets/images/photos/doctor2.png',
+        'src' => 'assets/images/photos/doc-gal.png',
         'webp' => 'assets/images/photos/doctor2.webp',
         'alt' => 'Врач 2',
         'category' => 'doctors'

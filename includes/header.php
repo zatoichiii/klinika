@@ -55,15 +55,11 @@
         </div>
 
         <div class="actions">
-          <div class="search-container">
-            <div class="search-icon" id="searchIcon">
-              <img src="/assets/images/icons/search.png" alt="Поиск" />
-            </div>
-          </div>
           <button class="btn_consultation btn-secondary ask-doctor">Задать вопрос врачу</button>
           <button class="btn btn-primary call-doctor">Вызвать врача</button>
-          <a class="telegram-icon" href="tg://resolve?domain=mednarkolog_clinic" aria-label="Telegram">
-            <img src="/assets/images/icons/telegram.png" alt="Telegram">
+          <a>
+            <img class="socials__item" src="/assets/images/icons/tg-ico.png" alt="tg">
+
           </a>
           <a class="phone-icon" href="tel:8 (888) 999-99-99" aria-label="Позвонить">
             <img src="/assets/images/icons/phone-icon.png" alt="Телефон">
@@ -89,101 +85,164 @@
 
     <div class="container">
       <div class="menu-container" id="menuContainer">
-        <div class="menu-columns">
-          <!-- Основное меню -->
-          <div class="menu-column main-menu">
-            <ul>
-              <li class="menu-item" data-target="alcohol-treatment">
-                <a href="#">Лечение алкоголизма</a>
-                <img class="arrow" src="assets/images/icons/arrow.png" alt="Стрелка" />
-              </li>
-              <li class="menu-item" data-target="detox">
-                <a href="#">Вывод из запоя</a>
-                <img class="arrow" src="assets/images/icons/arrow.png" alt="Стрелка" />
-              </li>
-              <li class="menu-item" data-target="about-clinic">
-                <a href="#">О клинике</a>
-                <img class="arrow" src="assets/images/icons/arrow.png" alt="Стрелка" />
-              </li>
-              <li><a href="#">Цены</a></li>
-              <li><a href="#">Контакты</a></li>
-              <li><a href="#">Карта сайта</a></li>
-            </ul>
-            <div class="socials-dynimic mobile">
-              <p><b>Соц. сети:</b></p>
-              <div class="socials-dynimic-icons">
-                <a href="#" aria-label="Telegram">
-                  <img src="/assets/images/icons/tgicon.png" alt="Telegram">
-                </a>
-                <a href="#" aria-label="ВКонтакте">
-                  <img src="/assets/images/icons/vk.png" alt="ВКонтакте">
-                </a>
-                <a href="#" aria-label="Одноклассники">
-                  <img src="/assets/images/icons/odnoklassniki.png" alt="Одноклассники">
-                </a>
-              </div>
-              <button class="eye-dynimic">
-                <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
-                <span>Версия для слабовидящих</span>
-              </button>
-            </div>
-            <div class="footer-info">
-              <p><b>Режим работы:</b> Пн-Пт 9:00 - 18:00</p>
-              <p><b>Медицинская лицензия:</b> №XXXXXX</p>
-            </div>
-          </div>
+        <div class="menu__columns-left">
+          <div class="menu__column-select">
+            <!-- Левая колонка -->
+            <div class="column-select__left-side">
+              <ul class="column-select__items">
+                <li class="column-select__item active">О клинике</li>
+                <li class="column-select__item">Вывод из запоя</li>
+                <li class="column-select__item">Лечение алкоголизма</li>
+                <li class="column-select__item">Кодирование</li>
+                <li class="column-select__item">Нарколог на дом</li>
+                <li class="column-select__item">
+                  <a href="/others">Другие услуги</a>
+                </li>
+                <li class="column-select__item">
+                  <a href="/others">Цены</a>
+                </li>
+                <li class="column-select__item">
+                  <a href="/others">Контакты</a>
+                </li>
+                <li class="column-select__item">
+                  <a href="/others">Карта сайта</a>
+                </li>
+              </ul>
 
-          <!-- Динамический контент -->
-          <div class="menu-column dynamic-content">
-            <div class="dynamic-content-wrap">
-              <div id="dynamicTitle">Выберите раздел</div>
-              <ul id="dynamicList"></ul>
-            </div>
-            <div class="footer-dynamic-block">
-              <div class="mobile-part">
-                <button class="btn btn-secondary mobile">Срочный вызов врача</button>
-                <div class="search-container">
-                  <input class="search-mobile" type="search" placeholder="Поиск">
-                  <img src="/assets/images/icons/search.png" alt="Поиск" class="search-icon-mobile">
+              <!-- Футер левой колонки -->
+              <div class="left-side__footer">
+                <div class="footer__item">
+                  <p class="footer-item__title">Режим работы:</p>
+                  <p class="footer-item__desc">Круглосуточно, без выходных</p>
                 </div>
-                <div class="mobile-item">
-                  <p class="title-mobile-item"><b>Телефоны:</b></p>
-                  <div class="numbers">
-                    <a href="tel:8 (888) 999-99-99">8 (888) 999-99-99</a>
-                    <a href="tel:8 (888) 999-99-99">8 (888) 999-99-99</a>
+                <div class="footer__item">
+                  <p class="footer-item__title">Медицинская лицензия:</p>
+                  <p class="footer-item__desc">№ЛО-77-01-018683</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mobile-side__footer">
+              <button class="btn btn-primary call-doctor">Срочный вызов врача</button>
+              <input class="mobile-side__search"></input>
+              <div class=""></div>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="column-select__right-side">
+              <div class="right-side-select__item active">
+                <div class="right-side__title">О клинике</div>
+                <ul class="right-side-select-item__elements">
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right-side-select__item">
+                <div class="right-side__title">Вывод из запоя</div>
+                <ul class="right-side-select-item__elements">
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике1</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right-side-select__item">
+                <div class="right-side__title">Лечение алкоголизма</div>
+                <ul class="right-side-select-item__elements">
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике2</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right-side-select__item">
+                <div class="right-side__title">Кодирование</div>
+                <ul class="right-side-select-item__elements">
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике3</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="right-side-select__item">
+                <div class="right-side__title">Нарколог на дом</div>
+                <ul class="right-side-select-item__elements">
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике</a>
+                  </li>
+                  <li class="right-side-select-item__element">
+                    <a href="#">О клинике4</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Футер правой колонки -->
+              <div class="right-side-select__footer">
+                <div class="right-side-select__socials">
+                  <p>Соц. сети:</p>
+                  <div class="socials__items">
+                    <a>
+                      <img class="socials__item" src="/assets/images/icons/tg-ico.png" alt="tg">
+                    </a>
+                    <a>
+                      <img class="socials__item" src="/assets/images/icons/vk.png" alt="vk">
+                    </a>
+                    <a>
+                      <img class="socials__item" src="/assets/images/icons/odnoklassniki.png" alt="odnoklassniki">
+                    </a>
                   </div>
                 </div>
-                <div class="mobile-item">
-                  <p class="title-mobile-item"><b>Адрес:</b></p>
-                  <p>г. Тула, ул. Ленина, д.2</p>
-                </div>
-              </div>
-
-              <!-- Социальные сети -->
-              <div class="socials-dynimic">
-                <p><b>Соц. сети:</b></p>
-                <div class="socials-dynimic-icons">
-                  <a href="#" aria-label="Telegram">
-                    <img src="/assets/images/icons/tgicon.png" alt="Telegram">
-                  </a>
-                  <a href="#" aria-label="ВКонтакте">
-                    <img src="/assets/images/icons/vk.png" alt="ВКонтакте">
-                  </a>
-                  <a href="#" aria-label="Одноклассники">
-                    <img src="/assets/images/icons/odnoklassniki.png" alt="Одноклассники">
-                  </a>
-                </div>
-                <button class="eye-dynimic">
-                  <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
-                  <span>Версия для слабовидящих</span>
+                <button class="button__eye">
+                  <img src="/assets/images/icons/eye.png">
+                  <p>Версия для слабовидящих</p>
                 </button>
               </div>
             </div>
           </div>
-
-
-
-          <!-- Акции -->
+          <!-- Блок акций -->
           <div class="menu-column promotions">
             <div class="promotion-item color">
               <div class="header-tag">Скидка</div>
@@ -202,8 +261,290 @@
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </section>
 
+
+  <style>
+    .socials__item {
+      width: 40px;
+      height: 40px;
+    }
+
+    .mobile-side__footer {
+      display: none;
+    }
+
+    .mobile-side__footer .btn.btn-primary.call-doctor {
+      display: block
+    }
+
+    li.column-select__item:not(:has(a))::after {
+      content: url(/assets/images/icons/arrow-right-red.png);
+      position: absolute;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      top: 50%;
+      transform: translateY(-50%);
+      align-items: center;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      transition: background-color, transform 0.3s;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 16px;
+      background-color: white;
+    }
+
+    .menu__columns-left {
+      display: flex;
+      gap: 20px;
+    }
+
+    .column-select__left-side {
+      flex: 1;
+      width: 25%;
+    }
+
+    .column-select__items {
+      list-style: none;
+      padding: 0;
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+      margin: 0;
+    }
+
+    .menu__column-select {
+      display: flex;
+      gap: 10px;
+      width: 74%;
+      min-height: 650px;
+      margin: 20px 20px 0 20px;
+    }
+
+    .right-side-select__socials p {
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .footer-item__title {
+      margin-top: 16px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      padding-bottom: 6px;
+    }
+
+    .footer-item__desc {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+
+    .column-select__item {
+      padding: 5px 0;
+      position: relative;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 16px;
+    }
+
+    .column-select__item.active {
+      color: var(--red-color);
+    }
+
+    .column-select__item.active::after {
+      background-color: rgba(236, 234, 228, 0.3);
+    }
+
+    .column-select__right-side {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: space-between;
+      padding-left: 30px;
+    }
+
+    .right-side-select__item {
+      display: none;
+      /* По умолчанию скрыты */
+    }
+
+    .right-side-select__item.active {
+      display: block;
+      /* Показывается при активации */
+    }
+
+    .right-side__title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 30px;
+    }
+
+    .right-side-select-item__elements {
+      list-style: none;
+      padding: 0;
+      height: 370px;
+      overflow-y: auto;
+      margin: 0;
+    }
+
+    .right-side-select-item__element {
+      margin-bottom: 14px;
+      font-weight: 500;
+      color: var(--red-color);
+      font-size: 16px;
+      line-height: 22px;
+
+    }
+
+    .column-select__left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .right-side-select__footer {
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .socials__items {
+      display: flex;
+      gap: 10px;
+    }
+
+    .button__eye p {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--red-color);
+    }
+
+    @media (max-width: 768px) {
+
+
+      .mobile-side__footer {
+        display: flex;
+        order: 19;
+        flex-direction: column;
+      }
+
+      .column-select__item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 12px;
+        padding-top: 12px;
+
+      }
+
+      .column-select__item.active {
+        color: black;
+      }
+
+      .right-side-select-item__element {
+        font-size: 14px;
+        margin-bottom: 12px;
+
+      }
+
+      .left-side__footer {
+        order: 20;
+      }
+
+      .right-side-select-item__elements {
+        height: auto;
+      }
+
+      .right-side-select__footer {
+        order: 25;
+      }
+
+      .column-select__item.active::after {
+        background-color: transparent;
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      .menu__column-select {
+        display: contents;
+      }
+
+      .column-select__left-side,
+      .column-select__right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+
+      .right-side__title {
+        display: none;
+      }
+
+      .right-side-select__item {
+        display: none;
+      }
+
+      .right-side-select__item.active {
+        display: block;
+      }
+
+      .right-side-select-item__elements {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      .column-select__left-side,
+      .column-select__right-side {
+        display: contents
+      }
+
+      .column-select__item.active:not(:has(a)) {
+        border-bottom: 0;
+      }
+
+      .column-select__items {
+        display: contents;
+      }
+
+      .menu-container.active {
+        max-height: 650px;
+        overflow-y: auto;
+      }
+
+      .menu__columns-left {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    .button__eye {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .left-side__footer {
+      border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+    });
+  </script>
   <main>

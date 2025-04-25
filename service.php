@@ -54,7 +54,9 @@
                 <div class="article-accordion-wrapper">
                     <div class="article-accordion-header open" id="contents-header">
                         Содержание статьи
-                        <img src="./assets/images/icons/up-arrow.png" alt="Стрелка" class="arrow-icon" />
+                        <div class="accordion-arrow">
+                            <img src="./assets/images/icons/up-arrow.png">
+                        </div>
                     </div>
                     <div class="article-accordion-content open" id="contents-content">
                         <div class="article-accordion" id="articleAccordion"></div>
@@ -412,11 +414,10 @@
                     </div>
                     <div class="more-articles-wrapper swiper">
                         <div class="more-articles-container swiper-wrapper">
-                            <!-- Карточка 1 -->
                             <div class="more-articles-card swiper-slide">
                                 <div class="card-image">
                                     <picture>
-                                        <source srcset="/assets/images/photos/article-image.webp" type="image/webp">
+                                        <source srcset="/assets/images/photos/blog.webp" type="image/webp">
                                         <img src="/assets/images/photos/blog.png" alt="Article Image" />
                                     </picture>
                                     <div class="card-tags">
@@ -431,11 +432,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Карточка 2 -->
                             <div class="more-articles-card swiper-slide">
                                 <div class="card-image">
                                     <picture>
-                                        <source srcset="/assets/images/photos/article-image.webp" type="image/webp">
+                                        <source srcset="/assets/images/photos/blog.webp" type="image/webp">
+                                        <img src="/assets/images/photos/blog.png" alt="Article Image" />
+                                    </picture>
+                                    <div class="card-tags">
+                                        <span class="tag date">12.09.2023</span>
+                                        <span class="tag type">Алкоголь</span>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-title">Как алкоголь влияет на настроение</div>
+                                    <div class="card-description">
+                                        Наши специалисты обладают многолетним опытом и регулярно совершенствуют свои навыки.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-articles-card swiper-slide">
+                                <div class="card-image">
+                                    <picture>
+                                        <source srcset="/assets/images/photos/blog.webp" type="image/webp">
                                         <img src="/assets/images/photos/blog.png" alt="Article Image" />
                                     </picture>
                                     <div class="card-tags">

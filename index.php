@@ -156,7 +156,7 @@
                   <li>Кодирование от алкоголизма</li>
                   <li>Лечение алкоголизма</li>
                 </ul>
-                
+
                 <a class="services__price-block">
                   <div class="services__price-description">
                     <span class="services__price-title">Все услуги</span>
@@ -236,17 +236,17 @@
         <button class="category-btn" data-category="coding">Кодирование от алкоголизма</button>
         <button class="category-btn" data-category="alcoholism">Лечение алкоголизма</button>
         <div class="dropdown-container">
-          <!-- Круглая кнопка со стрелкой -->
           <button class="dropdown-toggle">
             <img src="/assets/images/icons/category.png" />
           </button>
 
-          <!-- Выпадающий список -->
           <div class="dropdown-menu">
-            <button class="category-btn" data-category="drugs">Лечение наркомании</button>
-            <button class="category-btn" data-category="rehabilitation">Реабилитация</button>
-            <button class="category-btn" data-category="psychology">Психологическая помощь</button>
-            <button class="category-btn" data-category="detoxification">Детоксикация</button>
+            <div class="category-modal-content">
+              <button class="category-btn" data-category="drugs">Лечение наркомании</button>
+              <button class="category-btn" data-category="rehabilitation">Реабилитация</button>
+              <button class="category-btn" data-category="psychology">Психологическая помощь</button>
+              <button class="category-btn" data-category="detoxification">Детоксикация</button>
+            </div>
           </div>
         </div>
       </div>
@@ -472,7 +472,7 @@
               <li>Установка пломб</li>
               <li>Современное оборудование</li>
             </ul>
-            <button class="btn btn-primary promotion">Заказать услугу</button>
+            <button class="btn btn-primary promotion default">Заказать услугу</button>
           </div>
         </div>
         <div class="swiper-slide">
@@ -480,7 +480,7 @@
             <div class="slide-discount">Скидка</div>
             <div class="slide-title">Скидка -10% действующим военнослужащим</div>
             <p>Акция распространяется только на действующих военных.</p>
-            <button class="btn btn-primary promotion">Заказать услугу</button>
+            <button class="btn btn-primary promotion default">Заказать услугу</button>
           </div>
         </div>
         <div class="swiper-slide">
@@ -492,7 +492,7 @@
               <li>Гарантия 5 лет</li>
               <li>Безопасность процедуры</li>
             </ul>
-            <button class="btn btn-primary promotion">Заказать услугу</button>
+            <button class="btn btn-primary promotion default">Заказать услугу</button>
           </div>
         </div>
       </div>
@@ -757,7 +757,9 @@
             <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
             <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
           </div>
-          <button class="read-more-btn">Читать полностью</button>
+          <button class="read-more-btn">Читать полностью
+            <img src="/assets/images/icons/down.png"/>
+          </button>
         </div>
       </div>
       <div class="right-side-form">

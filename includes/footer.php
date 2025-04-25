@@ -12,14 +12,24 @@
             <div class="footer-wraper">
                 <!-- Верхняя часть футера -->
                 <div class="upper-block">
-                    <div class="logo">
-                        <img src="/assets/images/photos/ico.png" alt="Логотип Призма">
-                        <div class="text-block">
-                            <div class="title">Призма</div>
-                            <div class="desc">Наркология</div>
+                    <div class="footer__logo__search">
+
+                        <div class="logo">
+                            <img src="/assets/images/photos/ico.png" alt="Логотип Призма">
+                            <div class="text-block">
+                                <div class="title">Призма</div>
+                                <div class="desc">Наркология</div>
+                            </div>
                         </div>
                     </div>
+
+
                     <div class="buttons">
+                        <div class="search-container">
+                            <div class="search-icon" id="searchIcon">
+                                <img src="/assets/images/icons/search.png" alt="Поиск" />
+                            </div>
+                        </div>
                         <button class="button-eye">
                             <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
                             Версия для слабовидящих
@@ -30,6 +40,7 @@
 
                 <!-- Нижняя часть футера -->
                 <div class="lower-block">
+
                     <div class="grid-container">
                         <!-- Левая колонка: телефоны и адрес -->
                         <div class="left-column">
@@ -191,7 +202,7 @@
 <div class="modal modal-price">
     <div class="modal-content">
         <span class="close close-price">&times;</span>
-        <div class="modal-title"><b></b></div> 
+        <div class="modal-title"><b></b></div>
         <form>
             <div class="input-group">
                 <input type="text" placeholder="Ваше имя">
