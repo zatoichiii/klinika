@@ -77,7 +77,7 @@
         <div class="time-block">
             <div class="time-title" id="schedule-toggle">
                 График работы
-                <img style="transform: translateY(-50%) rotate(180deg);" src="/assets/images/icons/toggle-time.png" alt="Открыть" class="arrow-icon"/>
+                <img style="transform: translateY(-50%) rotate(180deg);" src="/assets/images/icons/toggle-time.png" alt="Открыть" class="arrow-icon" />
             </div>
             <div class="schedule-container open" id="schedule-content">
                 <div class="schedule-item">
@@ -166,7 +166,7 @@
 
 <!-- Дипломы врача -->
 <div class="diploms-doctors-section">
-    <div class="container">
+    <div class="container container-swiper">
         <div class="part-block">
             <div class="upper-block">
                 <div class="block-title-diplom">Дипломы и документы главного врача</div>
@@ -228,7 +228,7 @@
 
 <!-- Публикации -->
 <div class="publications-section">
-    <div class="container">
+    <div class="container container-swiper">
         <div class="part-block">
             <div class="upper-block">
                 <div class="block-title">Публикации главного врача</div>
@@ -242,13 +242,12 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <picture>
-  <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
-  <img
-    class="public-image"
-    src="/assets/images/photos/image-service.png"
-    alt="Статья"
-  />
-</picture>
+                            <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
+                            <img
+                                class="public-image"
+                                src="/assets/images/photos/image-service.png"
+                                alt="Статья" />
+                        </picture>
 
                         <div class="text-publications">
                             <div class="title-publications">Как алкоголь влияет на настроение</div>
@@ -266,13 +265,12 @@
                     </div>
                     <div class="swiper-slide">
                         <picture>
-  <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
-  <img
-    class="public-image"
-    src="/assets/images/photos/image-service.png"
-    alt="Статья"
-  />
-</picture>
+                            <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
+                            <img
+                                class="public-image"
+                                src="/assets/images/photos/image-service.png"
+                                alt="Статья" />
+                        </picture>
 
                         <div class="text-publications">
                             <div class="title-publications">Как алкоголь влияет на настроение</div>
@@ -290,13 +288,12 @@
                     </div>
                     <div class="swiper-slide">
                         <picture>
-  <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
-  <img
-    class="public-image"
-    src="/assets/images/photos/image-service.png"
-    alt="Статья"
-  />
-</picture>
+                            <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
+                            <img
+                                class="public-image"
+                                src="/assets/images/photos/image-service.png"
+                                alt="Статья" />
+                        </picture>
 
                         <div class="text-publications">
                             <div class="title-publications">Как алкоголь влияет на настроение</div>
@@ -314,13 +311,12 @@
                     </div>
                     <div class="swiper-slide">
                         <picture>
-  <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
-  <img
-    class="public-image"
-    src="/assets/images/photos/image-service.png"
-    alt="Статья"
-  />
-</picture>
+                            <source srcset="/assets/images/photos/image-service.webp" type="image/webp">
+                            <img
+                                class="public-image"
+                                src="/assets/images/photos/image-service.png"
+                                alt="Статья" />
+                        </picture>
 
                         <div class="text-publications">
                             <div class="title-publications">Как алкоголь влияет на настроение</div>
@@ -346,7 +342,7 @@
 
 <!-- Отзывы о враче -->
 <div class="reviews-section-doctor">
-    <div class="container">
+    <div class="container container-swiper">
         <div class="part-block">
             <div class="upper-block">
                 <div class="block-title">Отзывы о враче</div>

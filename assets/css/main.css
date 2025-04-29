@@ -8100,6 +8100,7 @@ td {
   padding: 40px 0;
 }
 
+
 .part-block {
   position: relative;
 }
@@ -8309,6 +8310,7 @@ td {
   font-size: 32px;
   line-height: 40px;
   gap: 30px;
+  padding-left: 16px;
   margin-bottom: 35px;
 }
 
@@ -8398,6 +8400,7 @@ td {
 
 .diploms-doctors-section .swiper-wrapper {
   display: flex;
+  padding-left: 16px;
   transition: transform 0.5s ease;
 }
 
@@ -11277,3 +11280,16 @@ li.column-select__item:not(:has(a))::after {
 .article-accordion-content.is-leaf a::before {
   content: "— ";
 }
+
+.publications-section .upper-block{
+  padding-left: 16px;
+}
+
+.swiper-publications-doctor{
+  padding-left: 16px;
+}
+
+.reviews-section-doctor .upper-block{
+  padding-left: 16px;
+}
+

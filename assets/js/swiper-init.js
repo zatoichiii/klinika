@@ -343,6 +343,10 @@ const initAdvantagesSwiper = () => {
   if (window.innerWidth > 0) {
     if (!advantagesSwiper) {
       advantagesSwiper = new Swiper(".advantages-swiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
         navigation: {
           nextEl: ".swiper-button-next.advantages",
           prevEl: ".swiper-button-prev.advantages",
@@ -353,10 +357,7 @@ const initAdvantagesSwiper = () => {
           1024: {
             slidesPerView: 3,
             spaceBetween: 20,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
+
           },
           768: {
             slidesPerView: 2.2,
