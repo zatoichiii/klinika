@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > 768) {
       if (!stagesSwiper) {
         stagesSwiper = new Swiper(".stages-swiper", {
-          autoHeight: true,
           navigation: {
             nextEl: ".swiper-button-next.stages",
             prevEl: ".swiper-button-prev.stages",

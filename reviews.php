@@ -17,7 +17,7 @@
     <div class="container">
         <div class="upper-section-reviews">
             <div class="upper-section-reviews-title">Отзывы наших пациентов</div>
-            <div class="btn-review-modal btn-input-reviews">Оставьте отзыв</div>
+            <div class="btn-review-modal btn-input-reviews" data-modal=".modal-review">Оставьте отзыв</div>
         </div>
 
         <div class="data-block">

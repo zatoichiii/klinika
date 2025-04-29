@@ -74,38 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", setMobileOrder);
 
-  const priceItems = document.querySelectorAll(".price-item");
-  const modalPrice = document.querySelector(".modal-price");
-  const modalTitle = document.querySelector(".modal-price .modal-title b");
-  const closeModalPrice = document.querySelector(".close-price");
-
-  if (priceItems.length > 0 && modalPrice && modalTitle && closeModalPrice) {
-    priceItems.forEach((item) => {
-      const price = item.querySelector(".price, .price-value");
-      const name = item.querySelector(".name, .price-info p");
-
-      if (price && name) {
-        price.addEventListener("click", () => {
-          modalTitle.textContent = "Заявка на " + name.textContent;
-
-          modalPrice.classList.add("open");
-        });
-      }
-    });
-
-    closeModalPrice.addEventListener("click", () => {
-      modalPrice.classList.remove("open");
-    });
-
-    modalPrice.addEventListener("click", (e) => {
-      if (e.target === modalPrice) {
-        modalPrice.classList.remove("open");
-      }
-    });
-  } else {
-    console.warn("Необходимые элементы для модального окна не найдены.");
-  }
-
   const scheduleToggle = document.getElementById("schedule-toggle");
   const scheduleContent = document.getElementById("schedule-content");
 
@@ -349,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener("click", () => {
         const reviewBody = button.previousElementSibling;
         reviewBody.classList.toggle("expanded");
+        button.classList.toggle('exp')
         button.textContent = reviewBody.classList.contains("expanded")
           ? "Скрыть"
           : "Подробнее";
@@ -621,106 +590,126 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  const accordionContainer = document.getElementById("articleAccordion");
-  const contentsHeader = document.getElementById("contents-header");
-  const contentsContent = document.getElementById("contents-content");
 
-  if (accordionContainer && contentsHeader && contentsContent) {
-    // Обработчик клика на "Содержание статьи"
-    contentsHeader.addEventListener("click", () => {
-      const isOpen = contentsContent.classList.contains("open");
 
-      if (isOpen) {
-        contentsContent.classList.remove("open");
-        contentsContent.style.maxHeight = null;
-      } else {
-        contentsContent.classList.add("open");
-        contentsContent.style.maxHeight =
-          contentsContent.scrollHeight + 500 + "px";
-      }
+const accordionContainer = document.getElementById("articleAccordion");
+const contentsHeader = document.getElementById("contents-header");
+const contentsContent = document.getElementById("contents-content");
 
-      // Добавляем/удаляем класс open для поворота стрелки
-      contentsHeader.classList.toggle("open");
-    });
+if (accordionContainer && contentsHeader && contentsContent) {
+  // Обработчик клика по "Содержание статьи"
+  contentsHeader.addEventListener("click", () => {
+    const isOpen = contentsContent.classList.contains("open");
 
-    const headings = Array.from(
-      document.querySelector(".part-block").querySelectorAll("h2, h3, h4, h5")
-    );
-
-    let stack = [];
-
-    headings.forEach((heading, index) => {
-      const level = parseInt(heading.tagName.charAt(1));
-      heading.id = `article-heading-${index}`;
-
-      const accordionItem = document.createElement("div");
-      accordionItem.classList.add("article-accordion-item");
-
-      const header = document.createElement("div");
-      header.classList.add("article-accordion-header");
-      header.textContent = heading.textContent;
-
-      const content = document.createElement("div");
-      content.classList.add("article-accordion-content");
-
-      header.addEventListener("click", () => {
-        if (content.children.length === 0) {
-          smoothScrollTo(heading);
-        } else {
-          toggleAccordion(header, content);
-        }
-      });
-
-      accordionItem.appendChild(header);
-      accordionItem.appendChild(content);
-
-      while (stack.length > 0 && stack[stack.length - 1].level >= level) {
-        stack.pop();
-      }
-
-      if (stack.length === 0) {
-        accordionContainer.appendChild(accordionItem);
-      } else {
-        stack[stack.length - 1].content.appendChild(accordionItem);
-      }
-
-      stack.push({
-        level,
-        content,
-      });
-    });
-
-    function toggleAccordion(header, content) {
-      const isOpen = content.classList.contains("open");
-
-      closeSiblingAccordions(content.parentElement);
-
-      if (!isOpen) {
-        content.classList.add("open");
-        content.style.maxHeight = content.scrollHeight + 600 + "px";
-      } else {
-        content.classList.remove("open");
-        content.style.maxHeight = null;
-      }
+    if (isOpen) {
+      contentsContent.classList.remove("open");
+      contentsContent.style.maxHeight = null;
+    } else {
+      contentsContent.classList.add("open");
+      contentsContent.style.maxHeight = contentsContent.scrollHeight + 500 + "px";
     }
 
-    function closeSiblingAccordions(parentElement) {
-      const siblings = parentElement.querySelectorAll(
-        ".article-accordion-content.open"
-      );
-      siblings.forEach((sibling) => {
-        sibling.classList.remove("open");
-        sibling.style.maxHeight = null;
-      });
+    contentsHeader.classList.toggle("open");
+  });
+
+  const headings = Array.from(
+    document.querySelector(".part-block").querySelectorAll("h2, h3, h4, h5")
+  );
+
+  let stack = [];
+
+  headings.forEach((heading, index) => {
+    const level = parseInt(heading.tagName.charAt(1));
+    heading.id = `article-heading-${index}`;
+
+    const accordionItem = document.createElement("div");
+    accordionItem.classList.add("article-accordion-item");
+
+    const header = document.createElement("div");
+    header.classList.add("article-accordion-header");
+    header.setAttribute("role", "button");
+    header.setAttribute("aria-expanded", "false");
+    header.setAttribute("tabindex", "0"); // делаем доступным для клавиатуры
+
+    header.textContent = heading.textContent;
+
+    const content = document.createElement("div");
+    content.classList.add("article-accordion-content");
+
+    // Проверяем, является ли текущий заголовок листом (не имеет дочерних заголовков)
+    const nextHeading = headings[index + 1];
+    const isLeaf =
+      !nextHeading ||
+      parseInt(nextHeading.tagName.charAt(1)) <= level;
+
+    if (isLeaf) {
+      const link = document.createElement("a");
+      link.href = `#article-heading-${index}`;
+      link.textContent = heading.textContent;
+      content.appendChild(link);
+      content.classList.add("is-leaf");
     }
 
-    function smoothScrollTo(element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    // Назначаем обработчики клика и Enter
+    const handleExpand = () => {
+      toggleAccordion(header, content);
+    };
+
+    header.addEventListener("click", handleExpand);
+    header.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleExpand();
+      }
+    });
+
+    accordionItem.appendChild(header);
+    accordionItem.appendChild(content);
+
+    while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+      stack.pop();
+    }
+
+    if (stack.length === 0) {
+      accordionContainer.appendChild(accordionItem);
+    } else {
+      stack[stack.length - 1].content.appendChild(accordionItem);
+    }
+
+    stack.push({
+      level,
+      content,
+    });
+  });
+
+  function toggleAccordion(header, content) {
+    const isOpen = content.classList.contains("open");
+
+    closeSiblingAccordions(content.parentElement);
+
+    if (!isOpen) {
+      content.classList.add("open");
+      content.style.maxHeight = content.scrollHeight + 600 + "px";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.remove("open");
+      content.style.maxHeight = null;
+      header.setAttribute("aria-expanded", "false");
     }
   }
+
+  function closeSiblingAccordions(parentElement) {
+    const siblings = parentElement.querySelectorAll(
+      ".article-accordion-content.open"
+    );
+    siblings.forEach((sibling) => {
+      sibling.classList.remove("open");
+      sibling.style.maxHeight = null;
+      const header = sibling.previousElementSibling;
+      if (header) header.setAttribute("aria-expanded", "false");
+    });
+  }
+}
   // ------------------------------
   // fancybox
   // ------------------------------
@@ -875,16 +864,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------
   // Модальное окно
   // ------------------------------
-  const modal = document.querySelector(".modal");
-  const buttonsModal = document.querySelectorAll(".btn");
-  const closeBtn = document.querySelector(".close");
+  const modals = document.querySelectorAll(".popup");
+  const buttons = document.querySelectorAll("[data-modal]");
+  const closeButtons = document.querySelectorAll(".close");
 
-  function openModal() {
+  function openModal(modal) {
+    if (!modal) return;
     modal.style.display = "flex";
-    setTimeout(() => modal.classList.add("open"), 10);
+    modal.style.animation = "fadeIn 0.3s ease-in-out";
+    setTimeout(() => {
+      modal.classList.add("open");
+      modal.style.animation = "";
+    }, 300);
   }
 
-  function closeModal() {
+  function closeModal(modal) {
+    if (!modal) return;
     modal.classList.remove("open");
     modal.style.animation = "fadeOut 0.3s ease-in-out";
     setTimeout(() => {
@@ -893,65 +888,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
   }
 
-  buttonsModal.forEach((button) => button.addEventListener("click", openModal));
-  closeBtn?.addEventListener("click", closeModal);
-  modal?.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = document.querySelector(btn.dataset.modal);
+      openModal(target);
+    });
   });
 
-  // Логика для второго модального окна (если есть)
-  const modalConsultation = document.querySelector(".modal-consultation");
-  const buttonsModalConsultation =
-    document.querySelectorAll(".btn_consultation");
-  const closeBtnConsultation = document.querySelector(".close-consultation");
+  const priceItems = document.querySelectorAll(".price-item");
+  const modalPrice = document.querySelector(".modal-price");
+  const modalTitle = modalPrice?.querySelector(".modal-title b");
 
-  function openModalConsultation() {
-    modalConsultation.style.display = "flex";
-    setTimeout(() => modalConsultation.classList.add("open"), 10);
+  if (priceItems.length > 0 && modalPrice && modalTitle) {
+    priceItems.forEach((item) => {
+      const price = item.querySelector(".price, .price-value");
+      const name = item.querySelector(".name, .price-info p");
+
+      if (price && name) {
+        price.addEventListener("click", () => {
+          modalTitle.textContent = "Заявка на " + name.textContent.trim();
+          openModal(modalPrice);
+        });
+      }
+    });
+  } else {
+    console.warn(
+      "Не найдены элементы для price-item или модального окна цены."
+    );
   }
 
-  function closeModalConsultation() {
-    modalConsultation.classList.remove("open");
-    modalConsultation.style.animation = "fadeOut 0.3s ease-in-out";
-    setTimeout(() => {
-      modalConsultation.style.display = "none";
-      modalConsultation.style.animation = "";
-    }, 300);
-  }
-
-  buttonsModalConsultation.forEach((button) =>
-    button.addEventListener("click", openModalConsultation)
-  );
-  closeBtnConsultation?.addEventListener("click", closeModalConsultation);
-  modalConsultation?.addEventListener("click", (e) => {
-    if (e.target === modalConsultation) closeModalConsultation();
+  closeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modal = btn.closest(".popup");
+      closeModal(modal);
+    });
   });
 
-  // Логика для нового модального окна
-  const modalReview = document.querySelector(".modal-review");
-  const buttonsModalReview = document.querySelectorAll(".btn-review-modal");
-  const closeBtnReview = document.querySelector(".close-review");
-
-  function openModalReview() {
-    modalReview.style.display = "flex";
-    setTimeout(() => modalReview.classList.add("open"), 10);
-  }
-
-  function closeModalReview() {
-    modalReview.classList.remove("open");
-    modalReview.style.animation = "fadeOut 0.3s ease-in-out";
-    setTimeout(() => {
-      modalReview.style.display = "none";
-      modalReview.style.animation = "";
-    }, 300);
-  }
-
-  buttonsModalReview.forEach((button) =>
-    button.addEventListener("click", openModalReview)
-  );
-  closeBtnReview?.addEventListener("click", closeModalReview);
-  modalReview?.addEventListener("click", (e) => {
-    if (e.target === modalReview) closeModalReview();
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
   });
 
   // ------------------------------

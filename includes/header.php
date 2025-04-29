@@ -55,8 +55,8 @@
         </div>
 
         <div class="actions">
-          <button class="btn_consultation btn-secondary ask-doctor">Задать вопрос врачу</button>
-          <button class="btn btn-primary call-doctor">Вызвать врача</button>
+          <button class="btn_consultation btn-secondary ask-doctor" data-modal=".modal-consultation">Задать вопрос врачу</button>
+          <button class="btn btn-primary call-doctor" data-modal=".modal">Вызвать врача</button>
           <a>
             <img class="socials__item" src="/assets/images/icons/tg-ico.png" alt="tg">
 
@@ -124,7 +124,12 @@
 
             <div class="mobile-side__footer">
               <button class="btn btn-primary call-doctor">Срочный вызов врача</button>
-              <input class="mobile-side__search"></input>
+              <a href="/search-page" class="mock-search-input">
+                <input type="text" placeholder="Поиск..." readonly>
+                <span class="search-icon">
+                  <img src="/assets/images/icons/search.png" alt="Поиск">
+                </span>
+              </a>
               <div class=""></div>
             </div>
 
@@ -247,17 +252,17 @@
             <div class="promotion-item color">
               <div class="header-tag">Скидка</div>
               <p>Скидка на услугу «Кодирование методом Довженко»</p>
-              <button class="btn btn-primary">Заказать услугу</button>
+              <button class="btn btn-primary" data-modal=".modal">Заказать услугу</button>
             </div>
             <div class="promotion-item">
               <div class="header-tag">Скидка</div>
               <p>Курс лечения алкоголизма на дому</p>
-              <button class="btn btn-primary">Заказать услугу</button>
+              <button class="btn btn-primary" data-modal=".modal">Заказать услугу</button>
             </div>
             <div class="promotion-item">
               <div class="header-tag">Скидка</div>
               <p>Курс лечения алкоголизма на дому</p>
-              <button class="btn btn-primary promotion">Заказать услугу</button>
+              <button class="btn btn-primary promotion" data-modal=".modal">Заказать услугу</button>
             </div>
           </div>
         </div>
@@ -266,285 +271,4 @@
       </div>
     </div>
   </section>
-
-
-  <style>
-    .socials__item {
-      width: 40px;
-      height: 40px;
-    }
-
-    .mobile-side__footer {
-      display: none;
-    }
-
-    .mobile-side__footer .btn.btn-primary.call-doctor {
-      display: block
-    }
-
-    li.column-select__item:not(:has(a))::after {
-      content: url(/assets/images/icons/arrow-right-red.png);
-      position: absolute;
-      right: 10px;
-      display: flex;
-      justify-content: center;
-      top: 50%;
-      transform: translateY(-50%);
-      align-items: center;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      transition: background-color, transform 0.3s;
-    }
-
-    .menu-container {
-      display: flex;
-      flex-direction: column;
-      padding: 30px 16px;
-      background-color: white;
-    }
-
-    .menu__columns-left {
-      display: flex;
-      gap: 20px;
-    }
-
-    .column-select__left-side {
-      flex: 1;
-      width: 25%;
-    }
-
-    .column-select__items {
-      list-style: none;
-      padding: 0;
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
-      margin: 0;
-    }
-
-    .menu__column-select {
-      display: flex;
-      gap: 10px;
-      width: 74%;
-      min-height: 650px;
-      margin: 20px 20px 0 20px;
-    }
-
-    .right-side-select__socials p {
-      margin-bottom: 6px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-    .footer-item__title {
-      margin-top: 16px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 20px;
-      padding-bottom: 6px;
-    }
-
-    .footer-item__desc {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-
-    .column-select__item {
-      padding: 5px 0;
-      position: relative;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 22px;
-      margin-bottom: 16px;
-    }
-
-    .column-select__item.active {
-      color: var(--red-color);
-    }
-
-    .column-select__item.active::after {
-      background-color: rgba(236, 234, 228, 0.3);
-    }
-
-    .column-select__right-side {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      justify-content: space-between;
-      padding-left: 30px;
-    }
-
-    .right-side-select__item {
-      display: none;
-      /* По умолчанию скрыты */
-    }
-
-    .right-side-select__item.active {
-      display: block;
-      /* Показывается при активации */
-    }
-
-    .right-side__title {
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 32px;
-      margin-bottom: 30px;
-    }
-
-    .right-side-select-item__elements {
-      list-style: none;
-      padding: 0;
-      height: 370px;
-      overflow-y: auto;
-      margin: 0;
-    }
-
-    .right-side-select-item__element {
-      margin-bottom: 14px;
-      font-weight: 500;
-      color: var(--red-color);
-      font-size: 16px;
-      line-height: 22px;
-
-    }
-
-    .column-select__left-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .right-side-select__footer {
-      gap: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .socials__items {
-      display: flex;
-      gap: 10px;
-    }
-
-    .button__eye p {
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 20px;
-      color: var(--red-color);
-    }
-
-    @media (max-width: 768px) {
-
-
-      .mobile-side__footer {
-        display: flex;
-        order: 19;
-        flex-direction: column;
-      }
-
-      .column-select__item {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        margin-bottom: 12px;
-        padding-top: 12px;
-
-      }
-
-      .column-select__item.active {
-        color: black;
-      }
-
-      .right-side-select-item__element {
-        font-size: 14px;
-        margin-bottom: 12px;
-
-      }
-
-      .left-side__footer {
-        order: 20;
-      }
-
-      .right-side-select-item__elements {
-        height: auto;
-      }
-
-      .right-side-select__footer {
-        order: 25;
-      }
-
-      .column-select__item.active::after {
-        background-color: transparent;
-        transform: translateY(-50%) rotate(90deg);
-      }
-
-      .menu__column-select {
-        display: contents;
-      }
-
-      .column-select__left-side,
-      .column-select__right-side {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-
-      .right-side__title {
-        display: none;
-      }
-
-      .right-side-select__item {
-        display: none;
-      }
-
-      .right-side-select__item.active {
-        display: block;
-      }
-
-      .right-side-select-item__elements {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      }
-
-      .column-select__left-side,
-      .column-select__right-side {
-        display: contents
-      }
-
-      .column-select__item.active:not(:has(a)) {
-        border-bottom: 0;
-      }
-
-      .column-select__items {
-        display: contents;
-      }
-
-      .menu-container.active {
-        max-height: 650px;
-        overflow-y: auto;
-      }
-
-      .menu__columns-left {
-        flex-direction: column;
-        gap: 0;
-      }
-    }
-
-    .button__eye {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .left-side__footer {
-      border-right: 1px solid rgba(0, 0, 0, 0.2);
-    }
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-
-    });
-  </script>
   <main>

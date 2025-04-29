@@ -35,7 +35,7 @@
                 </div>
               </a>
 
-              <button class="btn button">Задать вопрос врачу</button>
+              <button class="btn button" data-modal=".modal-consultation">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
@@ -63,7 +63,7 @@
                 </div>
               </a>
 
-              <button class="btn button">Задать вопрос врачу</button>
+              <button class="btn button" data-modal=".modal-consultation">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
@@ -91,7 +91,7 @@
                 </div>
               </a>
 
-              <button class="btn button">Задать вопрос врачу</button>
+              <button class="btn button" data-modal=".modal-consultation">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
@@ -119,7 +119,7 @@
                 </div>
               </a>
 
-              <button class="btn button">Задать вопрос врачу</button>
+              <button class="btn button" data-modal=".modal-consultation">Задать вопрос врачу</button>
             </div>
           </div>
           <div class="swiper-slide">
@@ -147,7 +147,7 @@
                 </div>
               </a>
 
-              <button class="btn button">Задать вопрос врачу</button>
+              <button class="btn button" data-modal=".modal-consultation">Задать вопрос врачу</button>
             </div>
           </div>
         </div>

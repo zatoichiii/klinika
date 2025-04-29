@@ -34,7 +34,7 @@
                             <img src="/assets/images/icons/eye.png" alt="Версия для слабовидящих">
                             Версия для слабовидящих
                         </button>
-                        <button class="btn call">Срочный вызов врача</button>
+                        <button class="btn call" data-modal=".modal">Срочный вызов врача</button>
                     </div>
                 </div>
 
@@ -164,7 +164,7 @@
 </footer>
 
 
-<div class="modal">
+<div class="popup modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="modal-title"><b>Бесплатная</b> консультация</div>
@@ -180,7 +180,7 @@
     </div>
 </div>
 
-<div class="modal modal-consultation">
+<div class="popup modal modal-consultation">
     <div class="modal-content">
         <span class="close close-consultation">&times;</span>
         <div class="modal-title"><b>Задайте вопрос</b> нашим специалистам</div>
@@ -199,7 +199,7 @@
     </div>
 </div>
 
-<div class="modal modal-price">
+<div class="popup modal modal-price">
     <div class="modal-content">
         <span class="close close-price">&times;</span>
         <div class="modal-title"><b></b></div>
@@ -219,7 +219,7 @@
 </div>
 
 
-<div class="modal modal-review">
+<div class="popup modal modal-review">
     <div class="modal-content">
         <span class="close close-review">&times;</span>
         <div class="modal-title"><b>Оставьте отзыв</b> о нашей работе</div>

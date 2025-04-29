@@ -14,7 +14,7 @@
             <div class="faq-content">
                 <div class="top-block-faq-page">
                     <div class="title-faq-page">Часто задаваемые вопросы</div>
-                    <button class="btn_consultation button faq-button">Задать вопрос</button>
+                    <button class="btn_consultation button faq-button" data-modal=".modal-consultation">Задать вопрос</button>
                 </div>
 
                 <!-- Фильтры -->

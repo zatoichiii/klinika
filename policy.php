@@ -1,6 +1,16 @@
 <? include 'includes/header.php'; ?>
 
 <div class="container">
+<div class="breadcrumbs">
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><img src="/assets/images/icons/home.png" alt="Главная"></a></li>
+                    <li>/</li>
+                    <li class="breadcrumb-item active" aria-current="page">Политика конфиденциальности</li>
+                </ul>
+            </nav>
+        </div>
+
     <h1>Политика конфиденциальности сайта наркологической клиники Призма</h1>
     <div class="content">
         <p>Соглашаясь с Условиями работы сайта (далее Условия) и оставляя свои данные на сайте <b>«Частный Медик 24 в Ростове-на-Дону»</b> (далее Сайт), путем заполнения полей онлайн-заявки Пользователь:</p>

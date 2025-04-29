@@ -35,7 +35,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="btn_consultation button">Задать вопрос врачу</button>
+                    <button class="btn_consultation button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
                 <div class="doctor-card">
@@ -54,7 +54,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
                 <div class="doctor-card">
@@ -73,7 +73,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
                 <div class="doctor-card">
@@ -92,27 +92,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
-                </div>
-
-
-                <div class="doctor-card">
-                    <div class="placeholders">
-                        <div class="placeholder-item">
-                            Врач
-                        </div>
-                        <div class="placeholder-item">
-                            Стаж: 10 лет
-                        </div>
-                    </div>
-                    <div class="doctor-name">Петров Петр Петрович</div>
-                    <a href="/doctor-detail" class="doctor-description">
-                        Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
-                    </a>
-                    <div class="doctor-image">
-                        <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
-                    </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
 
@@ -132,7 +112,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
 
@@ -152,7 +132,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
 
@@ -172,7 +152,7 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
 
 
@@ -192,7 +172,27 @@
                     <div class="doctor-image">
                         <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
                     </div>
-                    <button class="button">Задать вопрос врачу</button>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
+                </div>
+
+
+                <div class="doctor-card">
+                    <div class="placeholders">
+                        <div class="placeholder-item">
+                            Врач
+                        </div>
+                        <div class="placeholder-item">
+                            Стаж: 10 лет
+                        </div>
+                    </div>
+                    <div class="doctor-name">Петров Петр Петрович</div>
+                    <a href="/doctor-detail" class="doctor-description">
+                        Психиатр-нарколог. Опыт работы с тяжелыми формами зависимостей.
+                    </a>
+                    <div class="doctor-image">
+                        <img src="/assets/images/photos/doc-gal.png" alt="Петров Петр Петрович">
+                    </div>
+                    <button class="button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                 </div>
             </div>
         </section>

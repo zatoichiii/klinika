@@ -5,15 +5,15 @@
   <div class="container">
     <div class="banner-wrapper">
       <div class="content">
-        <h1 class="content-title">Наркологическая клиника <b>«Призма»</b></h1>
+        <h1 class="content-title">Наркологическая клиника «Призма»</h1>
         <p class="content-description">Наши специализированные программы лечения алкоголизма предлагают комплексный
           подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные планы реабилитации.</p>
-        <a href="#" class="btn button">Бесплатная консультация</a>
+        <a href="#" class="btn button" data-modal=".modal">Бесплатная консультация</a>
       </div>
       <div class="image-wrapper">
         <picture>
-          <source srcset="assets/images/photos/corridor.webp" type="image/webp">
-          <img src="assets/images/photos/corridor.png" alt="Коридор клиники" class="content-image">
+          <source srcset="assets/images/photos/bg-image-main.webp" type="image/webp">
+          <img src="assets/images/photos/bg-image-main.png" alt="Коридор клиники" class="content-image">
         </picture>
       </div>
     </div>
@@ -460,7 +460,7 @@
               <div class="price-value-promotion-old">9500 ₽</div>
               <div class="price-value-promotion-new">8500 ₽</div>
             </div>
-            <button class="btn btn-primary promotion">Заказать услугу</button>
+            <button class="btn btn-primary promotion" data-modal=".modal-consultation">Заказать услугу</button>
           </div>
         </div>
         <div class="swiper-slide">
@@ -472,7 +472,7 @@
               <li>Установка пломб</li>
               <li>Современное оборудование</li>
             </ul>
-            <button class="btn btn-primary promotion default">Заказать услугу</button>
+            <button class="btn btn-primary promotion default" data-modal=".modal-consultation">Заказать услугу</button>
           </div>
         </div>
         <div class="swiper-slide">
@@ -480,7 +480,7 @@
             <div class="slide-discount">Скидка</div>
             <div class="slide-title">Скидка -10% действующим военнослужащим</div>
             <p>Акция распространяется только на действующих военных.</p>
-            <button class="btn btn-primary promotion default">Заказать услугу</button>
+            <button class="btn btn-primary promotion default" data-modal=".modal-consultation">Заказать услугу</button>
           </div>
         </div>
         <div class="swiper-slide">
@@ -492,7 +492,7 @@
               <li>Гарантия 5 лет</li>
               <li>Безопасность процедуры</li>
             </ul>
-            <button class="btn btn-primary promotion default">Заказать услугу</button>
+            <button class="btn btn-primary promotion default" data-modal=".modal-consultation">Заказать услугу</button>
           </div>
         </div>
       </div>
@@ -598,7 +598,7 @@
     <div class="method-wrapper">
       <div class="method-upper-text">
         <div class="block-title">Методы лечения</div>
-        <button class="order-btn">Заказать услугу</button>
+        <button class="order-btn" data-modal=".modal-consultation">Заказать услугу</button>
       </div>
       <div class="swiper methods-slider">
         <div class="swiper-wrapper">
@@ -607,48 +607,60 @@
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
+            <div>
+              <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+                клиентов, их родственников, родных и близких.</p>
+            </div>
           </div>
           <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
+            <div>
+              <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+                клиентов, их родственников, родных и близких.</p>
+            </div>
           </div>
           <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
+            <div>
+              <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+                клиентов, их родственников, родных и близких.</p>
+            </div>
           </div>
           <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
+            <div>
+              <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+                клиентов, их родственников, родных и близких.</p>
+            </div>
           </div>
           <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
+            <div>
+              <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+                клиентов, их родственников, родных и близких.</p>
+            </div>
           </div>
           <div class="swiper-slide method-item">
             <div class="upper-block">
               <img src="/assets/images/icons/first.png" alt="Метод">
               <div>Медикаментозная терапия</div>
             </div>
-            <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
-              клиентов, их родственников, родных и близких.</p>
+            <div>
+              <p>Наши врачи помогают избавиться пациентам от хронических зависимостей. Повышаем качество жизни
+                клиентов, их родственников, родных и близких.</p>
+            </div>
           </div>
         </div>
         <div class="swiper-pagination" style="position: relative; padding-top: 20px"></div>
@@ -758,7 +770,7 @@
             <p>Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.Но проблема в том, что вместе с положительным эффектом, компьютеры оказывают негативное влияние на человека. Положительным эффектом, компьютеры оказывают негативное влияние на человека.</p>
           </div>
           <button class="read-more-btn">Читать полностью
-            <img src="/assets/images/icons/down.png"/>
+            <img src="/assets/images/icons/down.png" />
           </button>
         </div>
       </div>

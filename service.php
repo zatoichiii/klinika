@@ -27,7 +27,7 @@
 
                 <div class="article-detail-info service">
                     <div class="article-detail-info-item">
-                        <button class="btn button">Бесплатная консультация</button>
+                        <button class="btn button" data-modal=".modal">Бесплатная консультация</button>
                     </div>
                     <div class="article-detail-info-item price">
                         <button class="btn button">Смотреть прайс</button>
@@ -570,7 +570,7 @@
                                                     class="slide-image" />
                                             </picture>
                                         </div>
-                                        <button class="btn_consultation button">Задать вопрос врачу</button>
+                                        <button class="btn_consultation button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -586,7 +586,7 @@
                                                     class="slide-image" />
                                             </picture>
                                         </div>
-                                        <button class="btn_consultation button">Задать вопрос врачу</button>
+                                        <button class="btn_consultation button" data-modal=".modal-consultation">Задать вопрос врачу</button>
                                     </div>
                                 </div>
                             </div>

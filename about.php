@@ -15,7 +15,7 @@
             <div class="header-about-left">
                 <div class="header-about-title">Наркологическая клиника <b>«Призма»</b> </div>
                 <div class="header-about-text">Наши специализированные программы лечения алкоголизма предлагают комплексный подход, включающий медицинскую поддержку, психологическую терапию и индивидуальные планы реабилитации.</div>
-                <button class="btn btn-primary">Бесплатная консультация</button>
+                <button class="btn btn-primary" data-modal=".modal">Бесплатная консультация</button>
             </div>
             <div class="header-about-right">
                 <blockquote>
